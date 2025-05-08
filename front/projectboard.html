@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project board</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .boardbox {
+            position: absolute;
+            border: 1px solid gray;
+            background-color: rgb(208,240,234);
+            height: 600px;
+            width: 1400px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+        }
+        .box7 {
+            position: absolute;
+            border: 1px solid gray;
+            background-color: rgb(208,240,234);
+            height: 600px;
+            width: 1400px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+        }
+        .middle7 {
+            position: relative;
+            width: 100%;
+            height: 600px;
+        }
+
+        .workhead {
+            position: relative;
+            background-color: rgb(81,123,95);
+            height:35px;
+            width:300px;
+            color:white;
+            margin: 10px;
+            text-align: center;
+            font-size: large;
+        }
+        
+        .workbox {
+            height:100px;
+            width: 300px;
+            background-color: white;
+            margin:10px;
+            border: 1px solid gray;
+        }
+        .users {
+            height:200px;
+            width: 300px;
+            background-color: white;
+            border: 1px solid gray;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="root">
+        <img src = "icon_root/bell.png" width = "25", height = "25" class="right1 drag1" onclick="window.location.href='alert_pop.html';"/>
+        <img src = "icon_root/friends.png" width = "30", height = "30" class="right2 drag1" onclick="window.location.href='friend_pop.html';">
+        <img src = "icon_root/user.png" width = "20", height = "20" class="right3 drag1" onclick="window.location.href='mypage_pop.html';">
+    </div>
+
+    <div>
+        <div style="display: flex; align-items: center; margin-top: 5px; justify-content: space-between; font-weight: bold;" >
+            <div style="width: 30px;"></div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <div>프로젝트 이름</div>
+                <img src="icon_root/edit.png" style="height:20px; width:20px; margin-left: 10px; "/>
+            </div>
+            <div>
+                <img src="icon_root/gear.png" style="height:20px; width:20px; margin-right: 10px;" onclick="window.location.href='projectmanage.html';"/>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div class="middle7">
+        <div class="box7">
+            <div style="display: flex;">
+                <div style="flex-direction: column;">
+                    <div class="workhead">To do</div>
+                    <div class="workbox" onclick="window.location.href='writework.html';">업무제목1</div>
+                    <img src="icon_root/add.png" style="height:30px; width:30px;" onclick="opennewwork()"/>
+                </div>
+            </div>
+            <div style="display: flex;">
+                <div style="flex-direction: column;">
+                    <div class="workhead">In progress</div>
+                </div>
+                <div style="flex-direction: column;">
+                    <div class="workhead">Done</div>
+                </div>
+            </div>
+            <div style="width: 1px; background-color: gray; margin: 10px 20px;"></div>
+            <div style="flex-direction: column;">
+                <div class="users green" style="font-size: small; text-align: center;">참여 유저</div>
+                <div class="users green" style="font-size: small; text-align: center;" onclick="openhistory()">히스토리</div>
+            </div> 
+        </div>
+    </div>
+
+
+</body>
+<script>
+    function opennewwork() {
+        window.open(
+            'newwork_pop.html',       
+            'Newwork',     
+            'width=800,height=800' 
+        );
+    }
+
+    function openalert() {
+        window.open(
+            'alert_pop.html',       
+            'Alert',     
+            'width=800,height=800' 
+        );
+    }
+    function openfriend() {
+        window.open(
+            'friend_pop.html',       
+            'Friend',     
+            'width=800,height=800' 
+        );
+    }
+    function openmypage() {
+        window.open(
+            'mypage_pop.html',       
+            'Mypage',     
+            'width=800,height=800' 
+        );
+    }
+    function openhistory() {
+        window.open(
+            'history_pop.html',       
+            'history',     
+            'width=800,height=800' 
+        );
+    }
+</script>
+</html>

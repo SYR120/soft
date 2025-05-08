@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>manage</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .box14{
+            border: 1px solid gray;
+            height: 500px;
+            width: 400px;
+            display: flex;  
+            flex-direction: column;
+            align-items: center;
+           
+        }
+        .box15{
+            border: 1px solid gray;
+            height: 100px;
+            width: 300px;
+            display: flex;  
+            flex-direction: column;
+            margin-bottom: 15px;
+           
+        }
+
+        .middle14 {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="root">
+        <img src = "icon_root/bell.png" width = "25", height = "25" class="right1 drag1" onclick="window.location.href='alert_pop.html';"/>
+        <img src = "icon_root/friends.png" width = "30", height = "30" class="right2 drag1" onclick="window.location.href='friend_pop.html';">
+        <img src = "icon_root/user.png" width = "20", height = "20" class="right3 drag1" onclick="window.location.href='mypage_pop.html';">
+    </div>
+    <div class="middle14">
+        <div class="green">설정</div>
+    </div>
+    <div style="width:100%">
+        <hr/>
+    </div>
+    <div class="middle14">
+        <div style="margin-top:30px;">
+            <div class="box14">
+                <div>
+                    <div class="black">업무 할당</div>
+                </div>
+                <div style="width:100%">
+                    <hr/>
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>업무 1</td>
+                            <td>
+                                <img src="icon_root/addfriend.png" style="height:30px; width:30px;" id="add1"/>
+                                <select id="taskuser2">
+                                        <option>유저 선택</option>
+                                        <option>그룹 1</option>
+                                        <option>그룹 2</option>
+                                        <option>유저 1</option>
+                                        <option>유저 2</option>
+                                        <option>유저 3</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>업무 2</td>
+                            <td>
+                                <img src="icon_root/addfriend.png" style="height:30px; width:30px;" id="add1"/>
+                                <select id="taskuser2">
+                                    <option>유저 선택</option>
+                                    <option>그룹 1</option>
+                                    <option>그룹 2</option>
+                                    <option>유저 1</option>
+                                    <option>유저 2</option>
+                                    <option>유저 3</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>업무 3</td>
+                            <td>
+                                <img src="icon_root/addfriend.png" style="height:30px; width:30px;" id="add1"/>
+                                <select id="taskuser2">
+                                    <option>유저 선택</option>
+                                    <option>그룹 1</option>
+                                    <option>그룹 2</option>
+                                    <option>유저 1</option>
+                                    <option>유저 2</option>
+                                    <option>유저 3</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div>
+            <div style="display: flex; margin:5px; justify-content: flex-end;" >
+                <img src="icon_root/add.png" style="height: 20px; width:20px;" id="add2" onclick="openFindid()"/>
+            </div>
+            <div class="box14">
+                <div>
+                    <div class="black">참여자</div>
+                </div>
+                <div style="width:100%">
+                    <hr/>
+                </div>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="icon_root/user2.png" style="height:30px; width:30px;"/></td>
+                            <td>닉네임</td>
+                            <td>#태그</td>
+                            <td><img src="icon_root/minus.png" style="height:20px; width:20px;" id="deleteuser" onclick="Deleteuser()"/></td>
+                        </tr>
+                        <tr>
+                            <td><img src="icon_root/user2.png" style="height:30px; width:30px;"/></td>
+                            <td>닉네임</td>
+                            <td>#태그</td>
+                            <td><img src="icon_root/minus.png" style="height:20px; width:20px;" id="deleteuser" onclick="Deleteuser()"/></td>
+                        </tr>
+                        <tr>
+                            <td><img src="icon_root/user2.png" style="height:30px; width:30px;"/></td>
+                            <td>닉네임</td>
+                            <td>#태그</td>
+                            <td><img src="icon_root/minus.png" style="height:20px; width:20px;" id="deleteuser" onclick="Deleteuser()"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="group">
+            <div style="display: flex; margin:5px; justify-content: flex-end;" >
+                <img src="icon_root/add.png" style="height: 20px; width:20px;" id="add3"/>
+            </div>
+            <div class="box15">
+                <div class="black">관리자</div>
+                <div style="display: flex; margin:5px; justify-content: flex-end;" >
+                    <img src="icon_root/addfriend.png" style="height: 40px; width:40px; margin-top: 30px;"/>
+                </div>
+            </div>
+            <div class="box15">
+                <div class="black">그룹1</div>
+                <div style="display: flex; margin:5px; justify-content: flex-end;" >
+                    <img src="icon_root/addfriend.png" style="height: 40px; width:40px; margin-top: 30px;"/>
+                </div>
+            </div>
+            <div class="box15">
+                <div class="black">그룹2</div>
+                <div style="display: flex; margin:5px; justify-content: flex-end;" >
+                    <img src="icon_root/addfriend.png" style="height: 40px; width:40px; margin-top: 30px;"/>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <div class="middle14">
+        <button class="button_final" style="width:200px;" id="save">저장</button>
+    </div>
+</body>
+
+<script>
+    function openalert() {
+        window.open(
+            'alert_pop.html',       
+            'Alert',     
+            'width=800,height=800' 
+        );
+    }
+    function openfriend() {
+        window.open(
+            'friend_pop.html',       
+            'Friend',     
+            'width=800,height=800' 
+        );
+    }
+    function openmypage() {
+        window.open(
+            'mypage_pop.html',       
+            'Mypage',     
+            'width=800,height=800' 
+        );
+    }
+
+    function openFindid() {
+        window.open(
+            'findid_pop.html',       
+            'Findid',     
+            'width=600,height=600,left=100,top=100' 
+        );
+    }
+
+    document.getElementById("add3").addEventListener("click", function () {
+        const groupName = prompt("그룹 이름을 작성하세요");
+        if (!groupName) return;
+
+        const container = document.getElementById("group");
+
+        const newBox = document.createElement("div");
+        newBox.className = "box15";
+        newBox.innerHTML = `
+            <div class="black">${group}</div>
+            <div style="display: flex; margin:5px; justify-content: flex-end;" >
+                <img src="icon_root/addfriend.png" style="height: 40px; width:40px; margin-top: 30px;"/>
+            </div>
+        `;
+
+        container.appendChild(newBox);
+    });
+
+    function Deleteuser() {
+        alert("해당 유저를 삭제하시겠습니까?");
+    }
+    
+    function Saveproject(){
+        alert("변경 사항이 저장되었습니다.");
+    }
+</script>
+</html>

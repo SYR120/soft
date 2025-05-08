@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectList</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .box4{
+            border: 1px solid gray;
+            height: 500px;
+            width: 450px;
+            display: flex;  
+            flex-direction: column;
+        }
+
+        .middle4 {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .button_find {
+            background-color:rgb(227, 227, 227);
+            height:30px;
+            width:200px;
+            color:rgb(127, 127, 127);
+            border: 1px solid gray;
+            font-size: medium;
+            font-weight: 300;   
+            margin-top:3px;
+            
+        }
+        .font7 {
+            font-size: 10px;
+            color: rgb(72, 72, 72);
+            margin-left:5px;
+            margin-top:auto;
+            text-decoration: underline;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="root">
+        <img src = "icon_root/bell.png" width = "25", height = "25" class="right1 drag1" onclick="window.location.href='alert_pop.html';"/>
+        <img src = "icon_root/friends.png" width = "30", height = "30" class="right2 drag1" onclick="window.location.href='friend_pop.html';">
+        <img src = "icon_root/user.png" width = "20", height = "20" class="right3 drag1" onclick="window.location.href='mypage_pop.html';">
+    </div>
+    <div style="margin-top: 5px;"></div>
+    
+    <div class="content_w">
+        <div>
+            <button class="button_final" style="margin-left: 50px; margin-right: 1000px;" onclick="window.location.href='newproject.html';">새 프로젝트 생성</button>
+        </div>
+        <div style="display: flex;">
+            <input class="button_find" type="text" id="find" placeholder=" "/> 
+            <img src="icon_root/finding.png" style="width: 25px; height: 25px; margin: 5px"/>
+        </div>
+    </div>
+    <hr/>
+
+    </button>
+    <div class="middle4">
+        <div class="box4">
+            <div style="display: flex; justify-content: space-between;">
+                <div>
+                    <div class="black" style="margin: 5px;">참여 프로젝트</div>
+                </div>
+                <div style="display: flex;">
+                   <div class="font7 drag1" style="margin-left: 25px;">오름차순</div>
+                   <div class="font7 drag1">내림차순</div>
+                   <div class="font7 drag1">마감기한순</div>
+                   <div class="font7 drag1" style="margin-right: 5px;">생성날짜순</div>
+                </div> 
+            </div>
+            <hr style="border: 1px solid rgb(0, 0, 0);" />
+            <div>
+                <table class="table table-hover">
+                    <tr>
+                        <th>
+                            <img src="icon_root/folder.png" style="height:20px; width:20px;"/>
+                        </th>
+                        <th style="font-size: medium; font-weight: 100;" onclick="window.location.href='projectboard.html';">임시 프로젝트 (지울예정)</th>
+                    </tr>
+                </table>
+                <tbody id="tbody">
+
+                </tbody>
+
+            </div>
+        </div>
+        <div class="box4">
+            <div class="black" style="margin: 5px;">초대 요청 프로젝트</div>
+            <hr style="border: 1px solid rgb(0, 0, 0);" />
+            <div>
+                <table class="table table-hover">
+                    <tr>
+                        <th>
+                            <img src="icon_root/invite.png" style="height:20px; width:20px;"/>
+                        </th>
+                        <th style="font-size: medium; font-weight: 100;">임시 프로젝트 (지울예정)</th>
+                        <th style="font-size: medium; font-weight: 50;">초대자:00</th>
+                    </tr>
+                </table>
+                <tbody id="tbody">
+
+                </tbody>
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script>
+    function openalert() {
+        window.open(
+            'alert_pop.html',       
+            'Alert',     
+            'width=800,height=800' 
+        );
+    }
+    function openfriend() {
+        window.open(
+            'friend_pop.html',       
+            'Friend',     
+            'width=800,height=800' 
+        );
+    }
+    function openmypage() {
+        window.open(
+            'mypage_pop.html',       
+            'Mypage',     
+            'width=800,height=800' 
+        );
+    }
+</script>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write work</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+    <style>
+        .box15{
+            border: 1px solid gray;
+            height: 500px;
+            width: 500px;
+            display: flex;  
+            flex-direction: column;
+            align-items: center;
+           
+        }
+        .middle15 {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="root">
+        <img src = "icon_root/bell.png" width = "25", height = "25" class="right1 drag1" onclick="window.location.href='alert_pop.html';"/>
+        <img src = "icon_root/friends.png" width = "30", height = "30" class="right2 drag1" onclick="window.location.href='friend_pop.html';">
+        <img src = "icon_root/user.png" width = "20", height = "20" class="right3 drag1" onclick="window.location.href='mypage_pop.html';">
+    </div>
+
+    <div class="middle15">
+        <div class="box15">
+            <div style="width:100%">
+                <hr />
+            </div>
+            <div >
+                <input type="text" id="title" style="width:400px; outline:none;" class="border-0" placeholder="제목" autofocus/>
+            </div>
+            <div style="width:100%"> 
+                <hr />
+            </div>
+            <div>
+                <div id="editor" style="height: 300px;"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script>
+    function openalert() {
+        window.open(
+            'alert_pop.html',       
+            'Alert',     
+            'width=800,height=800' 
+        );
+    }
+    function openfriend() {
+        window.open(
+            'friend_pop.html',       
+            'Friend',     
+            'width=800,height=800' 
+        );
+    }
+    function openmypage() {
+        window.open(
+            'mypage_pop.html',       
+            'Mypage',     
+            'width=800,height=800' 
+        );
+    }
+
+    var toolbarOptions = [
+            ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+            ['blockquote', 'code-block'],
+
+            [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+            [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+            [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+            [{ 'direction': 'rtl' }],                         // text direction
+
+            [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+            [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+            [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+            [{ 'font': [] }],
+            [{ 'align': [] }],
+
+            ['clean','image']                                         // remove formatting button
+        ];
+        var quill = new Quill('#editor', {
+            modules: {
+                toolbar: toolbarOptions
+            },
+            theme: 'snow'
+        });
+</script>
+</html>
