@@ -125,13 +125,13 @@
 
 <body>
     <div class="root">
-        <button style="background-color: rgba(0, 0, 0, 0); border: none;" class="right3 drag1" onclick="window.location.href='mypage_pop.html';">
+        <button style="background-color: rgba(0, 0, 0, 0); border: none;" class="right3 drag1"  onclick="openmypage();">
             <i class="fa-solid fa-user fa-2x"></i>            
         </button>
-        <button style="background-color: rgba(0, 0, 0, 0); border: none;" class="right2 drag1" onclick="window.location.href='friend_pop.html';">
+        <button style="background-color: rgba(0, 0, 0, 0); border: none;" class="right2 drag1" onclick="openfriend();">
             <i class="fa-solid fa-user-group fa-2x"></i>            
         </button>
-        <button style="background-color: rgba(0, 0, 0, 0); border: none;" class="right1 drag1" onclick="window.location.href='alert_pop.html';">
+        <button style="background-color: rgba(0, 0, 0, 0); border: none;" class="right1 drag1" onclick="openalert()">
             <i class="fa-solid fa-bell fa-2x"></i>            
         </button>
     </div>
@@ -151,7 +151,7 @@
             <div style="display: flex; align-items: center; margin-top: 5px; font-weight: bold;" >
                 <div style="width: 30px;"></div>
                 <div style="display: flex; align-items: center; gap: 10px;">
-                    <div>프로젝트 이름</div>
+                    <div id="pjname">프로젝트 이름</div>
                     <img src="icon_root/edit.png" style="height:20px; width:20px; margin-left: 10px; "/>
                 </div>
                 <img src="icon_root/gear.png" style="height:20px; width:20px; margin-right: 10px; margin-left: auto;" onclick="window.location.href='projectmanage.html';"/>

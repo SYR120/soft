@@ -46,13 +46,13 @@
 </head>
 <body style="background-color: rgb(245, 245, 245);">
     <div class="root">
-        <button style="background-color: rgba(0, 0, 0, 0); border: none;" class="right3 drag1" onclick="window.location.href='mypage_pop.html';">
+        <button style="background-color: rgba(0, 0, 0, 0); border: none;" class="right3 drag1" onclick="openmypage();">
             <i class="fa-solid fa-user fa-2x"></i>            
         </button>
-        <button style="background-color: rgba(0, 0, 0, 0); border: none;" class="right2 drag1" onclick="window.location.href='friend_pop.html';">
+        <button style="background-color: rgba(0, 0, 0, 0); border: none;" class="right2 drag1" onclick="openfriend();">
             <i class="fa-solid fa-user-group fa-2x"></i>            
         </button>
-        <button style="background-color: rgba(0, 0, 0, 0); border: none;" class="right1 drag1" onclick="window.location.href='alert_pop.html';">
+        <button style="background-color: rgba(0, 0, 0, 0); border: none;" class="right1 drag1" onclick="openalert();">
             <i class="fa-solid fa-bell fa-2x"></i>            
         </button>
     </div>
@@ -67,7 +67,7 @@
             
             <div>
                 <input class="button_join1" type="text" id="id" placeholder="아이디" autofocus/>
-                <label class="font1 drag1 margin2" style="text-decoration: underline;" id="idcheck">중복 확인</label> 
+                <label class="font1 drag1 margin2" style="text-decoration: underline;" id="idcheck" onclick="checking()">중복 확인</label> 
             </div>
             
             <input class="button_join1" type="password" id="password" placeholder="비밀번호"/> 
@@ -75,7 +75,7 @@
             
             <div>
                 <input class="button_join1" type="text" id="email" placeholder="이메일"/> 
-                <label class="font1 drag1 margin2" style="text-decoration: underline;">인증 코드 전송</label>
+                <label class="font1 drag1 margin2" style="text-decoration: underline;" onclick="emailalert()">인증 번호 전송</label>
             </div>
             
             <input class="button_join1" type="text" id="number" placeholder="인증번호"/>
@@ -97,7 +97,7 @@
         window.open(
             'alert_pop.html',       
             'Alert',     
-            'width=800,height=800' 
+            'width=500,height=800' 
         );
     }
     function openfriend() {
@@ -115,52 +115,69 @@
         );
     }
 
+    let check = false;
+    function checking() {
+        check = true;
+        const idcheck = document.getElementById("idcheck");
+        idcheck.innerText = "중복 확인 완료";
+        idcheck.style.color = "red";
+    }
+
+    function emailalert(){
+        alert("해당 이메일로 인증번호를 전송했습니다.")
+                didClose: () => {
+                    number.focus();
+                }
+    }
     async function join(){
             if(id.value.length < 1){
                 alert("아이디를 입력하세요.")
-                didClose: () => {
-                    id.focus();
-                }
+                id.focus();
             }
             else if(id.value.length < 4){
                 alert("아이디는 4자 이상이어야 합니다.")
-                didClose: () =>{
-                    id.focus();
-                }
+                id.focus();
             }
             else if(id.value.length > 20){
                 alert("아이디는 20자 이하여야 합니다.")
-                didClose: () =>{
-                    id.focus();
-                }
+                id.focus();
             }
-            //중복확인 버튼 안누르면 통과 x 조건
+            else if(!check){
+                alert("아이디 중복을 확인해주세요.");
+            }
             else if(password.value.length < 1){
                 alert("비밀번호를 입력하세요.")
-                didClose: () =>{
-                    password.focus();
-                }
+                password.focus();
             }
-
-            else if(password.value.length<8){
+            else if(password.value.length < 8){
                 alert("비밀번호는 8자 이상이어야 합니다.")
-                didClose: () =>{
-                    password.focus();
-                }
+                password.focus();
             }
-            else if(password.value,length>20){
+            else if(password.value.length > 20){
                 alert("비밀번호는 20자 이하여야 합니다.")
-                didClose: () =>{
-                    password.focus();
-                }
+                password.focus();
             }
             else if(password.value !== pwcheck.value){
                 alert("비밀번호가 일치하지 않습니다.")
-                didClose: () =>{
-                    pwcheck.focus();
-                }
+                pwcheck.focus();
+            }
+            else if(email.value.length < 1){
+                alert("이메일을 입력해주세요.")
+                email.focus();
+            }
+            else if(number.value.length < 1){
+                alert("인증번호를 입력해주세요.")
+                number.focus();
+            }
+            else if(nickname.value.length <1){
+                alert("닉네임을 입력해주세요.")
+                nickname.focus();
+            }
+            else{
+                alert("회원가입이 완료되었습니다.");
             }
         }
+        
     
 </script>
 </html>

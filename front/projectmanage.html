@@ -37,9 +37,9 @@
 </head>
 <body>
     <div class="root">
-        <img src = "icon_root/bell.png" width = "25", height = "25" class="right1 drag1" onclick="window.location.href='alert_pop.html';"/>
-        <img src = "icon_root/friends.png" width = "30", height = "30" class="right2 drag1" onclick="window.location.href='friend_pop.html';">
-        <img src = "icon_root/user.png" width = "20", height = "20" class="right3 drag1" onclick="window.location.href='mypage_pop.html';">
+        <img src = "icon_root/bell.png" width = "25", height = "25" class="right1 drag1" onclick="openalert()"/>
+        <img src = "icon_root/friends.png" width = "30", height = "30" class="right2 drag1" onclick="openfriend();">
+        <img src = "icon_root/user.png" width = "20", height = "20" class="right3 drag1" onclick="openmypage();">
     </div>
     <div class="middle14">
         <div class="green">설정</div>
@@ -188,7 +188,7 @@
         window.open(
             'alert_pop.html',       
             'Alert',     
-            'width=800,height=800' 
+            'width=500,height=800' 
         );
     }
     function openfriend() {
@@ -223,7 +223,7 @@
         const newBox = document.createElement("div");
         newBox.className = "box15";
         newBox.innerHTML = `
-            <div class="black">${group}</div>
+            <div class="black">${groupName}</div>
             <div style="display: flex; margin:5px; justify-content: flex-end;" >
                 <img src="icon_root/addfriend.png" style="height: 40px; width:40px; margin-top: 30px;"/>
             </div>
