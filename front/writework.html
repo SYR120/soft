@@ -17,22 +17,25 @@
             justify-content: center;
             align-items: center;
         }
-        .middle15 {
-            display: flex;
-            justify-content: center;
-       
+        .mid{
+           margin: 0; 
+           padding: 0; 
+           height: 100vh; 
+           display: flex; 
+           justify-content: center; 
+           align-items: center;
         }
     </style>
 
 </head>
-<body>
+<body class="mid">
     <div class="root">
         <img src = "icon_root/bell.png" width = "25", height = "25" class="right1 drag1" onclick="openalert()"/>
         <img src = "icon_root/friends.png" width = "30", height = "30" class="right2 drag1" onclick="openfriend();">
         <img src = "icon_root/user.png" width = "20", height = "20" class="right3 drag1" onclick="openmypage();">
     </div>
     
-    <div class="middle15">
+    <div>
         <div style="flex-direction: column;">
             <div class="box15">
                 <div style="width:100%">
@@ -50,7 +53,7 @@
             </div>
             <div style="display: flex; justify-content: center; margin-top: 10px;">
                 <button class="button_final" style="width:60px; margin-right:10px;">발행</button>
-                <button class="button_final" style="width:60px;">취소</button>
+                <button class="button_final" style="width:60px;" onclick="cancelwrite()">취소</button>
             </div>
         </div>
     </div>
@@ -78,6 +81,13 @@
             'Mypage',     
             'width=800,height=800' 
         );
+    }
+
+    async function cancelwrite(){
+        const result = confirm("작성중인 내용이 저장되지 않을 수 있습니다.");
+        if (result) {
+            window.location.href="worklist.html";
+        } 
     }
 
     var toolbarOptions = [
