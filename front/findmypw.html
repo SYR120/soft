@@ -1,11 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Find my pw</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/289a62abf7.js" crossorigin="anonymous"></script>
+    <style>
+         .button_find {
+            background-color:rgba(255, 255, 255, 0);
+            height:40px;
+            width:300px;
+            color:rgb(25, 25, 52);
+            border: 1px solid rgba(0, 0, 0, 0.25);
+            font-size: small;
+            font-weight: 300;   
+            margin-bottom: 10px;
+            border-radius: 4px;
+            font-family: 'Pretendard-Regular';
+        }
+        .middle_findpw {
+            position: relative;
+            width: 100%;
+            height: 400px;
+        }
+    </style>
 </head>
 <body>
-    <p>비번 찾기 창</p>
+     <div class="root">
+        <img src = "icon_root/bell.png" width = "25", height = "25" class="right1 drag1" onclick="openalert()"/>
+        <img src = "icon_root/friends.png" width = "30", height = "30" class="right2 drag1" onclick="openfriend();">
+        <img src = "icon_root/user.png" width = "20", height = "20" class="right3 drag1" onclick="openmypage();">
+    </div>
+    <div class="middle_findpw">
+        <div class="box" style="height:400px;">
+            <div class="green">비밀번호 찾기</div>
+            <hr style="background-color: rgba(163, 163, 163, 0.5);  border: none; height: 1px; width: 80%; margin-bottom: 15px;"/>
+            <h4>비밀번호를 찾고자하는 아이디를 입력해주세요.</h4>
+            <input class="button_find" type="text" id="id" placeholder=""/> 
+            <h4>해당 아이디의 이메일 정보를 입력해주세요.</h4>
+            <input class="button_find" type="text" id="email" placeholder=""/> 
+
+            <button class="button_final" style="width:80px;" onclick="findingpw()">확인</button>
+        </div>
+
+    </div>
 </body>
+<script>
+    function openalert() {
+        window.open(
+            'alert_pop.html',       
+            'Alert',     
+            'width=500,height=800' 
+        );
+    }
+    function openfriend() {
+        window.open(
+            'friend_pop.html',       
+            'Friend',     
+            'width=800,height=800' 
+        );
+    }
+    function openmypage() {
+        window.open(
+            'mypage_pop.html',       
+            'Mypage',     
+            'width=800,height=800' 
+        );
+    }
+
+    async function findingpw(){
+        if(id.value.length < 1){
+            alert("아이디를 입력해주세요.");
+            id.focus();
+        }
+        else if(email.value.length < 1){
+            alert("이메일을 입력해주세요.");
+            email.focus();
+        }
+        else{
+            alert("해당 이메일로 새로운 비밀번호를 전송하였습니다.");
+            window.location.href="home.html";
+        }
+    } 
+
+    function error(){
+        alert("가입된 아이디와 이메일 정보가 올바르지 않습니다.");
+    }
+</script>
 </html>
