@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>work</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .worklist_box {
+            border: 1px solid gray;
+            height: 450px;
+            width: 200px;
+            top: 20%;
+            border-radius: 10px;
+            border: none;
+            box-shadow : 0px 0px 3px rgba(150, 150, 150, 0.8);
+            padding-top: 35px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="root">
+        <img src = "icon_root/bell.png" width = "25", height = "25" class="right1 drag1" onclick="openalert()"/>
+        <img src = "icon_root/friends.png" width = "30", height = "30" class="right2 drag1" onclick="openfriend();">
+        <img src = "icon_root/user.png" width = "20", height = "20" class="right3 drag1" onclick="openmypage();">
+    </div>
+
+    <div style="display: flex; gap: 20px;">
+        <div class="worklist_box">
+            <div style="flex-direction: column;">
+                <div style="display: flex;">
+                    <h5>업무1</h5>
+                    <img src="icon_root/writing.png" style="height:20px; width:20px; margin-left:80px;"/>
+                    <div class="drag1" style="text-decoration: underline; margin-left:5px;" onclick="window.location.href='writework.html';">글쓰기</div>
+                </div>
+                <hr style="border: 1px solid rgb(0, 0, 0);" />
+                <table class="table table-hover">
+                    <tbody>
+                        <tr>
+                            <td>게시글1</td>
+                        </tr>
+                        <tr>
+                            <td>게시글1</td>
+                        </tr>
+                        <tr>
+                            <td>게시글1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="worklist_box" style="width: 600px;">
+            <div style="flex-direction: column;">
+                <div style="display: flex; justify-content: end;"> 
+                    <button class="button_final" style="width:40px; margin-right:10px;">발행</button>
+                    <button class="button_final" style="width:40px; margin-right:10px;">취소</button>
+                </div>
+                <hr style="border: 1px solid rgb(160, 160, 160);" />
+                <div>
+                    <input type="text" id="title" placeholder="제목"/> 
+                </div>
+                <hr style="border: 1px solid rgb(160, 160, 160);" />
+                <div>
+                    <input type="text" id="write" placeholder="내용"/> 
+                </div>
+
+            </div>
+        </div>
+        <div class="worklist_box">3</div>
+    </div>
+    
+</body>
+<script>
+    function openalert() {
+        window.open(
+            'alert_pop.html',       
+            'Alert',     
+            'width=800,height=800' 
+        );
+    }
+    function openfriend() {
+        window.open(
+            'friend_pop.html',       
+            'Friend',     
+            'width=800,height=800' 
+        );
+    }
+    function openmypage() {
+        window.open(
+            'mypage_pop.html',       
+            'Mypage',     
+            'width=800,height=800' 
+        );
+    }
+</script>
+</html>
