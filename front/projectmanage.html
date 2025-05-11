@@ -216,8 +216,9 @@
 
     document.getElementById("add3").addEventListener("click", function () {
         const groupName = prompt("그룹 이름을 작성하세요");
-        if (!groupName) return;
-
+        if (!groupName) {
+            return;
+        }
         const container = document.getElementById("group");
 
         const newBox = document.createElement("div");

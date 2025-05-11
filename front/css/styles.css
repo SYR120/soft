@@ -134,6 +134,15 @@ body {
     margin-bottom: 10px;
 }
 
+.mid{
+    margin: 0; 
+    padding: 0; 
+    height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
 
 /* 폰트 */
 @font-face {
