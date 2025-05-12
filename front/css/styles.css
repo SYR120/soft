@@ -124,11 +124,12 @@ body {
     font-family: 'Pretendard-Regular';
 }
 
-.button_final:active {
+.button_final:hover {
     background-color: rgb(135,195,177);
 }
 .content_w{
     display: flex;
+    flex-direction: row;
     align-items: center;
     height: 60px;
 
