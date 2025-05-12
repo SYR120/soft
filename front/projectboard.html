@@ -10,17 +10,6 @@
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <style>
-        .boardbox {
-            position: absolute;
-            border: 1px solid gray;
-            background-color: rgb(208,240,234);
-            height: 600px;
-            width: 1400px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-        }
         .box7 {
             position: absolute;
             background-color: rgb(245, 245, 245);
@@ -125,6 +114,8 @@
         }
         .project_memu{
             position: sticky;
+            height: 60px;
+
             padding: 15px;
             border-bottom: solid 1px;
             border-color: rgb(200, 200, 200);
@@ -151,8 +142,7 @@
     <div class="main">
         <div class="project_memu">
             <div style="display: flex; align-items: center; margin-top: 5px; font-weight: bold;" >
-                <div style="width: 30px;"></div>
-                <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-left: 30px;">
                     <div id="pjname">프로젝트 이름</div>
                     <img src="icon_root/edit.png" style="height:20px; width:20px; margin-left: 10px; "/>
                 </div>

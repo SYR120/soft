@@ -120,7 +120,6 @@ body {
     border: none;
     font-size: medium;
     font-weight: 700;   
-    margin-bottom: 10px;
     border-radius: 4px;
     font-family: 'Pretendard-Regular';
 }
@@ -130,6 +129,9 @@ body {
 }
 .content_w{
     display: flex;
+    align-items: center;
+    height: 60px;
+
     gap: 10px; 
     margin-bottom: 10px;
 }

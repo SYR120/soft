@@ -12,19 +12,25 @@
     <style>
         .box4{
             border: 1px solid gray;
-            height: 500px;
-            width: 450px;
+            height: 50%;
+            width: 45%;
             display: flex;  
             flex-direction: column;
+
+            border-radius: 10px;
+            margin-top: 20px;
         }
 
         .middle4 {
+            height: 100%;
+            width: 100%;
+
             position: relative;
-            display: flex;
+            display: flex;  
+            flex-direction: row;
             justify-content: center;
-            align-items: flex-start; 
+            align-items: flex-start;
             gap: 40px;
-            margin-top: 20px;
         }
 
         .button_find {
@@ -45,6 +51,13 @@
             margin-top:auto;
             text-decoration: underline;
         }
+        .main{
+            height: 100%;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+        }
         
     </style>
 </head>
@@ -53,35 +66,23 @@
     <div id="root"></div>
     <script src="approot.js"></script>
     
-    <div style="flex-direction: column;">
-        <div style="margin-top: 5px;">
-            <div class="content_w">
-                <div>
-                    <button class="button_final" style="margin-left: 50px; margin-right: 1000px;" onclick="window.location.href='newproject.html';">새 프로젝트 생성</button>
-                </div>
-                <div style="display: flex;">
-                    <input class="button_find" type="text" id="find" placeholder=" "/> 
-                    <img src="icon_root/finding.png" style="width: 25px; height: 25px; margin: 5px"/>
-                </div>
+    <div class="main">
+        <div class="content_w" style="padding: 15px; border-bottom: solid 1px; border-color: rgba(163, 163, 163, 0.5);">
+            <div style="display: flex; margin-left: auto;">
+                <input class="button_find" type="text" id="find" placeholder="프로젝트 검색" style="font-size: small;"/> 
+                <img src="icon_root/finding.png" style="width: 25px; height: 25px; margin: 5px"/>
             </div>
         </div>
-        
-        <hr/>
     
         <div class="middle4">
             <div class="box4">
-                <div style="display: flex; justify-content: space-between;">
-                    <div>
-                        <div class="black" style="margin: 5px;">참여 프로젝트</div>
-                    </div>
-                    <div style="display: flex;">
-                       <div class="font7 drag1" style="margin-left: 25px;">오름차순</div>
-                       <div class="font7 drag1">내림차순</div>
-                       <div class="font7 drag1">마감기한순</div>
-                       <div class="font7 drag1" style="margin-right: 5px;">생성날짜순</div>
-                    </div> 
+                <div style="display: flex; flex-direction: row; align-items: center; margin: 15px; height: 30px;">
+                    <div class="black">참여 프로젝트</div>
+                    <button class="button_final" onclick="window.location.href='newproject.html';" style="margin-left: auto;">새 프로젝트 생성</button>         
                 </div>
-                <hr style="border: 1px solid rgb(0, 0, 0);" />
+
+                <div style="border: 1px solid rgba(163, 163, 163, 0.5); margin-bottom: 10px;"></div>
+                <!-- <hr style="border: 1px solid rgb(0, 0, 0);" /> -->
                 <div>
                     <table class="table table-hover">
                         <tr>
@@ -98,8 +99,12 @@
                 </div>
             </div>
             <div class="box4">
-                <div class="black" style="margin: 5px;">초대 요청 프로젝트</div>
-                <hr style="border: 1px solid rgb(0, 0, 0);" />
+                <div style="display: flex; flex-direction: row; align-items: center; margin: 15px; height: 30px;">
+                   <div class="black" style="margin: 5px;">초대 요청 프로젝트</div>                 
+                </div>
+
+                <div style="border: 1px solid rgba(163, 163, 163, 0.5); margin-bottom: 10px;"></div>
+                <!-- <hr style="border: 1px solid rgb(0, 0, 0);" /> -->
                 <div>
                     <table class="table table-hover">
                         <tr>
@@ -117,8 +122,8 @@
                 </div>
             </div>
         </div>
-    </div>
 
+    </div>
     
 </body>
 <script>

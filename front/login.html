@@ -6,6 +6,8 @@
     <title>login</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://kit.fontawesome.com/289a62abf7.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <style>
         .button_login1 {
             background-color:rgba(255, 255, 255, 0);
@@ -84,17 +86,8 @@
     </style>
 </head>
 <body style="background-color: rgb(245, 245, 245);">
-    <div class="root">
-        <button style="background-color: rgba(0, 0, 0, 0); border: none;" class="right3 drag1" onclick="openmypage()">
-            <i class="fa-solid fa-user fa-2x"></i>            
-        </button>
-        <button style="background-color: rgba(0, 0, 0, 0); border: none;" class="right2 drag1" onclick="openfriend();">
-            <i class="fa-solid fa-user-group fa-2x"></i>            
-        </button>
-        <button style="background-color: rgba(0, 0, 0, 0); border: none;" class="right1 drag1" onclick="openalert();">
-            <i class="fa-solid fa-bell fa-2x"></i>            
-        </button>
-    </div>
+    <div id="root"></div>
+    <script src="approot.js"></script>
 
     <div class="middle">
         <div class="box" style="background-color: rgb(255, 255, 255);">
@@ -109,7 +102,7 @@
             <input class="button_login1" type="password" id="password" placeholder=" 비밀번호" />
          
 
-            <button class="button_final drag1" onclick="login()">로그인</button>
+            <button class="button_final drag1" style="margin-bottom: 10px;" onclick="login()">로그인</button>
 
             <!-- 
                 <div class="content_w">
