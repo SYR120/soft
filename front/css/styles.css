@@ -154,3 +154,9 @@ body {
 
 /* 나눔스퀘어 */
 @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+
+/*배경투명화*/
+.clear {
+    background-color: transparent;
+    border: none;
+}

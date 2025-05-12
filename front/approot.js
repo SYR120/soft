@@ -12,29 +12,30 @@
     window.open('mypage_pop.html', 'Mypage', 'width=800,height=800');
   }
 
-  function App() {
+  function approot() {
   return createElement(
     'div',
     { className: 'root' },
-
+    
     createElement(
       'button',
-      { className: 'right3 drag1', onClick: openMyPage },
+      { className: 'right3 drag1 clear', onClick: openMyPage},
       createElement('i', { className: 'fa-solid fa-user fa-2x' })
     ),
 
     createElement(
       'button',
-      { className: 'right2 drag1', onClick: openFriend },
+      { className: 'right2 drag1 clear', onClick: openFriend },
       createElement('i', { className: 'fa-solid fa-user-group fa-2x' })
     ),
     
     createElement(
       'button',
-      { className: 'right1 drag1', onClick: openAlert },
+      { className: 'right1 drag1 clear', onClick: openAlert },
       createElement('i', { className: 'fa-solid fa-bell fa-2x' })
     )
   );
+
 }
-  createRoot(document.getElementById('root')).render(createElement(tooo));
+  createRoot(document.getElementById('root')).render(createElement(approot));
 })();

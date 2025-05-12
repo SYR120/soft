@@ -131,53 +131,78 @@
     }
     async function join(){
             if(id.value.length < 1){
-                alert("아이디를 입력하세요.")
+                alert("아이디를 입력하세요.");
                 id.focus();
             }
             else if(id.value.length < 4){
-                alert("아이디는 4자 이상이어야 합니다.")
+                alert("아이디는 4자 이상이어야 합니다.");
                 id.focus();
             }
             else if(id.value.length > 20){
-                alert("아이디는 20자 이하여야 합니다.")
+                alert("아이디는 20자 이하여야 합니다.");
+                id.focus();
+            }
+            else if(/[A-Za-z0-9^\-_]/.test(id.value)) {
+                alert("허용되지 않은 특수기호가 사용되었습니다. (허용 특수기호: -,_)");
                 id.focus();
             }
             else if(!check){
                 alert("아이디 중복을 확인해주세요.");
             }
+            //아이디가 중복인지 확인하는 코드 추가해야함
             else if(password.value.length < 1){
-                alert("비밀번호를 입력하세요.")
+                alert("비밀번호를 입력하세요.");
                 password.focus();
             }
             else if(password.value.length < 8){
-                alert("비밀번호는 8자 이상이어야 합니다.")
+                alert("비밀번호는 8자 이상이어야 합니다.");
                 password.focus();
             }
             else if(password.value.length > 20){
-                alert("비밀번호는 20자 이하여야 합니다.")
+                alert("비밀번호는 20자 이하여야 합니다.");
+                password.focus();
+            }
+            else if(!/[A-Za-z0-9!@#$%^&*]/.test(password.value)) {
+                alert("비밀번호는 영문, 숫자, 특수기호(!@#$%^&*)로 구성되어야 합니다.");
+                password.focus();
+            }
+            else if(/[A-Za-z0-9^!@#$%^&*]/.test(password.value)) {
+                alert("허용되지 않은 특수기호가 사용되었습니다. (허용 특수기호: !@#$%^&*)");
                 password.focus();
             }
             else if(password.value !== pwcheck.value){
-                alert("비밀번호가 일치하지 않습니다.")
+                alert("비밀번호가 일치하지 않습니다.");
                 pwcheck.focus();
             }
             else if(email.value.length < 1){
-                alert("이메일을 입력해주세요.")
+                alert("이메일을 입력해주세요.");
                 email.focus();
             }
+            //인증번호 전송하는 코드 추가해야함
             else if(number.value.length < 1){
-                alert("인증번호를 입력해주세요.")
+                alert("인증번호를 입력해주세요.");
                 number.focus();
             }
             else if(nickname.value.length <1){
-                alert("닉네임을 입력해주세요.")
+                alert("닉네임을 입력해주세요.");
+                nickname.focus();
+            }
+            else if(nickname.value.length < 2){
+                alert("닉네임은 2자 이상이어야 합니다.");
+                nickname.focus();
+            }
+            else if(nickname.value.length > 20){
+                alert("닉네임은 20자 이하여야 합니다.");
+                nickname.focus();
+            }
+            else if(/[A-Za-z0-9^\-_]/.test(nickname.value)) {
+                alert("허용되지 않은 특수기호가 사용되었습니다. (허용 특수기호: -,_)");
                 nickname.focus();
             }
             else{
                 alert("회원가입이 완료되었습니다.");
             }
         }
-        
     
 </script>
 </html>
