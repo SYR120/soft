@@ -142,7 +142,7 @@
                 alert("아이디는 20자 이하여야 합니다.");
                 id.focus();
             }
-            else if(/[A-Za-z0-9^\-_]/.test(id.value)) {
+            else if(/[^A-Za-z0-9^\-_]/.test(id.value)) {
                 alert("허용되지 않은 특수기호가 사용되었습니다. (허용 특수기호: -,_)");
                 id.focus();
             }
@@ -162,11 +162,22 @@
                 alert("비밀번호는 20자 이하여야 합니다.");
                 password.focus();
             }
-            else if(!/[A-Za-z0-9!@#$%^&*]/.test(password.value)) {
-                alert("비밀번호는 영문, 숫자, 특수기호(!@#$%^&*)로 구성되어야 합니다.");
+            else if (!/[A-Za-z]/.test(password.value)) {
+                alert("비밀번호는 영어, 숫자, 특수문자로 구성되어야 합니다.");
                 password.focus();
+                return;
             }
-            else if(/[A-Za-z0-9^!@#$%^&*]/.test(password.value)) {
+            else if (!/[0-9]/.test(password.value)) {
+                alert("비밀번호는 영어, 숫자, 특수문자로 구성되어야 합니다.");
+                password.focus();
+                return;
+            }
+            else if (!/[!@#$%^&*]/.test(password.value)) {
+                alert("비밀번호는 영어, 숫자, 특수문자로 구성되어야 합니다.");
+                password.focus();
+                return;
+            }
+            else if(/[^A-Za-z0-9!@#$%^&*]/.test(password.value)) {
                 alert("허용되지 않은 특수기호가 사용되었습니다. (허용 특수기호: !@#$%^&*)");
                 password.focus();
             }
@@ -195,12 +206,13 @@
                 alert("닉네임은 20자 이하여야 합니다.");
                 nickname.focus();
             }
-            else if(/[A-Za-z0-9^\-_]/.test(nickname.value)) {
+            else if(/[^A-Za-z0-9\uAC00-\uD7A3\-_]/.test(nickname.value)) {
                 alert("허용되지 않은 특수기호가 사용되었습니다. (허용 특수기호: -,_)");
                 nickname.focus();
             }
             else{
                 alert("회원가입이 완료되었습니다.");
+                window.location.href = "login.html";
             }
         }
     
