@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/289a62abf7.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <style>
         .box15{
             border: 1px solid gray;
@@ -29,11 +32,8 @@
 
 </head>
 <body class="mid">
-    <div class="root">
-        <img src = "icon_root/bell.png" width = "25", height = "25" class="right1 drag1" onclick="openalert()"/>
-        <img src = "icon_root/friends.png" width = "30", height = "30" class="right2 drag1" onclick="openfriend();">
-        <img src = "icon_root/user.png" width = "20", height = "20" class="right3 drag1" onclick="openmypage();">
-    </div>
+    <div id="root"></div>
+    <script src="approot.js"></script>
     
     <div>
         <div style="flex-direction: column;">
@@ -61,28 +61,6 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 <script>
-    function openalert() {
-        window.open(
-            'alert_pop.html',       
-            'Alert',     
-            'width=500,height=800' 
-        );
-    }
-    function openfriend() {
-        window.open(
-            'friend_pop.html',       
-            'Friend',     
-            'width=800,height=800' 
-        );
-    }
-    function openmypage() {
-        window.open(
-            'mypage_pop.html',       
-            'Mypage',     
-            'width=800,height=800' 
-        );
-    }
-
     async function cancelwrite(){
         const result = confirm("작성중인 내용이 저장되지 않을 수 있습니다.");
         if (result) {

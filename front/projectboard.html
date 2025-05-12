@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://kit.fontawesome.com/289a62abf7.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <style>
         .boardbox {
             position: absolute;
@@ -133,17 +135,8 @@
 </head>
 
 <body>
-    <div class="root">
-        <button style="background-color: rgba(0, 0, 0, 0); border: none;" class="right3 drag1"  onclick="openmypage();">
-            <i class="fa-solid fa-user fa-2x"></i>            
-        </button>
-        <button style="background-color: rgba(0, 0, 0, 0); border: none;" class="right2 drag1" onclick="openfriend();">
-            <i class="fa-solid fa-user-group fa-2x"></i>            
-        </button>
-        <button style="background-color: rgba(0, 0, 0, 0); border: none;" class="right1 drag1" onclick="openalert()">
-            <i class="fa-solid fa-bell fa-2x"></i>            
-        </button>
-    </div>
+    <div id="root"></div>
+    <script src="approot.js"></script>
 
     <aside class="aside_left">
         <h5>프로젝트 선택</h5>
@@ -271,28 +264,6 @@
         window.open(
             'newwork_pop.html',       
             'Newwork',     
-            'width=800,height=800' 
-        );
-    }
-
-    function openalert() {
-        window.open(
-            'alert_pop.html',       
-            'Alert',     
-            'width=800,height=800' 
-        );
-    }
-    function openfriend() {
-        window.open(
-            'friend_pop.html',       
-            'Friend',     
-            'width=800,height=800' 
-        );
-    }
-    function openmypage() {
-        window.open(
-            'mypage_pop.html',       
-            'Mypage',     
             'width=800,height=800' 
         );
     }

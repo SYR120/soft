@@ -6,6 +6,8 @@
     <title>Find my pw</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://kit.fontawesome.com/289a62abf7.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <style>
          .button_find {
             background-color:rgba(255, 255, 255, 0);
@@ -27,11 +29,9 @@
     </style>
 </head>
 <body>
-     <div class="root">
-        <img src = "icon_root/bell.png" width = "25", height = "25" class="right1 drag1" onclick="openalert()"/>
-        <img src = "icon_root/friends.png" width = "30", height = "30" class="right2 drag1" onclick="openfriend();">
-        <img src = "icon_root/user.png" width = "20", height = "20" class="right3 drag1" onclick="openmypage();">
-    </div>
+    <div id="root"></div>
+    <script src="approot.js"></script>
+
     <div class="middle_findpw">
         <div class="box" style="height:400px;">
             <div class="green">비밀번호 찾기</div>
@@ -51,28 +51,6 @@
     </div>
 </body>
 <script>
-    function openalert() {
-        window.open(
-            'alert_pop.html',       
-            'Alert',     
-            'width=500,height=800' 
-        );
-    }
-    function openfriend() {
-        window.open(
-            'friend_pop.html',       
-            'Friend',     
-            'width=800,height=800' 
-        );
-    }
-    function openmypage() {
-        window.open(
-            'mypage_pop.html',       
-            'Mypage',     
-            'width=800,height=800' 
-        );
-    }
-
     async function findingpw(){
         if(id.value.length < 1){
             alert("아이디를 입력해주세요.");
