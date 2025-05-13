@@ -10,16 +10,26 @@
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <style>
-   
+        .main {
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            margin-top: 100px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        
         .worklist_box {
-            border: 1px solid gray;
+            border: 1px solid rgb(189, 189, 189);
             height: 100%;
-            width: 200px;
-            top: 20%;
+            width: 250px;
             border-radius: 10px;
-            border: none;
-            box-shadow : 0px 0px 3px rgba(150, 150, 150, 0.8);
-            padding-top: 15px;
+            padding: 15px;
+            background-color: white;
         }
         .button_work {
             background-color:rgb(159, 211, 204);
@@ -48,14 +58,17 @@
     <div id="root"></div>
     <script src="approot.js"></script>
 
-    <div>
-        <div style="display: flex; gap: 20px; margin-top:130px;">
+    <div class="main">
+        <div style="display: flex; gap: 20px;">
             <div class="worklist_box">
                 <div style="flex-direction: column;">
                     <div style="display: flex;">
                         <div style="font-weight: bold; font-size:20px;">업무 1</div>
-                        <img src="icon_root/writing.png" style="height:20px; width:20px; margin-left:80px;"/>
-                        <div class="drag1" style="text-decoration: underline; margin-left:5px;" onclick="window.location.href='writework.html';">글쓰기</div>
+                        <div style="display: flex; align-items: center; margin-left: auto;">
+                            <img src="icon_root/writing.png" style="height:20px; width:20px; margin-left:80px;"/>
+                            <div class="drag1" style="text-decoration: underline; margin-left:5px;" onclick="window.location.href='writework.html';">글쓰기</div> 
+                        </div>
+  
                     </div>
                     <hr style="border: 1px solid rgb(0, 0, 0);" />
                     <table class="table table-hover">
@@ -73,13 +86,8 @@
                     </table>
                 </div>
             </div>
-            <div class="worklist_box" style="width: 600px;">
-                <div style="flex-direction: column;">
-                    <div style="display: flex; justify-content: end;"> 
-                        <button class="button_work" onclick="window.location.href='writework.html';">수정</button>
-                        <button class="button_work" style="background-color: rgb(194, 194, 194);" onclick="deletewrite()">삭제</button>
-                    </div>
-                    <hr style="border: 1px solid rgb(160, 160, 160);" />
+            <div>
+                <div class="worklist_box" style="width: 700px; flex-direction: column;">
                     <div style="margin:10px;">
                         <div style="font-weight: bold; font-size:25px;">제목</div>
                         <div style="display: flex;">
@@ -110,9 +118,9 @@
                             <img src = "icon_root/comment.png" style="height:25px; width:25px;"/>
                             <div style="font-size: small; color: rgb(105, 105, 105); margin-top:2px;" id="comcount">0</div>
                         </div>
-                        <div>
-                            <button class="button_work" style="width:70px;" onclick="prev()">이전글</button>
-                            <button class="button_work" style="width:70px;" onclick="next()">다음글</button>
+                        <div style="display: flex; justify-content: end;"> 
+                            <button class="button_work" onclick="window.location.href='writework.html';">수정</button>
+                            <button class="button_work" style="background-color: rgb(194, 194, 194);" onclick="deletewrite()">삭제</button>
                         </div>
                     </div>
                     <div style="width:100%">
@@ -148,7 +156,13 @@
                         </div>
                     </div>
                 </div>
+                <!-- 아래에 뭐가 존재하면 위의 박스가 길어지는 현상 생김. 수정필요 -->
+                <div style="display: flex; margin-top: 20px;">
+                    <button class="button_work" style="width:70px; margin-right: auto;" onclick="prev()">이전글</button>
+                    <button class="button_work" style="width:70px; margin-left: auto;" onclick="next()">다음글</button>
+                </div>
             </div>
+
             <div style="flex-direction: column;">
                 <div class="worklist_box" style="height:150px;">
                     <div style="margin:5px;">
@@ -215,6 +229,7 @@
             <hr style="border: 1px solid rgb(160, 160, 160); width:600px;" />
         `;
 
+        // 이 알람은 없애는 게 좋아보임. 아님 확인 안눌러도 ㄱㅊ게 하거나
         alert("댓글이 등록되었습니다.");
         container.appendChild(com);
         const comcount = document.getElementById("comcount");
@@ -231,3 +246,9 @@
     }
 </script>
 </html>
+
+
+<!-- 
+    게시글이 아예 존재하지 않는 경우의 화면도 만들어야 함.
+    예) 게시글 내용 보이는 화면에 아직 (게시글이 없습니다)회색 네모박스 보이게 하기.
+-->
