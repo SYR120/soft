@@ -10,9 +10,23 @@
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <style>
+        .box3{
+            position: absolute;
+            border: 1px solid gray;
+            height: 800px;
+            width: 1200px;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+
+            display: flex;  
+            flex-direction: row;
+
+            border-radius: 10px;
+        }
         .box4{
-            height: 98%;
-            width: 95%;
+            height: 100%;
+            width: 100%;
             display: flex;  
             flex-direction: column;
             justify-content: flex-start;
@@ -21,25 +35,33 @@
             border: none;
             background-color: rgb(255, 255, 255);
 
-            padding: 10px;
+            padding: 15px;
         }
 
         .button_find {
-            background-color:rgba(255, 255, 255, 0);
-            height:30px;
-            width:200px;
-            color:rgb(25, 25, 52);
-            border: 1px solid rgba(0, 0, 0, 0.25);
+            border: none;
             font-size: small;
-            font-weight: 300;   
-            margin-bottom: 10px;
-            border-radius: 4px;
+            font-weight: 300;
             font-family: 'Pretendard-Regular';
-            
         }
         input:focus {
-        outline: none;
-        background-color: rgba(200, 200, 200, 0.3);
+            outline: none;
+            background-color: rgb(245, 245, 245);
+        }
+
+        .find{
+            background-color:rgba(255, 255, 255, 0);
+            height:35px;
+            width:200px;
+            color:rgb(25, 25, 52);
+            border: 1px solid rgba(0, 0, 0, 0.25); 
+
+            padding: 10px;
+            border-radius: 4px; 
+        }
+        .find:focus-within{
+            outline: none;
+            background-color: rgb(245, 245, 245);
         }
         
         .font7 {
@@ -77,68 +99,74 @@
     </style>
 </head>
 
-<body style="background-color: rgb(245, 245, 245);">
+<body>
     <div id="root"></div>
     <script src="approot.js"></script>
     
-    <div class="main" style="background-color: rgba(192, 201, 198, 0.15);">
-        <div class="content_w" style="padding: 15px; border-bottom: solid 1px; border-color: rgba(163, 163, 163, 0.5); background-color: white;">
-            <div class="black" style="margin-right: auto; margin-left: 12px;">참여 프로젝트</div>
+    <div class="middle">
+        <div class="box3">
+            <div class="main">
+                <div class="content_w" style="height: 60px; padding: 15px; border-bottom: solid 1px; border-color: rgba(163, 163, 163, 0.5);">
+                    <div class="black" style="margin-right: auto; margin-left: 12px;">참여 프로젝트</div>
 
-            <div style="width: 30%; display: flex; align-items: center;">
-                <input class="button_find" type="text" id="find" placeholder="프로젝트 검색" style="font-size: small; width: 400px;"/> 
-                <img src="icon_root/finding.png" style="width: 25px; height: 25px; margin: 5px"/>                    
+                    <div class="find" style="width: 30%; display: flex; align-items: center;">
+                        <input class="button_find" type="text" id="find" placeholder="프로젝트 검색" style="font-size: small; width: 400px;"/> 
+                        <img src="icon_root/finding.png" style="width: 25px; height: 25px; margin: 5px"/>                    
+                    </div>
+
+                    <button class="button_final" onclick="window.location.href='newproject.html';" style="margin-left: auto;">새 프로젝트 생성</button> 
+                </div>
+
+
+                <div class="mid" style="background-color: rgb(245, 245, 245); padding: 15px;">
+                    <div class="box4">
+                        <table class="table1">
+                            <tr>
+                                <th>
+                                    <img src="icon_root/folder.png" style="height:20px; width:20px;"/>
+                                </th>
+                                <th style="font-size: medium; font-weight: 100;" onclick="window.location.href='projectboard.html';">임시 프로젝트 (지울예정)</th>
+                            </tr>
+                        </table>
+                        <tbody id="tbody">
+
+                        </tbody>
+
+                    </div>            
+                </div>
+
             </div>
 
-            <button class="button_final" onclick="window.location.href='newproject.html';" style="margin-left: auto;">새 프로젝트 생성</button> 
+            <div class="sub">
+                <div class="content_w" style="height: 60px; padding: 15px; border-bottom: solid 1px; border-color: rgba(163, 163, 163, 0.5);">
+                    <div class="black" style="margin: 5px;">초대 요청 프로젝트</div>                 
+                </div>
+
+                <div>
+                    <table class="table table-hover">
+                        <tr>
+                            <th>
+                                <img src="icon_root/invite.png" style="height:20px; width:20px;"/>
+                            </th>
+                            <th style="font-size: medium; font-weight: 100;">임시 프로젝트 (지울예정)</th>
+                            <th style="font-size: medium; font-weight: 50;">초대자:00</th>
+                        </tr>
+                    </table>
+                    <tbody id="tbody">
+
+                    </tbody>
+
+                </div>
+
+            </div>     
+
         </div>
-
-
-        <div class="mid">
-            <div class="box4">
-                <table class="table1">
-                    <tr>
-                        <th>
-                            <img src="icon_root/folder.png" style="height:20px; width:20px;"/>
-                        </th>
-                        <th style="font-size: medium; font-weight: 100;" onclick="window.location.href='projectboard.html';">임시 프로젝트 (지울예정)</th>
-                    </tr>
-                </table>
-                <tbody id="tbody">
-
-                </tbody>
-
-            </div>            
-        </div>
-
-
     </div>
 
-    <div class="sub">
-        <div class="content_w" style="padding: 15px; border-bottom: solid 1px; border-color: rgba(163, 163, 163, 0.5);">
-            <div class="black" style="margin: 5px;">초대 요청 프로젝트</div>                 
-        </div>
-
-        <div>
-            <table class="table table-hover">
-                <tr>
-                    <th>
-                        <img src="icon_root/invite.png" style="height:20px; width:20px;"/>
-                    </th>
-                    <th style="font-size: medium; font-weight: 100;">임시 프로젝트 (지울예정)</th>
-                    <th style="font-size: medium; font-weight: 50;">초대자:00</th>
-                </tr>
-            </table>
-            <tbody id="tbody">
-
-            </tbody>
-
-        </div>
-
-    </div>
+    
     
 </body>
 <script>
- 
+
 </script>
 </html>

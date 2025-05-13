@@ -11,12 +11,21 @@
   function openMyPage() {
     window.open('mypage_pop.html', 'Mypage', 'width=800,height=800');
   }
+  function openProjectList() {
+    window.location.href=('projectlist.html');
+  }
 
   function approot() {
   return createElement(
     'div',
     { className: 'root' },
     
+    createElement(
+      'button',
+      { className: 'left1 drag1 clear', onClick: openProjectList},
+      createElement('img', { src: 'icon_root/logo.png', className: 'logo', style: {height: '50px'} })
+    ),
+
     createElement(
       'button',
       { className: 'right3 drag1 clear', onClick: openMyPage},
