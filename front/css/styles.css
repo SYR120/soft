@@ -51,6 +51,8 @@ body {
     position: relative; 
     font-family: 'Pretendard-Regular';
     overflow:hidden;
+
+    background-color: rgb(254, 254, 254);
 }
 
 /*홈화면 박스*/
