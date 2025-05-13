@@ -4,6 +4,12 @@
 
   function openAlert() {
     window.open('alert_pop.html', 'Alert', 'width=500,height=800');
+    // const modalBtn = document.querySelector(".modal-Btn");
+    // const modal = document.querySelector(".modal");
+
+    // modalBtn.addEventListener("click", () => {
+    //     modal.showModal();
+    // })
   }
   function openFriend() {
     window.open('friend_pop.html', 'Friend', 'width=800,height=800');
@@ -29,19 +35,19 @@
     createElement(
       'button',
       { className: 'right3 drag1 clear', onClick: openMyPage},
-      createElement('i', { className: 'fa-solid fa-user fa-2x' })
+      createElement('i', { className: 'fa-solid fa-user fa-2x', style: { fontSize: '25px'} })
     ),
 
     createElement(
       'button',
       { className: 'right2 drag1 clear', onClick: openFriend },
-      createElement('i', { className: 'fa-solid fa-user-group fa-2x' })
+      createElement('i', { className: 'fa-solid fa-user-group fa-2x', style: { fontSize: '25px'} })
     ),
     
     createElement(
       'button',
       { className: 'right1 drag1 clear', onClick: openAlert },
-      createElement('i', { className: 'fa-solid fa-bell fa-2x' })
+      createElement('i', { className: 'fa-solid fa-bell fa-2x', style: { fontSize: '25px'} })
     )
   );
 
