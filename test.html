@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/289a62abf7.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <title>리엑트 테스트용 인덱스파일/ 테스트 이후는 home = index 이름 변경 예정</title>
+    <title>test</title>
 </head>
 <style>
     .modal{
@@ -38,14 +38,14 @@
         <div class="modal_body">1</div>
     </div>
     <button class="btn-open-modal">모달 버튼</button>
-    <button>다이얼로그 모달창</button>
-    <div class="modal">
-        <dialog class="modal_body">
-            <h1>안녕하세요</h1>
-            <p>이것은 다이얼로그입니다.</p>
-            <button id="close">닫기</button>
-        </dialog>
-    </div>
+
+    <button class="modal-Btn">Open</button>
+    <dialog class="modal2">
+        <h3>모달창임</h3>
+        <form method="dialog">
+            <button>Close</button>
+        </form>
+    </dialog>
 </body>
 <!--모달 구현 방법 3가지/ 1-> 직접 다 만들어서 하기 2-> dialog 태그 사용하기 3-> 모달 라이브러리 사용-->
 <script>
@@ -55,5 +55,12 @@
     btnOpenModal.addEventListener("click", ()=>{
         modal.style.display="flex";
     });
+
+    const modalBtn = document.querySelector(".modal-Btn");
+    const modal2 = document.querySelector(".modal2");
+
+    modalBtn.addEventListener("click", () => {
+        modal2.showModal()
+    })
 </script>
 </html>
