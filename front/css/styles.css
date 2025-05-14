@@ -172,3 +172,29 @@ body {
     background-color: transparent;
     border: none;
 }
+
+/*모달*/
+.button_ale {
+        background-color: rgb(155,206,199);
+        font-weight: bold;
+    }
+.button_ale:active {
+        background-color:rgb(116, 167, 160) ;
+    }
+.scroll {
+    overflow-y: auto;
+    border: 1px solid #aaa; 
+}
+
+.dialog.modal1 {
+    width: 500px;               
+    height: 800px;          
+    padding: 20px;   
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    display: none;
+ }
+
+dialog.modal1::backdrop {
+    background: rgba(0,0,0,0.4);
+}
