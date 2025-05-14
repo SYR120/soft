@@ -92,7 +92,7 @@ body {
     font-size: medium;
     font-weight: 700;   
 }
-.button1:active {
+.button1:hover {
     background-color: rgb(159, 211, 204);
 }
 

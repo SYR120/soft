@@ -24,158 +24,237 @@
         }
         
         .worklist_box {
-            border: 1px solid rgb(189, 189, 189);
+            border: none;
             height: 100%;
+            max-height: 80vh;
             width: 250px;
             border-radius: 10px;
-            padding: 15px;
             background-color: white;
+            box-shadow : 0px 0px 3px rgba(0, 0, 0, 0.2);
+
+            
+            overflow-y: scroll;
         }
+        .worklist_box::-webkit-scrollbar{
+            width: 5px;
+        }
+        .worklist_box::-webkit-scrollbar-thumb {
+            background-color: rgba(230, 230, 230);
+            box-shadow : 0px 0px 3px rgba(150, 150, 150, 0.8);
+            border-radius: 10px;
+        }
+        .worklist_box::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        .worklist_box2 {
+            border: none;
+            height: 100%;
+            max-height: 80vh;
+            width: 250px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow : 0px 0px 3px rgba(0, 0, 0, 0.2);
+
+            
+            overflow-y: scroll;
+        }
+        .worklist_box2::-webkit-scrollbar{
+            display: none;
+        }
+
         .button_work {
-            background-color:rgb(159, 211, 204);
+            background-color: transparent;
+            border: solid 1px rgb(112, 165, 139);            
+            /* background-color:rgb(183, 228, 206);
+            border: none; */
+
             height:25px;
             width:50px;
-            color:rgb(25, 54, 52);
-            border: none;
+
+            color:rgb(112, 165, 139);
             font-size: 15px;
-            font-weight: 500;   
-            margin-right: 5px;
+            font-weight: 500;
             border-radius: 4px;
             font-family: 'Pretendard-Regular';
         }
+        .button_work2 {
+            background-color:rgb(255, 255, 255);
+            border: none;
+            height:25px;
+            width:50px;
+            box-shadow : 0px 0px 2px rgba(150, 150, 150, 0.8);
+
+            color:rgb(10, 10, 10);
+            font-size: 15px;
+            font-weight: 500;
+            border-radius: 4px;
+            font-family: 'Pretendard-Regular';
+        }
+
         .comment_box {
             border: 1px solid gray;
-            background-color: rgb(232, 232, 232);
-            height: 120px;
-            width: 95%;
-            margin:10px;
+            background-color: rgb(235, 235, 235);
+            width: 100%;
+            padding: 10px;
+
             border-radius: 10px;
             border: none;
         }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            padding: 15px;
+            border-bottom: 1px solid rgb(230, 230, 230);
+            text-align: left;
+        }
+        
+        .high_box{
+            height: 70px;
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items:flex-end;
+        }
+
+        .button_done{
+            height: 50px;
+            width: 250px;
+            margin-top:20px;
+
+            border-radius: 20px;
+            border: none;
+
+            background-color: rgb(112, 165, 139);
+            box-shadow : 0px 0px 3px rgba(0, 0, 0, 0.2);
+
+            color:rgb(255, 255, 255);
+            font-size: 15px;
+            font-weight: 500;
+            font-family: 'Pretendard-Regular';
+
+            display: flex;
+            justify-content:center;
+            align-items: center;
+        }
+        .button_done:hover {
+            background-color: rgb(84, 133, 129);
+            transition: 0.1s;
+        }
+
+        .button_done:hover span{
+            display: none;
+        }
+        .button_done:hover::before{
+            content:"Done으로 상태 변경하기";
+        }
+
     </style>
 </head>
-<body class="mid" style=" overflow-y: scroll;">
+<body class="mid" style="background-color: rgb(195, 195, 195)">
     <div id="root"></div>
     <script src="approot.js"></script>
 
     <div class="main">
         <div style="display: flex; gap: 20px;">
-            <div class="worklist_box">
-                <div style="flex-direction: column;">
-                    <div style="display: flex;">
-                        <div style="font-weight: bold; font-size:20px;">업무 1</div>
-                        <div style="display: flex; align-items: center; margin-left: auto;">
-                            <img src="icon_root/writing.png" style="height:20px; width:20px; margin-left:80px;"/>
-                            <div class="drag1" style="text-decoration: underline; margin-left:5px;" onclick="window.location.href='writework.html';">글쓰기</div> 
-                        </div>
-  
-                    </div>
-                    <hr style="border: 1px solid rgb(0, 0, 0);" />
-                    <table class="table table-hover">
-                        <tbody>
-                            <tr>
-                                <td>게시글1</td>
-                            </tr>
-                            <tr>
-                                <td>게시글1</td>
-                            </tr>
-                            <tr>
-                                <td>게시글1</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div style="display: flex; flex-direction: column;" >
+                <div class="high_box">
+                    <span style="position: relative; font-size: 35px; color:white;">업무명</span>
+                    <div style="margin-left: auto; padding: 5px; background-color: rgb(81,123,95); font-size: medium; color: white;">In Progress</div>
                 </div>
-            </div>
-            <div>
                 <div class="worklist_box" style="width: 700px; flex-direction: column;">
-                    <div style="margin:10px;">
-                        <div style="font-weight: bold; font-size:25px;">제목</div>
-                        <div style="display: flex;">
-                            <div style="margin:5px;">
-                                <img src="icon_root/user2.png" style="height: 30px; width: 30px;"/>
-                            </div>
-                            <div>
-                                <div style="font-size: 15px;">작성자</div>
-                                <div style="font-size: 12px; color:rgb(105, 105, 105)">2025/05/05 12:00</div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr style="border: 1px solid rgb(160, 160, 160);" />
-                    <div style="margin:10px;">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <div></div>
-                            <div>
-                                <img src="icon_root/link.png" style="height:20px; width:20px;"/>
-                                <a style="font-size: small; color: rgb(105, 105, 105)">파일 다운로드</a>
+                    <div style="margin: 15px;">
+                        <div style="margin:10px;">
+                            <div style="font-weight: bold; font-size:25px;">제목</div>
+                            <div style="display: flex;">
+                                <div style="margin:5px;">
+                                    <img src="icon_root/user2.png" style="height: 30px; width: 30px;"/>
+                                </div>
+                                <div>
+                                    <div style="font-size: 15px;">작성자</div>
+                                    <div style="font-size: 12px; color:rgb(105, 105, 105)">2025/05/05 12:00</div>
+                                </div>
                             </div>
                         </div>
-                        <div style="height:300px;">
-                            <div style="font-weight: 400;">내용</div>
-                        </div>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top:5px;">
-                        <div style="margin-left:5px; display: flex;">
-                            <img src = "icon_root/comment.png" style="height:25px; width:25px;"/>
-                            <div style="font-size: small; color: rgb(105, 105, 105); margin-top:2px;" id="comcount">0</div>
-                        </div>
-                        <div style="display: flex; justify-content: end;"> 
-                            <button class="button_work" onclick="window.location.href='writework.html';">수정</button>
-                            <button class="button_work" style="background-color: rgb(194, 194, 194);" onclick="deletewrite()">삭제</button>
-                        </div>
-                    </div>
-                    <div style="width:100%">
                         <hr style="border: 1px solid rgb(160, 160, 160);" />
-                    </div>
-                    <div style="display: flex;">
-                        <div style="flex-direction: column; margin:5px;" id="commentlist">
-                            <!-- <div style="margin-left:5px;">
-                                <img src="icon_root/user2.png" style="height: 30px; width: 30px;" id="userimage"/>
-                            </div>
-                            <div style="flex-direction: column; margin-left:5px;">
-                                <div style="font-size: 15px;" id="usernickname">사과 #1231</div>
-                                <div style="font-size: 13px;" id="usercomment">수고하셨습니다.</div>
-                            </div> -->
-
-                        </div>
-                    </div>
-                    <div class="comment_box">
-                        <div style="margin:5px;">
-                            <div style="font-size: medium;">나</div>
-                            <input style="font-size: small; border: none; background-color: transparent; outline: none; width:500px; " type="text" id="comment" placeholder="댓글 작성하기" />
-                            <div style="width:100%">
-                                <hr style="border: 1px solid rgb(160, 160, 160);" />
-                            </div>
+                        <div style="margin:10px;">
                             <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div></div>
                                 <div>
                                     <img src="icon_root/link.png" style="height:20px; width:20px;"/>
-                                </div>
-                                <div>
-                                    <button class="button_work" style="width:70px;" onclick="addcomment()">등록</button>
+                                    <a style="font-size: small; color: rgb(105, 105, 105)">파일 다운로드</a>
                                 </div>
                             </div>
+                            <div style="height:300px;">
+                                <div style="font-weight: 400;">내용</div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <!-- 아래에 뭐가 존재하면 위의 박스가 길어지는 현상 생김. 수정필요 -->
-                <div style="display: flex; margin-top: 20px;">
-                    <button class="button_work" style="width:70px; margin-right: auto;" onclick="prev()">이전글</button>
-                    <button class="button_work" style="width:70px; margin-left: auto;" onclick="next()">다음글</button>
-                </div>
-            </div>
-
-            <div style="flex-direction: column;">
-                <div class="worklist_box" style="height:150px;">
-                    <div style="margin:5px;">
-                        <div style="font-weight: bold; font-size:15px;">담당 유저</div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top:5px;">
+                            <div style="margin-left:5px; display: flex;">
+                                <img src = "icon_root/comment.png" style="height:25px; width:25px;"/>
+                                <div style="font-size: small; color: rgb(105, 105, 105); margin-top:2px;" id="comcount">0</div>
+                            </div>
+                            <div style="display: flex; justify-content: end;"> 
+                                <button class="button_work" style="margin-right: 5px;" onclick="window.location.href='writework.html';">수정</button>
+                                <button class="button_work" style="border: solid 1px rgb(173, 98, 98); color:rgb(173, 98, 98)" onclick="deletewrite()">삭제</button>
+                            </div>
+                        </div>
                         <div style="width:100%">
                             <hr style="border: 1px solid rgb(160, 160, 160);" />
                         </div>
+                        <div style="display: flex;">
+                            <div style="flex-direction: column; margin:5px;" id="commentlist">
+                                <!-- <div style="margin-left:5px;">
+                                    <img src="icon_root/user2.png" style="height: 30px; width: 30px;" id="userimage"/>
+                                </div>
+                                <div style="flex-direction: column; margin-left:5px;">
+                                    <div style="font-size: 15px;" id="usernickname">사과 #1231</div>
+                                    <div style="font-size: 13px;" id="usercomment">수고하셨습니다.</div>
+                                </div> -->
+
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <div class="comment_box">
+                                <div style="font-size: medium;">나</div>
+                                <input style="font-size: small; border: none; background-color: transparent; outline: none; width:500px; " type="text" id="comment" placeholder="댓글 작성하기" />
+                                <div style="width:100%">
+                                    <hr style="border: 1px solid rgb(160, 160, 160);" />
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <img src="icon_root/link.png" style="height:20px; width:20px;"/>
+                                        <button class="button_work2" style="width:70px;" onclick="addcomment()">등록</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; margin-top: 20px;">
+                            <button class="button_work" style="width:70px; margin-right: auto;" onclick="prev()">이전글</button>
+                            <button class="button_work" style="width:70px; margin-left: auto;" onclick="next()">다음글</button>
+                        </div>
+                    </div>
+    
+                </div>                
+            </div>
+
+            <div style="flex-direction: column;">
+                <div class="high_box"> </div>
+                <div class="worklist_box" style="height:150px; overflow-y: scroll;">
+                    <div style="background-color: white; padding: 15px;">
+                        <div style="font-weight: bold; font-size:15px;">담당 유저</div>
+                    </div>
+                    <hr style="border: 1px solid rgb(160, 160, 160); margin: 0;" />
+                    <div style="padding: 15px;">
                         <div style="font-size: small;">qwer1 (그룹 1)</div>
                         <div style="font-size: small;">asdf2 (그룹 2)</div>
-                        <div style="font-size: small;">abcd3 (그룹 2)</div>
+                        <div style="font-size: small;">abcd3 (그룹 2)</div>                        
                     </div>
+
                 </div>
-                <div class="worklist_box" style="height:150px; margin-top:10px;">
+                <!-- <div class="worklist_box" style="height:150px; margin-top:10px;">
                     <div style="margin:5px;">
                         <div style="font-weight: bold; font-size:15px;">업무 상태</div>
                         <div style="width:100%">
@@ -196,6 +275,49 @@
                             </div>
                         </div>
                     </div>
+                </div> -->
+
+                <div class="worklist_box2" style="margin-top:10px; height: 300px; overflow-y: scroll;">
+                    <div style="position: sticky; top: 0;">
+                        <div style="display: flex; background-color: white; padding: 15px;">
+                            <div style="font-weight: bold; font-size:15px;">게시글</div>
+                            <div style="display: flex; align-items: center; margin-left: auto;">
+                                <img src="icon_root/writing.png" style="height:20px; width:20px; margin-left:80px;"/>
+                                <div class="drag1" style="text-decoration: underline; margin-left:5px;" onclick="window.location.href='writework.html';">글쓰기</div> 
+                            </div>                                
+                        </div>   
+                        <hr style="border: 1px solid rgb(160, 160, 160); margin: 0;" />                        
+                    </div> 
+  
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>게시글1</td>
+                            </tr>
+                            <tr>
+                                <td>게시글1</td>
+                            </tr>
+                            <tr>
+                                <td>게시글1</td>
+                            </tr>
+                            <tr>
+                                <td>게시글1</td>
+                            </tr>
+                            <tr>
+                                <td>게시글1</td>
+                            </tr>
+                            <tr>
+                                <td>게시글1</td>
+                            </tr>
+                            <tr>
+                                <td>게시글1</td>
+                            </tr>
+                        </tbody>
+                    </table>                            
+                </div>
+
+                <div class="button_done">
+                    <span>업무 완료</span>
                 </div>
             </div>
         </div>
@@ -230,7 +352,7 @@
         `;
 
         // 이 알람은 없애는 게 좋아보임. 아님 확인 안눌러도 ㄱㅊ게 하거나
-        alert("댓글이 등록되었습니다.");
+        // alert("댓글이 등록되었습니다.");
         container.appendChild(com);
         const comcount = document.getElementById("comcount");
         comcount.innerText = parseInt(comcount.innerText) + 1;
