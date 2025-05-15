@@ -7,7 +7,7 @@
     
     if (!modal) {
       const div = document.createElement("div");
-      div.innerHTML =  `<dialog class="modal1" style="overflow-y:scroll;">
+      div.innerHTML =  `<dialog class="modal1" style="overflow-y:scroll; ">
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -174,7 +174,6 @@
         document.body.appendChild(div);
     }
     
-    //window.open('alert_pop.html', 'Alert', 'width=500,height=800');
     const modalBtn = document.querySelector("#alert");
     
 
@@ -185,10 +184,241 @@
    
   }
   function openFriend() {
-    window.open('friend_pop.html', 'Friend', 'width=800,height=800');
+    const modal = document.querySelector(".modal2");
+    if(!modal){
+      const div = document.createElement("div");
+      div.innerHTML=`
+        <dialog class="modal2">
+          <div style="align-content: center;">
+              <div style="display: flex;">
+                  <div style="flex-direction: column;">
+                      <div>
+                          <button class="button_final" onclick="Watchdiv('1')">친구 목록</button>
+                      </div>
+                      <div>
+                          <button class="button_final" onclick="Watchdiv('2')">유저 찾기</button>
+                      </div>
+                      <div>
+                          <button class="button_final" onclick="Watchdiv('3')">요청 대기</button>
+                      </div>
+                  </div> 
+              </div>
+              <div class="box11">
+                  <div id="1">
+  
+                      <div class="green" style="text-align: center;">친구 목록</div>
+                      <div style="width: 100%;">
+                          <hr style="border: 1px solid rgb(0, 0, 0); "/>
+                      </div>
+                      <table class="table table-hover">
+                          <thead>
+                              <tr>
+                                  <th><img src="icon_root/user2.png" style="height: 25px; width: 25px; "/></th>
+                                  <th>닉네임</th>
+                                  <th>#태그</th>
+                                  <th>마지막 접속시간</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td>1</td>
+                                  <td>1</td>
+                                  <td>1</td>
+                                  <td>1</td>
+                              </tr>
+                              <tr>
+                                  <td>1</td>
+                                  <td>1</td>
+                                  <td>1</td>
+                                  <td>1</td>
+      
+                              </tr>
+                              <tr>
+                                  <td>1</td>
+                                  <td>1</td>
+                                  <td>1</td>
+                                  <td>1</td>
+                              </tr>
+                              <tr>
+                                  <td>1</td>
+                                  <td>1</td>
+                                  <td>1</td>
+                                  <td>1</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+  
+                  <div id="2">
+                      <div class="green" style="text-align: center;">유저 찾기</div>
+                      <div style="width: 100%;">
+                          <hr style="border: 1px solid rgb(0, 0, 0); "/>
+                      </div>
+                      <div style="margin-bottom: 10px; margin-left: 10px;">
+                          <input class="button_find2" type="text" id="findid" placeholder="닉네임 #태그"/>
+                          <img src="icon_root/finding.png" style="height: 25px; width: 25px;" class="margin2 drag1"/>
+                      </div>
+                      <div style="margin-left: 10px;">
+  
+                          <div class="box8 ">
+                              <table class="table table-hover">
+                                  <thead>
+                                      <tr>
+                                          <th><img src="icon_root/user2.png" style="height: 25px; width: 25px; margin:5px;"/></th>
+                                          <th>닉네임</th>
+                                          <th>#태그</th>
+                                          <th><img src="icon_root/adduser.png" style="height: 15px; width: 15px;"/></th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                      <td>1</td>
+                                      <td>1</td>
+                                      <td>1</td>
+                                      <td>1</td>
+                                  </tr>
+                                  <tr>
+                                      <td>1</td>
+                                      <td>1</td>
+                                      <td>1</td>
+                                      <td>1</td>
+          
+                                  </tr>
+                                  <tr>
+                                      <td>1</td>
+                                      <td>1</td>
+                                      <td>1</td>
+                                      <td>1</td>
+                                  </tr>
+                                  <tr>
+                                      <td>1</td>
+                                      <td>1</td>
+                                      <td>1</td>
+                                      <td>1</td>
+                                  </tr>
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
+                  <div id="3">
+                      <div class="green" style="text-align: center;">요청 대기</div>
+                      <div style="width: 100%;">
+                          <hr style="border: 1px solid rgb(0, 0, 0); "/>
+                      </div>
+                      <table class="table table-hover">
+                          <thead>
+                              <tr>
+                                  <th><img src="icon_root/user2.png" style="height: 25px; width: 25px; margin:5px;"/></th>
+                                  <th>닉네임</th>
+                                  <th>#태그</th>
+                                  <th>수락</th>
+                                  <th>거절</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                              <td>1</td>
+                              <td>1</td>
+                              <td>1</td>
+                              <td><button style="background-color:rgb(55,158,144);">수락</button></td>
+                              <td><button style="background-color:rgb(255,127,127);">거절</button></td>
+                          </tr>
+                          <tr>
+                              <td>1</td>
+                              <td>1</td>
+                              <td>1</td>
+                              <td><button style="background-color:rgb(55,158,144);">수락</button></td>
+                              <td><button style="background-color:rgb(255,127,127);">거절</button></td>
+                          </tr>
+                          <tr>
+                              <td>1</td>
+                              <td>1</td>
+                              <td>1</td>
+                              <td><button style="background-color:rgb(55,158,144);">수락</button></td>
+                              <td><button style="background-color:rgb(255,127,127);">거절</button></td>
+                              
+                          </tr>
+                          <tr>
+                              <td>1</td>
+                              <td>1</td>
+                              <td>1</td>
+                              <td><button style="background-color:rgb(55,158,144);">수락</button></td>
+                              <td><button style="background-color:rgb(255,127,127);">거절</button></td>
+                          </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+        </dialog>`;
+        document.body.appendChild(div);
+    }
+    const modalBtn = document.querySelector("#friend");
+    
+    modalBtn.addEventListener("click", () => {
+        modal.showModal();
+      }
+    );
   }
+  function Watchdiv(i) {
+    Watchdiv('1');
+    modal.showModal();
+      const sections = ["1", "2", "3"];
+      sections.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) {
+              el.style.display = (id === i) ? 'block' : 'none';
+          }
+      });
+
+      const button = document.querySelectorAll('.button_final');
+      button.forEach((btn,index) => {
+          if((index + 1).toString() === i){
+              btn.classList.add('active');
+          }
+          else{
+              btn.classList.remove('active');
+          }
+
+      });
+  }
+  window.addEventListener('load', () => Watchdiv('1'));
   function openMyPage() {
-    window.open('mypage_pop.html', 'Mypage', 'width=800,height=800');
+    const modal = document.querySelector(".modal3");
+    if(!modal){
+      const div = document.createElement("div");
+      div.innerHTML=`
+      <dialog class="modal3">
+        <div class="middle3">
+            <div style="display: flex; margin:5px 5px 0 0; justify-content: flex-end;" >
+                <img src="icon_root/online.png" style="height:20px; width:20px;"/>
+                <div id="online">접속중</div>
+            </div>
+            <div style="display: flex;">
+                <img src="icon_root/user2.png" style="height:100px; width:100px; margin:30px;"/>
+                <div style="margin:50px ;">
+                    <div class="black">닉네임</div>
+                    <div style="display: flex;">
+                        <div style="color:green">아이디</div>
+                        <div style="color:green">#태그</div>
+                    </div>
+                    <div>자기소개</div>
+                </div>
+            </div>
+    
+            <div style="display: flex; justify-content: flex-end; margin:5px 5px 0 0; ">
+                <button class="button_pro">친구 추가</button>
+            </div>
+        </div>  
+      </dialog>`;
+      document.body.appendChild(div);
+
+    }
+    const modelBtn = document.querySelector("#mypage");
+    modelBtn.addEventListener("click", () => {
+      modal.showModal();
+    });
   }
   function openProjectList() {
     window.location.href=('projectlist.html');
@@ -207,13 +437,13 @@
 
     createElement(
       'button',
-      { className: 'right3 drag1 clear', onClick: openMyPage},
+      { className: 'right3 drag1 clear', onClick: openMyPage, id: 'mypage'},
       createElement('i', { className: 'fa-solid fa-user fa-2x', style: { fontSize: '25px'} })
     ),
 
     createElement(
       'button',
-      { className: 'right2 drag1 clear', onClick: openFriend },
+      { className: 'right2 drag1 clear', onClick: openFriend, id:'friend'},
       createElement('i', { className: 'fa-solid fa-user-group fa-2x', style: { fontSize: '25px'} })
     ),
     
@@ -238,63 +468,3 @@
   observer.observe(target, option);
 })();
 
-/*(function() {
-  const { createElement, Fragment } = React;
-  const { createRoot } = ReactDOM;
-
-  // function openAlert() {
-  //   //window.open('alert_pop.html', 'Alert', 'width=500,height=800');
-  //   // const modal = document.querySelector('.dialog.modal1');
-  //   // if (modal) {
-  //   //   modal.showModal();
-  //   // } 
-  //   if (dialogRef.current) dialogRef.current.showModal();
-  // }
-  
-  function openFriend() {
-    window.open('friend_pop.html', 'Friend', 'width=800,height=800');
-  }
-  function openMyPage() {
-    window.open('mypage_pop.html', 'Mypage', 'width=800,height=800');
-  }
-  function openProjectList() {
-    window.location.href=('projectlist.html');
-  }
-
-  function approot() {
-    
-    return createElement(
-      // Fragment,
-      // null,
-      'div',
-      { className: 'root' },
-      
-      createElement(
-        'button',
-        { className: 'left1 drag1 clear', onClick: openProjectList},
-        createElement('img', { src: 'icon_root/logo.png', className: 'logo', style: {height: '50px'} })
-      ),
-
-      createElement(
-        'button',
-        { className: 'right3 drag1 clear', onClick: openMyPage},
-        createElement('i', { className: 'fa-solid fa-user fa-2x', style: { fontSize: '25px'} })
-      ),
-
-      createElement(
-        'button',
-        { className: 'right2 drag1 clear', onClick: openFriend },
-        createElement('i', { className: 'fa-solid fa-user-group fa-2x', style: { fontSize: '25px'} })
-      ),
-      
-      createElement(
-        'button',
-        { className: 'right1 drag1 clear', onClick: openAlert },
-        createElement('i', { className: 'fa-solid fa-bell fa-2x', style: { fontSize: '25px'} })
-      )
-    );
-
-}
-  createRoot(document.getElementById('root')).render(createElement(approot));
-})();
-*/

@@ -195,6 +195,92 @@ body {
     display: none;
  }
 
-dialog.modal1::backdrop {
+.dialog.modal1::backdrop {
     background: rgba(0,0,0,0.4);
+}
+
+.modal2 {
+    width: 800px;               
+    height: 800px;          
+    padding: 20px;   
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    display: none;
+ }
+
+dialog.modal2[open] {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.dialog.modal2::backdrop {
+    background: rgba(0,0,0,0.4);
+}
+
+.dialog.modal3 {
+    width: 300px;               
+    height: 250px;          
+    padding: 20px;   
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    display: none;
+ }
+
+.dialog.modal3::backdrop {
+    background: rgba(0,0,0,0.4);
+}
+
+.box11{
+    position: absolute;
+    border: 1px solid gray;
+    height: 650px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.box8{
+    border: 1px solid gray;
+    height: 400px;
+    width: 300px;
+    display: flex;  
+    flex-direction: column;
+}
+
+.button_find2 {
+    background-color:rgb(227, 227, 227);
+    height:30px;
+    width:300px;
+    color:rgb(127, 127, 127);
+    border: 1px solid gray;
+    font-size: medium;
+    font-weight: 300;   
+    margin-top:3px;
+    
+}
+.button_final.active {
+    background-color: rgb(255,127,127);
+}
+
+.box13{
+    position: absolute;
+    border: 1px solid gray;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.middle3 {
+    position: relative;
+    width: 100%;
+}
+.button_pro {
+    background-color:rgb(208,245,234);
+    height:30px;
+    width:100px;
+    color:rgb(0, 0, 0);
+    border: 1px solid gray;
+    font-size: medium;
+    font-weight: 300;   
+    margin-bottom: 10px;
 }
