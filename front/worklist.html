@@ -165,7 +165,7 @@
                     <span style="position: relative; font-size: 35px; color:white;">업무명</span>
                     <div style="margin-left: auto; padding: 5px; background-color: rgb(81,123,95); font-size: medium; color: white;">In Progress</div>
                 </div>
-                <div class="worklist_box" style="width: 700px; flex-direction: column;">
+                <div class="worklist_box" style="width: 700px; flex-direction: column;" id="workbox">
                     <div style="margin: 15px;">
                         <div style="margin:10px;">
                             <div style="font-weight: bold; font-size:25px;">제목</div>
@@ -348,7 +348,15 @@
             <div style="margin-left:35px; margin-top:5px;">
                 <div style="font-size: 13px;" id="usercomment">${text}</div>
             </div>
-            <hr style="border: 1px solid rgb(160, 160, 160); width:600px;" />
+            <div style="display: flex; justify-content: right;">
+                <div>
+                    <button class="button_work" style="margin-left: 5px;">수정</button>
+                    <button class="button_work2" style="margin-left: 5px;">삭제</button>
+                </div>    
+            </div>
+            <div style="width:660px;">
+                <hr style="border: 1px solid rgb(160, 160, 160);" />
+            </div>
         `;
 
         // 이 알람은 없애는 게 좋아보임. 아님 확인 안눌러도 ㄱㅊ게 하거나
@@ -360,12 +368,28 @@
         input.focus();
     }
 
+    function deletecomment(){
+        const result = confirm("댓글을 삭제하겠습니까?");
+        
+    }
     function prev(){
         alert("이전 글이 없습니다.");
     }
     function next(){
         alert("다음 글이 없습니다.");
     }
+    //임시
+    async function worktext(){
+        const box = document.getElementById("workbox");
+        if(!text){
+            box.innerHTML = `
+                <div class="nowork" style="display: flex; justify-content: center; align-items: center; height: 100%;">
+                    <div>아직 작성된 글이 없습니다.</div>
+                </div>
+            `;
+        }
+    }
+
 </script>
 </html>
 

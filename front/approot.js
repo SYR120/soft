@@ -189,168 +189,165 @@
       const div = document.createElement("div");
       div.innerHTML=`
         <dialog class="modal2">
-          <div style="align-content: center;">
-              <div style="display: flex;">
-                  <div style="flex-direction: column;">
-                      <div>
-                          <button class="button_final" onclick="Watchdiv('1')">친구 목록</button>
-                      </div>
-                      <div>
-                          <button class="button_final" onclick="Watchdiv('2')">유저 찾기</button>
-                      </div>
-                      <div>
-                          <button class="button_final" onclick="Watchdiv('3')">요청 대기</button>
-                      </div>
-                  </div> 
+            <div class="middle11">
+                <div>
+                    <button class="button_final" onclick="Watchdiv('1')">친구 목록</button>
+                </div>
+                <div>
+                    <button class="button_final" onclick="Watchdiv('2')">유저 찾기</button>
+                </div>
+                <div>
+                    <button class="button_final" onclick="Watchdiv('3')">요청 대기</button>
+                </div>
+            </div>
+            <div>
+            <div class="box_friend">
+                <div id="1">
+                    <div class="green" style="text-align: center;">친구 목록</div>
+                    <div style="width: 100%;">
+                        <hr style="border: 1px solid rgb(0, 0, 0); "/>
+                    </div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th><img src="icon_root/user2.png" style="height: 25px; width: 25px; "/></th>
+                                <th>닉네임</th>
+                                <th>#태그</th>
+                                <th>마지막 접속시간</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="2">
+                    <div class="green" style="text-align: center;">유저 찾기</div>
+                    <div style="width: 100%;">
+                        <hr style="border: 1px solid rgb(0, 0, 0); "/>
+                    </div>
+                    <div style="margin-bottom: 10px; margin-left: 10px;">
+                        <input class="button_find2" type="text" id="findid" placeholder="닉네임 #태그"/>
+                        <img src="icon_root/finding.png" style="height: 25px; width: 25px;" class="margin2 drag1"/>
+                    </div>
+                    <div style="margin-left: 10px;">
+
+                        <div class="box8 ">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th><img src="icon_root/user2.png" style="height: 25px; width: 25px; margin:5px;"/></th>
+                                        <th>닉네임</th>
+                                        <th>#태그</th>
+                                        <th><img src="icon_root/adduser.png" style="height: 15px; width: 15px;"/></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+        
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="3">
+                    <div class="green" style="text-align: center;">요청 대기</div>
+                    <div style="width: 100%;">
+                        <hr style="border: 1px solid rgb(0, 0, 0); "/>
+                    </div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th><img src="icon_root/user2.png" style="height: 25px; width: 25px; margin:5px;"/></th>
+                                <th>닉네임</th>
+                                <th>#태그</th>
+                                <th>수락</th>
+                                <th>거절</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td><button style="background-color:rgb(55,158,144);">수락</button></td>
+                            <td><button style="background-color:rgb(255,127,127);">거절</button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td><button style="background-color:rgb(55,158,144);">수락</button></td>
+                            <td><button style="background-color:rgb(255,127,127);">거절</button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td><button style="background-color:rgb(55,158,144);">수락</button></td>
+                            <td><button style="background-color:rgb(255,127,127);">거절</button></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td><button style="background-color:rgb(55,158,144);">수락</button></td>
+                            <td><button style="background-color:rgb(255,127,127);">거절</button></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
               </div>
-              <div class="box11">
-                  <div id="1">
-  
-                      <div class="green" style="text-align: center;">친구 목록</div>
-                      <div style="width: 100%;">
-                          <hr style="border: 1px solid rgb(0, 0, 0); "/>
-                      </div>
-                      <table class="table table-hover">
-                          <thead>
-                              <tr>
-                                  <th><img src="icon_root/user2.png" style="height: 25px; width: 25px; "/></th>
-                                  <th>닉네임</th>
-                                  <th>#태그</th>
-                                  <th>마지막 접속시간</th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                  <td>1</td>
-                                  <td>1</td>
-                                  <td>1</td>
-                                  <td>1</td>
-                              </tr>
-                              <tr>
-                                  <td>1</td>
-                                  <td>1</td>
-                                  <td>1</td>
-                                  <td>1</td>
-      
-                              </tr>
-                              <tr>
-                                  <td>1</td>
-                                  <td>1</td>
-                                  <td>1</td>
-                                  <td>1</td>
-                              </tr>
-                              <tr>
-                                  <td>1</td>
-                                  <td>1</td>
-                                  <td>1</td>
-                                  <td>1</td>
-                              </tr>
-                          </tbody>
-                      </table>
-                  </div>
-  
-                  <div id="2">
-                      <div class="green" style="text-align: center;">유저 찾기</div>
-                      <div style="width: 100%;">
-                          <hr style="border: 1px solid rgb(0, 0, 0); "/>
-                      </div>
-                      <div style="margin-bottom: 10px; margin-left: 10px;">
-                          <input class="button_find2" type="text" id="findid" placeholder="닉네임 #태그"/>
-                          <img src="icon_root/finding.png" style="height: 25px; width: 25px;" class="margin2 drag1"/>
-                      </div>
-                      <div style="margin-left: 10px;">
-  
-                          <div class="box8 ">
-                              <table class="table table-hover">
-                                  <thead>
-                                      <tr>
-                                          <th><img src="icon_root/user2.png" style="height: 25px; width: 25px; margin:5px;"/></th>
-                                          <th>닉네임</th>
-                                          <th>#태그</th>
-                                          <th><img src="icon_root/adduser.png" style="height: 15px; width: 15px;"/></th>
-                                      </tr>
-                                  </thead>
-                                  <tbody>
-                                      <tr>
-                                      <td>1</td>
-                                      <td>1</td>
-                                      <td>1</td>
-                                      <td>1</td>
-                                  </tr>
-                                  <tr>
-                                      <td>1</td>
-                                      <td>1</td>
-                                      <td>1</td>
-                                      <td>1</td>
-          
-                                  </tr>
-                                  <tr>
-                                      <td>1</td>
-                                      <td>1</td>
-                                      <td>1</td>
-                                      <td>1</td>
-                                  </tr>
-                                  <tr>
-                                      <td>1</td>
-                                      <td>1</td>
-                                      <td>1</td>
-                                      <td>1</td>
-                                  </tr>
-                                  </tbody>
-                              </table>
-                          </div>
-                      </div>
-                  </div>
-                  <div id="3">
-                      <div class="green" style="text-align: center;">요청 대기</div>
-                      <div style="width: 100%;">
-                          <hr style="border: 1px solid rgb(0, 0, 0); "/>
-                      </div>
-                      <table class="table table-hover">
-                          <thead>
-                              <tr>
-                                  <th><img src="icon_root/user2.png" style="height: 25px; width: 25px; margin:5px;"/></th>
-                                  <th>닉네임</th>
-                                  <th>#태그</th>
-                                  <th>수락</th>
-                                  <th>거절</th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                              <td>1</td>
-                              <td>1</td>
-                              <td>1</td>
-                              <td><button style="background-color:rgb(55,158,144);">수락</button></td>
-                              <td><button style="background-color:rgb(255,127,127);">거절</button></td>
-                          </tr>
-                          <tr>
-                              <td>1</td>
-                              <td>1</td>
-                              <td>1</td>
-                              <td><button style="background-color:rgb(55,158,144);">수락</button></td>
-                              <td><button style="background-color:rgb(255,127,127);">거절</button></td>
-                          </tr>
-                          <tr>
-                              <td>1</td>
-                              <td>1</td>
-                              <td>1</td>
-                              <td><button style="background-color:rgb(55,158,144);">수락</button></td>
-                              <td><button style="background-color:rgb(255,127,127);">거절</button></td>
-                              
-                          </tr>
-                          <tr>
-                              <td>1</td>
-                              <td>1</td>
-                              <td>1</td>
-                              <td><button style="background-color:rgb(55,158,144);">수락</button></td>
-                              <td><button style="background-color:rgb(255,127,127);">거절</button></td>
-                          </tr>
-                          </tbody>
-                      </table>
-                  </div>
-              </div>
-          </div>
+            </div>  
         </dialog>`;
         document.body.appendChild(div);
     }
@@ -362,8 +359,7 @@
     );
   }
   function Watchdiv(i) {
-    Watchdiv('1');
-    modal.showModal();
+
       const sections = ["1", "2", "3"];
       sections.forEach(id => {
           const el = document.getElementById(id);
@@ -384,6 +380,7 @@
       });
   }
   window.addEventListener('load', () => Watchdiv('1'));
+  
   function openMyPage() {
     const modal = document.querySelector(".modal3");
     if(!modal){
@@ -408,7 +405,8 @@
             </div>
     
             <div style="display: flex; justify-content: flex-end; margin:5px 5px 0 0; ">
-                <button class="button_pro">친구 추가</button>
+                <button class="button_pro" onclick="window.location.href='profile.html';">프로필 수정</button>
+                <button class="button_pro">로그아웃</button>
             </div>
         </div>  
       </dialog>`;
@@ -457,14 +455,21 @@
 }
   createRoot(document.getElementById('root')).render(createElement(approot));
 
-
-  window.onload = function() {openAlert();};
+//   window.addEventListener("load", () => {
+//     openAlert();
+//     openFriend();
+//     openMyPage();
+//   });
 
   let target = document.querySelector("#root");
-  let observer = new MutationObserver((mutations) => {
+  let observer = new MutationObserver(() => {
     openAlert();
-});
-  let option = { attributes: true, childList: true, characterData: true };
-  observer.observe(target, option);
+    openFriend();
+    openMyPage();   
+});   
+window.onload = function() {openAlert(); openFriend(); openMyPage(); openMyPage();};
+
+ let option = { attributes: true, childList: true, characterData: true };
+ observer.observe(target, option);
 })();
 
