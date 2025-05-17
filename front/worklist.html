@@ -350,8 +350,7 @@
             </div>
             <div style="display: flex; justify-content: right;">
                 <div>
-                    <button class="button_work" style="margin-left: 5px;">수정</button>
-                    <button class="button_work2" style="margin-left: 5px;">삭제</button>
+                    <button class="button_work2" style="margin-left: 5px;" onclick="deletecomment()">삭제</button>
                 </div>    
             </div>
             <div style="width:660px;">
@@ -367,10 +366,17 @@
         input.value = "";
         input.focus();
     }
-
-    function deletecomment(){
+    function deletecomment() {
         const result = confirm("댓글을 삭제하겠습니까?");
-        
+        if (!result) {
+            return;
+        } 
+        const btn = event.target;
+        const com = btn.closest('.commentlist');
+        com.remove();
+        const comcount = document.getElementById("comcount");
+        const current = parseInt(comcount.innerText, 10) || 0;
+        comcount.innerText = Math.max(0, current - 1);
     }
     function prev(){
         alert("이전 글이 없습니다.");

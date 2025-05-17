@@ -167,9 +167,11 @@
                     </tr>
                 </tbody>
             </table>
-            <form method="dialog">
-                <button>Close</button>
-            </form>
+            <div style="display: flex; justify-content: flex-end; ">
+                <form method="dialog">
+                    <button style="background-color:none; border:none;" class="font1">닫기</button>
+                </form>  
+            </div>
         </dialog>`;
         document.body.appendChild(div);
     }
@@ -347,7 +349,12 @@
                     </table>
                 </div>
               </div>
-            </div>  
+            </div>
+            <div style="display: flex; justify-content: flex-end; margin-top:470px; ">
+                <form method="dialog">
+                    <button style="background-color:none; border:none;" class="font1">닫기</button>
+                </form>  
+            </div>
         </dialog>`;
         document.body.appendChild(div);
     }
@@ -359,7 +366,6 @@
     );
   }
   function Watchdiv(i) {
-
       const sections = ["1", "2", "3"];
       sections.forEach(id => {
           const el = document.getElementById(id);
@@ -380,6 +386,7 @@
       });
   }
   window.addEventListener('load', () => Watchdiv('1'));
+  window.Watchdiv = Watchdiv;
   
   function openMyPage() {
     const modal = document.querySelector(".modal3");
@@ -405,7 +412,7 @@
             </div>
     
             <div style="display: flex; justify-content: flex-end; margin:5px 5px 0 0; ">
-                <button class="button_pro" onclick="window.location.href='profile.html';">프로필 수정</button>
+                <button class="button_pro" style="margin-right:5px;" onclick="window.location.href='profile.html';">프로필 수정</button>
                 <button class="button_pro">로그아웃</button>
             </div>
         </div>  

@@ -10,6 +10,30 @@
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <style>
+        .button_nw {
+            background-color:rgba(255, 255, 255, 0);
+            height:40px;
+            width:250px;
+            color:rgb(25, 25, 52);
+            border: 1px solid rgba(0, 0, 0, 0.25);
+            font-size: small;
+            font-weight: 300;   
+            margin-bottom: 10px;
+            border-radius: 4px;
+            font-family: 'Pretendard-Regular';
+        }
+        
+        .modal_nw {
+            width: 500px;               
+            height: 450px;          
+            padding: 20px;   
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        dialog.modal_nw::backdrop {
+            background: rgba(0,0,0,0.4);
+        }
+
         .box3{
             position: absolute;
             border: 1px solid gray;
@@ -104,6 +128,30 @@
     <div id="root"></div>
     <script src="approot.js"></script>
     
+    <dialog class="modal_nw">
+        <div class="middle" style="text-align: center;">
+            <div class="green">업무 생성</div>
+            <div style="width: 100%;">
+                <hr style="border: 1px solid rgb(0, 0, 0); "/>
+            </div>
+            <div style="margin-top:20px;">
+                <label>업무 제목</label>
+                <input class="button_nw" type="text" id="worktitle" placeholder="업무 제목"/>
+            </div>
+            <div style="margin-top:20px;">
+                <label>업무 내용</label>
+                <input class="button_nw" type="text" id="worktext" placeholder="업무 내용"/>
+            </div>
+            <div style="margin-top:20px;">
+                <label>마감 기한</label>
+                <input class="button_nw" type="datetime-local" id="deadline"/>
+            </div>
+            <div style="margin-top:20px;">
+                <button class="button_final" style="width:80px;" onclick="addproject()">생성</button>
+            </div>
+        </div>
+    </dialog>
+
     <div class="middle">
         <div class="box3">
             <div class="main">
@@ -115,23 +163,22 @@
                         <img src="icon_root/finding.png" style="width: 25px; height: 25px; margin: 5px"/>                    
                     </div>
 
-                    <button class="button_final" onclick="window.location.href='newproject.html';" style="margin-left: auto;">새 프로젝트 생성</button> 
+                    <button class="button_final" style="margin-left: auto;" id="addnewproject">새 프로젝트 생성</button> 
                 </div>
-
-
                 <div class="mid" style="background-color: rgb(245, 245, 245); padding: 15px;">
                     <div class="box4">
                         <table class="table1">
-                            <tr>
-                                <th>
-                                    <img src="icon_root/folder.png" style="height:20px; width:20px;"/>
-                                </th>
-                                <th style="font-size: medium; font-weight: 100;" onclick="window.location.href='projectboard.html';">임시 프로젝트 (지울예정)</th>
-                            </tr>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <img src="icon_root/folder.png" style="height:20px; width:20px;"/>
+                                    </th>
+                                    <th style="font-size: medium; font-weight: 100;" onclick="window.location.href='projectboard.html';">임시 프로젝트 (지울예정)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody1">
+                            </tbody>
                         </table>
-                        <tbody id="tbody">
-
-                        </tbody>
 
                     </div>            
                 </div>
@@ -145,17 +192,19 @@
 
                 <div>
                     <table class="table table-hover">
-                        <tr>
-                            <th>
-                                <img src="icon_root/invite.png" style="height:20px; width:20px;"/>
-                            </th>
-                            <th style="font-size: medium; font-weight: 100;">임시 프로젝트 (지울예정)</th>
-                            <th style="font-size: medium; font-weight: 50;">초대자:00</th>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <img src="icon_root/invite.png" style="height:20px; width:20px;"/>
+                                </th>
+                                <th style="font-size: medium; font-weight: 100;">임시 프로젝트 (지울예정)</th>
+                                <th style="font-size: medium; font-weight: 50;">초대자:00</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody2">
+    
+                        </tbody>
                     </table>
-                    <tbody id="tbody">
-
-                    </tbody>
 
                 </div>
 
@@ -163,11 +212,48 @@
 
         </div>
     </div>
-
     
     
 </body>
 <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const modalBtn = document.querySelector("#addnewproject");
+        const modal = document.querySelector(".modal_nw");
+        modalBtn.addEventListener("click", () => {
+            modal.showModal()
+        })
+    });
 
+    async function addproject(){
+        const worktitle = document.getElementById("worktitle");
+        const worktext = document.getElementById("worktext");
+        const deadline = document.getElementById("deadline");
+
+        const title = worktitle.value.trim();
+        const text = worktext.value.trim();
+        const dl = deadline.value.trim();
+
+        if (!title|| !text || !dl) {
+            alert("모든 항목을 입력해주세요.");
+            return;
+        }
+        const tbody = document.querySelector("#tbody1");
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>
+                <img src="icon_root/folder.png" style="height:20px; width:20px;"/>
+            </td>
+            <td style="font-size: medium; font-weight: 100;">${title}</td>
+        `;
+        tbody.appendChild(tr);
+
+        worktitle.value = "";
+        worktext.value  = "";
+        deadline.value  = "";
+        
+        const modal = document.querySelector(".modal_nw");
+        modal.close();
+
+    }
 </script>
 </html>

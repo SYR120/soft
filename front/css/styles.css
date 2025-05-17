@@ -288,9 +288,11 @@ dialog.modal2[open] {
     background-color:rgb(208,245,234);
     height:30px;
     width:100px;
-    color:rgb(0, 0, 0);
+    color:rgb(25, 25, 52);
     border: 1px solid gray;
     font-size: medium;
     font-weight: 300;   
     margin-bottom: 10px;
+    font-family: 'Pretendard-Regular';
+    border-radius: 4px;
 }
