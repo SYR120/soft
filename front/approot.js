@@ -191,15 +191,15 @@
       const div = document.createElement("div");
       div.innerHTML=`
         <dialog class="modal2">
-            <div class="middle11">
+            <div style="margin-top:30px;">
                 <div>
-                    <button class="button_final" onclick="Watchdiv('1')">친구 목록</button>
+                    <button class="button_friend" onclick="Watchdiv('1')">친구 목록</button>
                 </div>
                 <div>
-                    <button class="button_final" onclick="Watchdiv('2')">유저 찾기</button>
+                    <button class="button_friend" onclick="Watchdiv('2')">유저 찾기</button>
                 </div>
                 <div>
-                    <button class="button_final" onclick="Watchdiv('3')">요청 대기</button>
+                    <button class="button_friend" onclick="Watchdiv('3')">요청 대기</button>
                 </div>
             </div>
             <div>
@@ -374,7 +374,7 @@
           }
       });
 
-      const button = document.querySelectorAll('.button_final');
+      const button = document.querySelectorAll('.button_friend');
       button.forEach((btn,index) => {
           if((index + 1).toString() === i){
               btn.classList.add('active');
