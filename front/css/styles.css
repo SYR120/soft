@@ -51,6 +51,7 @@ body {
     position: relative; 
     font-family: 'Pretendard-Regular';
     overflow:hidden;
+    white-space: nowrap;
 
     background-color: rgb(254, 254, 254);
 }
@@ -133,8 +134,16 @@ body {
     font-weight: 700;   
     border-radius: 4px;
     font-family: 'Pretendard-Regular';
-}
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.button_final.active { /* 선생님 이 친구가 자꾸 다른 곳에서 날뜁니다 따로설정해주세요 */
+    background-color: rgb(255, 255, 255);
+    border: solid 1px rgb(183, 228, 206);
+}
 .button_final:hover {
     background-color: rgb(159, 211, 189);
 }
@@ -266,9 +275,6 @@ dialog.modal2[open] {
     font-weight: 300;   
     margin-top:3px;
     
-}
-.button_final.active {
-    background-color: rgb(255,127,127);
 }
 
 
