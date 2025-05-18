@@ -165,6 +165,9 @@
             font-size: medium;
             z-index: 5;
         }
+        td.active {
+            background-color: rgb(214, 238, 182) !important;
+        }
 
         .button_find {
             border: none;
@@ -206,7 +209,7 @@
             text-align: center;
         }
 
-        /* 미선택 */
+        /* 미선택 (유저/그룹) */
         .select input[type=radio]+label{
             color: rgb(150, 150, 150);
             font-size: medium;
@@ -214,7 +217,7 @@
             transition: 0.1s;
         }
 
-        /* 선택 */
+        /* 선택 (유저/그룹) */
         .select input[type=radio]:checked+label{
             color: rgb(0, 0, 0);
             font-size: large;
@@ -322,7 +325,7 @@
                     </div>
                 </div>
 
-                <div class="work_select_content">
+                <div class="work_select_content" id="work_list">
                     <div class="workhead">To do</div>
                     <table class="table table-hover">
                         <tbody>
@@ -365,7 +368,7 @@
                     </div>
                 </div>
 
-                <div class="work_select_content">
+                <div class="work_select_content" id="ug_list">
                     <table class="table table-hover">
                         <tbody>
                             <tr><td>프로필 사진 / 닉네임 / 태그 </td></tr>
@@ -380,6 +383,35 @@
         </div>
 
     </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        let taskSelected = false;
+    
+        const taskRows = document.querySelectorAll("#work_list table tbody td");
+        taskRows.forEach(row => {
+            row.addEventListener("click", () => {
+                taskRows.forEach(r => r.classList.remove("active"));
+                row.classList.add("active");
+                taskSelected = true;
+                userGroupRows.forEach(u => u.classList.remove("active"));
+            });
+        });
+    
+        const userGroupRows = document.querySelectorAll("#ug_list table tbody td");
+        userGroupRows.forEach(row => {
+            row.addEventListener("click", () => {
+                if (!taskSelected) {
+                    alert("먼저 업무를 선택해야 합니다.");
+                    return;
+                }
+    
+                row.classList.toggle("active");
+            });
+        });
+    });
+    </script>
+
 
 </body>
 

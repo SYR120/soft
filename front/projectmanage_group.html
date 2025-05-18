@@ -124,6 +124,7 @@
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
+            height: 56px;
 
             padding: 10px;
             gap: 15px;
@@ -149,6 +150,10 @@
         }
         .work_select_content::-webkit-scrollbar-track {
             background-color: transparent;
+        }
+        
+        td.active {
+            background-color: rgb(214, 238, 182) !important;
         }
 
         .button_find {
@@ -237,6 +242,55 @@
             background-color: rgb(200, 200, 200);
         }
 
+        /* 컬러 인풋 */
+        #groupcolor {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 28px;
+            height: 25px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        #groupcolor::-webkit-color-swatch {
+            border-radius: 50%;
+            border: none;
+        }
+        #groupcolor::-moz-color-swatch {
+            border-radius: 50%;
+            border: none;
+        }
+
+        .group_list{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px;
+            gap: 10px;
+            border-bottom: solid 1px rgb(200, 200, 200);
+        }
+        .group_list:hover{
+            background-color: rgb(0, 0, 0, 0.1);
+        }
+        .group_list.active{
+            background-color: rgb(214, 238, 182);
+        }
+
+        /* 유저,그룹 선택 안보이게 */
+        #ug_select, #authority_select {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            display: none;
+        }
+        #ug_select.show, #authority_select.show {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
     </style>
 </head>
 <body>
@@ -267,6 +321,7 @@
         </div> 
 
         <div style="display: flex; flex-direction: row; height: 100%; width: 100%;">
+
             <div class="work_select">
                 <div class="work_select_head">
                     <span style="margin-left: 5px;">그룹</span>
@@ -277,8 +332,25 @@
                 </div>
 
                 <div class="work_select_content">
-                    <div>
-                        <div>그룹명</div>
+                    <div class="group_list">
+                        <div style="display: flex; flex-direction: row; gap: 10px;">
+                            <span>그룹명</span>   
+                            <img src="icon_root/edit.png" style="height:20px; width:20px;"/>                        
+                        </div>
+                        <div style="margin-left: auto; display: flex; flex-direction: row; gap: 10px;">
+                            <span>그룹 색상 수정</span>
+                            <input type="color" id="groupcolor"/>                            
+                        </div>
+                    </div>
+                    <div class="group_list">
+                        <div style="display: flex; flex-direction: row; gap: 10px;">
+                            <span>소프트웨어공학</span>   
+                            <img src="icon_root/edit.png" style="height:20px; width:20px;"/>                        
+                        </div>
+                        <div style="margin-left: auto; display: flex; flex-direction: row; gap: 10px;">
+                            <span>그룹 색상 수정</span>
+                            <input type="color" id="groupcolor"/>                            
+                        </div>
                     </div>
                 </div>
 
@@ -306,9 +378,58 @@
                 </div>
 
             </div>
+
+            <div class="work_select" id="authority_select">
+                <div class="work_select_head">
+                    <span style="margin-left: 5px;">권한</span>                 
+                </div>
+            </div>
+
         </div>
 
     </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let groupSelected = false;
+        const ugSelect = document.getElementById("ug_select");
+        const authoritySelect = document.getElementById("authority_select");
+
+        document.querySelectorAll('.group_list').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.group_list').forEach(el => el.classList.remove('active'));
+                item.classList.add('active');
+                groupSelected = true;
+                document.querySelectorAll('td').forEach(tr => tr.classList.remove('active'));
+
+                // 유저,그룹 선택 보이는 애니메이션
+                if (!ugSelect.classList.contains("show")) {
+                    ugSelect.style.display = "block";
+                    setTimeout(() => {
+                        ugSelect.classList.add("show");
+                    }, 10);
+                    authoritySelect.style.display = "block";
+                    setTimeout(() => {
+                        authoritySelect.classList.add("show");
+                    }, 10);
+                }
+                
+            });
+        });
+
+        document.querySelectorAll('td').forEach(row => {
+            row.addEventListener('click', () => {
+                if (!groupSelected) {
+                    alert("먼저 그룹을 선택해야 합니다.");
+                    return;
+                }
+                row.classList.toggle('active');
+            });
+        });
+    });
+
+</script>
+
 
 </body>
 
@@ -348,10 +469,6 @@
         alert("변경 사항이 저장되었습니다.");
     }
 
-
-
-    // 업무 하나 선택 시 유저 선택창 보이게.
-    // 업무 선택은 라디오 버튼 식으로 해야 할 듯
 
 </script>
 </html>
