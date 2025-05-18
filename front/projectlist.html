@@ -233,10 +233,15 @@
         const text = worktext.value.trim();
         const dl = deadline.value.trim();
 
-        if (!title|| !text || !dl) {
-            alert("모든 항목을 입력해주세요.");
+        if (!title) {
+            alert("제복을 입력해주세요.");
+            title.focus();
+        }
+        else if(!dl){
+            alert("마감 기간을 설정해주세요.");
             return;
         }
+        
         const tbody = document.querySelector("#tbody1");
         const tr = document.createElement("tr");
         tr.innerHTML = `
