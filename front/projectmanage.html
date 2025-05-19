@@ -99,7 +99,7 @@
     }
     .work_select_user {
         height: 100vh;
-        width: 1000px;
+        width: 800px;
 
         border-right: solid 1px rgb(200, 200, 200);
     }
@@ -147,6 +147,7 @@
         justify-content: flex-start;
         align-items: center;
 
+        height: 56px;
         padding: 10px;
         gap: 15px;
         border-bottom: solid 1px rgb(200, 200, 200);
@@ -186,6 +187,14 @@
         text-align: center;
         font-size: medium;
         z-index: 5;
+    }
+
+    td{
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
     }
     td.active {
         background-color: rgb(214, 238, 182) !important;
@@ -353,6 +362,15 @@
     .button_cancel:active {
         background-color: rgb(200, 200, 200);
     }
+
+    .user_list{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+    }
+
 </style>
 
 <body>
@@ -394,7 +412,20 @@
                     </div>
     
                     <div class="work_select_user_content">
-    
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr><td class="user_list">
+                                        <img src="icon_root/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
+                                        <span>닉네임</span>
+                                        <span style="font-size: small; color: rgba(0, 0, 0, 0.5);">identification</span>
+                                        <span style="color: #3a6b5b; margin-left:10px;">#0000</span>
+                                        <div style="margin-left: auto; margin-right: 10px; display: flex; flex-direction: row; align-items: center; gap: 10px;">
+                                            <span>그룹명</span>
+                                            <div style="background-color: black; height: 20px; width: 20px; border-radius: 50%;"></div>
+                                        </div>                                       
+                                </td></tr>
+                            </tbody>
+                        </table>                        
                     </div>
     
                 </div>
@@ -424,26 +455,30 @@
                     </div>
 
                     <div class="work_select_content">
-                        <div class="group_list">
-                            <div style="display: flex; flex-direction: row; gap: 10px;">
-                                <span>그룹명</span>   
-                                <img src="icon_root/edit.png" style="height:20px; width:20px;"/>                        
-                            </div>
-                            <div style="margin-left: auto; display: flex; flex-direction: row; gap: 10px;">
-                                <span>그룹 색상 수정</span>
-                                <input type="color" id="groupcolor"/>                            
-                            </div>
-                        </div>
-                        <div class="group_list">
-                            <div style="display: flex; flex-direction: row; gap: 10px;">
-                                <span>소프트웨어공학</span>   
-                                <img src="icon_root/edit.png" style="height:20px; width:20px;"/>                        
-                            </div>
-                            <div style="margin-left: auto; display: flex; flex-direction: row; gap: 10px;">
-                                <span>그룹 색상 수정</span>
-                                <input type="color" id="groupcolor"/>                            
-                            </div>
-                        </div>
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr><td class="group_list">
+                                    <div style="display: flex; flex-direction: row; gap: 10px;">
+                                        <span>그룹명</span>   
+                                        <img src="icon_root/edit.png" style="height:20px; width:20px;"/>                        
+                                    </div>
+                                    <div style="margin-left: auto; display: flex; flex-direction: row; gap: 10px;">
+                                        <span>그룹 색상 수정</span>
+                                        <input type="color" id="groupcolor"/>                            
+                                    </div>
+                                </td></tr>
+                                <tr><td class="group_list">
+                                    <div style="display: flex; flex-direction: row; gap: 10px;">
+                                        <span>그룹명</span>   
+                                        <img src="icon_root/edit.png" style="height:20px; width:20px;"/>                        
+                                    </div>
+                                    <div style="margin-left: auto; display: flex; flex-direction: row; gap: 10px;">
+                                        <span>그룹 색상 수정</span>
+                                        <input type="color" id="groupcolor"/>                            
+                                    </div>
+                                </td></tr>
+                            </tbody>
+                        </table>
                     </div>
 
                 </div>
@@ -461,10 +496,18 @@
                     <div class="work_select_content">
                         <table class="table table-hover">
                             <tbody>
-                                <tr><td>프로필 사진 / 닉네임 / 태그 </td></tr>
-                                <tr><td>프로필 사진 / 닉네임 / 태그 </td></tr>
-                                <tr><td>프로필 사진 / 닉네임 / 태그 </td></tr>
-                                <tr><td>프로필 사진 / 닉네임 / 태그 </td></tr>
+                                <tr><td class="user_list">
+                                    <img src="icon_root/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
+                                    <span>닉네임</span>
+                                    <span style="font-size: small; color: rgba(0, 0, 0, 0.5);">identification</span>
+                                    <span style="color: #3a6b5b; margin-left:10px;">#0000</span>                                      
+                                </td></tr>
+                                <tr><td class="user_list">
+                                    <img src="icon_root/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
+                                    <span>닉네임</span>
+                                    <span style="font-size: small; color: rgba(0, 0, 0, 0.5);">identification</span>
+                                    <span style="color: #3a6b5b; margin-left:10px;">#0000</span>                                      
+                                </td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -474,6 +517,18 @@
                 <div class="work_select" id="authority_select">
                     <div class="work_select_head">
                         <span style="margin-left: 5px;">권한</span>                 
+                    </div>
+                    <div class="work_select_content">
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr><td>유저 초대 및 제외</td></tr>
+                                <tr><td>업무 생성 및 삭제, 마감기한 설정</td></tr>
+                                <tr><td>그룹 생성 및 초대</td></tr>
+                                <tr><td>프로젝트 삭제</td></tr>
+                                <tr><td>권한 위임 및 양도</td></tr>
+                                <tr><td>게시글, 댓글 삭제</td></tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -544,10 +599,40 @@
                     <div class="work_select_content" id="ug_list">
                         <table class="table table-hover">
                             <tbody>
-                                <tr><td>프로필 사진 / 닉네임 / 태그 </td></tr>
-                                <tr><td>프로필 사진 / 닉네임 / 태그 </td></tr>
-                                <tr><td>프로필 사진 / 닉네임 / 태그 </td></tr>
-                                <tr><td>프로필 사진 / 닉네임 / 태그 </td></tr>
+                                <tr><td class="user_list">
+                                        <img src="icon_root/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
+                                        <span>닉네임</span>
+                                        <span style="font-size: small; color: rgba(0, 0, 0, 0.5);">identification</span>
+                                        <span style="color: #3a6b5b; margin-left:10px;">#0000</span>
+                                        <div style="margin-left: auto; margin-right: 10px; display: flex; flex-direction: row; align-items: center; gap: 10px;">
+                                            <span>그룹명</span>
+                                            <div style="background-color: black; height: 20px; width: 20px; border-radius: 50%;"></div>
+                                        </div>                                       
+                                </td></tr>
+                                <tr><td class="user_list">
+                                        <img src="icon_root/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
+                                        <span>닉네임</span>
+                                        <span style="font-size: small; color: rgba(0, 0, 0, 0.5);">identification</span>
+                                        <span style="color: #3a6b5b; margin-left:10px;">#0000</span>
+                                        <div style="margin-left: auto; margin-right: 10px; display: flex; flex-direction: row; align-items: center; gap: 10px;">
+                                            <span>그룹명</span>
+                                            <div style="background-color: black; height: 20px; width: 20px; border-radius: 50%;"></div>
+                                        </div>                                       
+                                </td></tr>
+
+                                <!-- 그룹 선택시 -->
+                                <tr><td class="user_list">
+                                    <div style="margin-right: 10px; display: flex; flex-direction: row; align-items: center; gap: 10px;">
+                                        <span>그룹명</span>
+                                        <div style="background-color: black; height: 20px; width: 20px; border-radius: 50%;"></div>
+                                    </div>
+                                    <div style="margin-left: auto;">
+                                        <img src="icon_root/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
+                                        <img src="icon_root/user2.png" style="height: 30px; width: 30px; margin:5px;"/>                                         
+                                        <img src="icon_root/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
+                                    </div>  
+                                                                      
+                            </td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -557,6 +642,78 @@
 
         </div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        // 그룹관리
+        let groupSelected = false;
+        const ugSelect = document.getElementById("ug_select");
+        const authoritySelect = document.getElementById("authority_select");
+
+        document.querySelectorAll('.group_list').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.group_list').forEach(el => el.classList.remove('active'));
+                item.classList.add('active');
+                groupSelected = true;
+                document.querySelectorAll('td').forEach(td => td.classList.remove('active'));
+
+                // 유저,그룹 선택 보이는 애니메이션
+                if (!ugSelect.classList.contains("show")) {
+                    ugSelect.style.display = "block";
+                    setTimeout(() => {
+                        ugSelect.classList.add("show");
+                    }, 10);
+                    authoritySelect.style.display = "block";
+                    setTimeout(() => {
+                        authoritySelect.classList.add("show");
+                    }, 10);
+                }
+                
+            });
+        });
+
+        document.querySelectorAll('td').forEach(row => {
+            row.addEventListener('click', () => {
+                if (!groupSelected && row.getElementById) {
+                    alert("먼저 그룹을 선택해야 합니다.");
+                    return;
+                }
+                row.classList.toggle('active');
+            });
+        });
+
+
+        // 업무할당
+        let taskSelected = false;
+        const userGroupRows = document.querySelectorAll("#ug_list table tbody td");
+        const taskRows = document.querySelectorAll("#work_list table tbody td");
+    
+        taskRows.forEach(row => {
+            row.addEventListener("click", () => {
+                taskRows.forEach(r => r.classList.remove("active"));
+                row.classList.add("active");
+                taskSelected = true;
+                userGroupRows.forEach(u => u.classList.remove("active"));
+            });
+        });
+
+        // 수정 필요. 선택이 안됨
+        userGroupRows.forEach(row => {
+            row.addEventListener("click", () => {
+                if (!taskSelected) {
+                    alert("먼저 업무를 선택해야 합니다.");
+                    return;
+                }
+
+                row.classList.toggle("active");
+            });
+        });
+
+    });
+
+
+
+</script>        
   
 </body>
 <script>
@@ -578,31 +735,6 @@
     window.addEventListener('load', () => Watchdiv2('1'));
     window.Watchdiv2 = Watchdiv2;
 
-    document.addEventListener("DOMContentLoaded", () => {
-        let taskSelected = false;
-    
-        const taskRows = document.querySelectorAll("#work_list table tbody td");
-        taskRows.forEach(row => {
-            row.addEventListener("click", () => {
-                taskRows.forEach(r => r.classList.remove("active"));
-                row.classList.add("active");
-                taskSelected = true;
-                userGroupRows.forEach(u => u.classList.remove("active"));
-            });
-        });
-    
-    });
-    const userGroupRows = document.querySelectorAll("#ug_list table tbody td");
-    userGroupRows.forEach(row => {
-        row.addEventListener("click", () => {
-            if (!taskSelected) {
-                alert("먼저 업무를 선택해야 합니다.");
-                return;
-            }
-
-            row.classList.toggle("active");
-        });
-    });
      function openFindid() {
         window.open(
             'findid_pop.html',       
