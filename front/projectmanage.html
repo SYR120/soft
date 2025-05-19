@@ -379,8 +379,8 @@
             </div>
     
             <div class="complete">
-                <div class="button_yes">변경사항 저장</div>
-                <div class="button_cancel">취소</div>
+                <div class="button_yes" onclick="Saveproject()">변경사항 저장</div>
+                <div class="button_cancel" onclick="Nosave()">취소</div>
             </div> 
     
             <div style="display: flex; flex-direction: row; height: 100%; width: 100%;">
@@ -486,8 +486,8 @@
             </div>
 
             <div class="complete">
-                <div class="button_yes">변경사항 저장</div>
-                <div class="button_cancel">취소</div>
+                <div class="button_yes" onclick="Saveproject()">변경사항 저장</div>
+                <div class="button_cancel" onclick="Nosave()">취소</div>
             </div> 
 
             <div style="display: flex; flex-direction: row; height: 100%; width: 100%;">
@@ -591,16 +591,16 @@
             });
         });
     
-        const userGroupRows = document.querySelectorAll("#ug_list table tbody td");
-        userGroupRows.forEach(row => {
-            row.addEventListener("click", () => {
-                if (!taskSelected) {
-                    alert("먼저 업무를 선택해야 합니다.");
-                    return;
-                }
-    
-                row.classList.toggle("active");
-            });
+    });
+    const userGroupRows = document.querySelectorAll("#ug_list table tbody td");
+    userGroupRows.forEach(row => {
+        row.addEventListener("click", () => {
+            if (!taskSelected) {
+                alert("먼저 업무를 선택해야 합니다.");
+                return;
+            }
+
+            row.classList.toggle("active");
         });
     });
      function openFindid() {
