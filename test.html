@@ -18,13 +18,22 @@
 </style>
 
 <body>
-    <div id="root"></div>
-    <script src="approot.js"></script>
-
+    <div class="box">
+        <label>유저이름</label>
+        <div id = "id">null</div>
+    </div>
   
 </body>
 <script>
- 
+    fetch('http://localhost:8080/api/test')
+        .then(res => res.json())
+        .then(data => {
+            if (data.length > 0) {
+            document.getElementById('id').textContent = data[0].name;
+            } else {
+            document.getElementById('id').textContent = '유저 없음';
+            }
+        });
 
 </script>
 </html>
