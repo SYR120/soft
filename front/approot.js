@@ -2,6 +2,7 @@
   const { createElement, Fragment } = React;
   const { createRoot } = ReactDOM;
   
+
   function openAlert() {
     const modal = document.querySelector(".modal1");
     
@@ -395,10 +396,15 @@
       div.innerHTML=`
       <dialog class="modal3">
         <div class="middle3">
-            <div style="display: flex; margin:5px 5px 0 0; justify-content: flex-end;" >
-                <img src="icon_root/online.png" style="height:20px; width:20px;"/>
-                <div id="online">접속중</div>
+        
+            <div style="display: flex; justify-content: flex-start;" >
+                <img src="icon_root/online.png" style="height:15px; width:15px;"/>
+                <div id="online" style="font-size:small;">접속중</div>
+                <form method="dialog">
+                    <button style="background-color:none; border:none; margin-left:270px;" class="font1">X</button>
+                </form>
             </div>
+
             <div style="display: flex;">
                 <img src="icon_root/user2.png" style="height:100px; width:100px; margin:30px;"/>
                 <div style="margin:50px ;">
@@ -461,20 +467,14 @@
 
 }
   createRoot(document.getElementById('root')).render(createElement(approot));
-
-//   window.addEventListener("load", () => {
-//     openAlert();
-//     openFriend();
-//     openMyPage();
-//   });
-
+  
   let target = document.querySelector("#root");
   let observer = new MutationObserver(() => {
     openAlert();
     openFriend();
     openMyPage();   
 });   
-window.onload = function() {openAlert(); openFriend(); openMyPage(); openMyPage();};
+window.onload = function() {openAlert(); openFriend(); openMyPage();;};
 
  let option = { attributes: true, childList: true, characterData: true };
  observer.observe(target, option);
