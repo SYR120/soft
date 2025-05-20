@@ -88,19 +88,23 @@
         }
         .workbox {
             position: relative;
-            height: 100px;
+            height: 130px;
             width: 300px;
             flex-shrink: 0;
 
             background-color: white;
             margin:10px;
             padding: 10px;
+            gap: 5px;
             border: none;
             border-radius: 10px;
             box-shadow : 1px 1px 3px rgba(150, 150, 150, 0.8);
             overflow: hidden;
+
+            display: flex;
+            flex-direction: column;
         }
-        .workbox:active {
+        .workbox:hover {
             background-color: rgb(240, 240, 240)
         }
         .worksection{
@@ -130,10 +134,47 @@
             border-right: solid 1px;
             border-color: grey;
             float: left;
-            padding: 10px;
 
             background-color: white;
         }
+        .aside_left ul {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .aside_left li{
+            width: 100%;
+            display: block;
+            color: rgb(10, 10, 10);
+            font-size: medium;
+            text-decoration-line: none;
+
+            padding: 25px;
+
+            border-bottom: solid 1px rgb(200, 200, 200);
+        }
+        .aside_left li:hover {
+            background-color: rgb(230, 230, 230);
+        }
+        li.on {
+            background-color: white;
+            border-bottom: solid 2px green;
+            pointer-events: none;
+        }
+        .box_option {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: white;
+
+            height: 60px;
+            padding: 20px;
+
+            font-size: medium;
+            font-weight: bold;
+
+            border-bottom: solid 1.5px rgb(150, 150, 150);
+        } 
         .user_and_history{
             height: 100%;         
             width: 350px;
@@ -143,8 +184,7 @@
             display: flex;
             align-items: center;
 
-            border-left: solid 1px;
-            border-color: rgb(200, 200, 200);
+            border-left: solid 1px rgb(200, 200, 200);
             background-color: white;
 
             padding: 10px;
@@ -160,9 +200,16 @@
             height: 60px;
 
             padding: 15px;
-            border-bottom: solid 1px;
-            border-color: rgb(200, 200, 200);
+            border-bottom: solid 1.5px rgb(200, 200, 200);
         }
+        .user_list{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 5px;
+        }
+
     </style>
 </head>
 
@@ -196,7 +243,7 @@
     </dialog>
     
     <aside class="aside_left">
-        <h5>프로젝트 선택</h5>
+        <div class="box_option">프로젝트 선택</div>
         <ul>
             <li>다른 프로젝트1</li>
             <li>다른 프로젝트2</li>
@@ -223,7 +270,17 @@
                 <div style="flex-direction: column;">
                     <section class="worksection" id="todowork">
                         <div class="workhead">To do</div>
-                        <div class="workbox" onclick="window.location.href='worklist.html';">업무1</div>
+                        <div class="workbox" onclick="window.location.href='worklist.html';">
+                            <span>업무명</span>
+                            <div style="border-bottom: solid 1px rgb(200, 200, 200)";></div>
+                            <span style="color: gray; font-size: smaller;">마감 - 2025/00/00 00:00</span>
+                            <div style="display: flex; flex-direction: row; margin-top: auto; gap: 5px;">
+                                <img src="icon_root/user2.png" style="height: 25px; width: 25px;"/>
+                                <img src="icon_root/user2.png" style="height: 25px; width: 25px;"/>                                         
+                                <img src="icon_root/user2.png" style="height: 25px; width: 25px;"/>                                
+                            </div>
+                        </div>
+
                     </section>
                     <section class="worksection">
                         <img src="icon_root/add.png" style="height:30px; width:30px;" id="newwork"/>                        
@@ -232,19 +289,15 @@
                 
                 <section class="worksection">
                     <div class="workhead">In progress</div>
-                    <div class="workbox" onclick="window.location.href='writework.html';">업무2</div>
-                    <div class="workbox" onclick="window.location.href='writework.html';">업무3</div>
-                    <div class="workbox" onclick="window.location.href='writework.html';">업무3</div>
-                    <div class="workbox" onclick="window.location.href='writework.html';">업무3</div>
-                    <div class="workbox" onclick="window.location.href='writework.html';">업무3</div>
-                    <div class="workbox" onclick="window.location.href='writework.html';">업무3</div>
-                    <div class="workbox" onclick="window.location.href='writework.html';">업무3</div>
-                    <div class="workbox" onclick="window.location.href='writework.html';">업무3</div>
-                    <div class="workbox" onclick="window.location.href='writework.html';">업무3</div>
-                    <div class="workbox" onclick="window.location.href='writework.html';">업무3</div>
-                    <div class="workbox" onclick="window.location.href='writework.html';">업무3</div>
-                    <div class="workbox" onclick="window.location.href='writework.html';">업무3</div>
-                    <div class="workbox" onclick="window.location.href='writework.html';">업무3</div>
+                        <div class="workbox" onclick="window.location.href='worklist.html';">
+                            <span>업무명</span>
+                            <div style="border-bottom: solid 1px rgb(200, 200, 200)";></div>
+                            <span style="color: gray; font-size: smaller;">마감 - 2025/00/00 00:00</span>
+                            <div style="display: flex; flex-direction: row; margin-top: auto; gap: 5px;">
+                                <div style="background-color: black; height: 20px; width: 20px; border-radius: 50%;"></div>
+                                <span>그룹명</span>
+                            </div>
+                        </div>                    
                 </section>
 
                 <section class="worksection">
@@ -263,9 +316,13 @@
 
                 <table class="table table-hover">
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                        </tr>
+                        <tr><td class="user_list">
+                            <img src="icon_root/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
+                            <span>닉네임</span>
+                            <span style="font-size: small; color: rgba(0, 0, 0, 0.5);">identification</span>
+                            <span style="color: #3a6b5b;">#0000</span>   
+                            <div style="background-color: black; height: 20px; width: 20px; border-radius: 50%; margin-left: auto;"></div>                                 
+                        </td></tr>
                     </tbody>
                 </table>
             </div>
@@ -278,37 +335,24 @@
 
                 <table class="table table-hover">
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                        </tr>
+                        <tr><td>
+                            <div style="display: flex; flex-direction: row; align-items: center;">
+                                <span>업무1 내용 수정</span>
+                                <div style="margin-left: auto;">
+                                    <span style="color: gray;">닉네임</span>
+                                    <span style="color: #3a6b5b; margin-left: 5px;">2025/00/00</span>                                
+                                </div>
+                            </div>
+                        </td></tr>
+                        <tr><td>
+                            <div style="display: flex; flex-direction: row; align-items: center;">
+                                <span>ㅇㅇ(유저) 초대</span>
+                                <div style="margin-left: auto;">
+                                    <span style="color: gray;">닉네임</span>
+                                    <span style="color: #3a6b5b; margin-left: 5px;">2025/00/00</span>                                
+                                </div>
+                            </div>
+                        </td></tr>
                     </tbody>
                 </table>
             </div>
