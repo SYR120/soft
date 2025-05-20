@@ -11,6 +11,10 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <title>Project board</title>
     <style>
+        .middle_pb {
+            position: relative;
+            width: 100%;
+        }
          .button_pb {
             background-color:rgba(255, 255, 255, 0);
             height:40px;
@@ -218,7 +222,7 @@
     <script src="approot.js"></script>
 
     <dialog class="modal_pb">
-        <div class="middle" style="text-align: center;">
+        <div class="middle_pb" style="text-align: center;">
             <div class="green">업무 생성</div>
             <div style="width: 100%;">
                 <hr style="border: 1px solid rgb(0, 0, 0); "/>
@@ -255,9 +259,9 @@
     <div class="main">
         <div class="project_memu">
             <div style="display: flex; align-items: center; margin-top: 5px; font-weight: bold;" >
-                <div style="display: flex; align-items: center; gap: 10px; margin-left: 30px;" onclick="changename()">
+                <div style="display: flex; align-items: center; gap: 10px; margin-left: 30px;">
                     <div id="pjname" contenteditable="false">프로젝트 이름</div>
-                    <img src="icon_root/edit.png" style="height:20px; width:20px; margin-left: 10px; "/>
+                    <img id="edit" src="icon_root/edit.png" style="height:20px; width:20px; margin-left: 10px; "/>
                 </div>
                 <img src="icon_root/gear.png" style="height:20px; width:20px; margin-right: 10px; margin-left: auto;" onclick="window.location.href='projectmanage.html';"/>
             </div>
@@ -361,6 +365,37 @@
 
 </body>
 <script>
+    const name = document.getElementById("pjname");
+    const edit = document.getElementById("edit");
+    let oldname = name.textContent;
+    edit.addEventListener("click", () => {
+            name.contentEditable = "true";
+            name.style.outline = "1px solid #aaa";
+            name.focus();
+
+            oldname = name.textContent;
+        }
+    );
+    name.addEventListener("keydown", e => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                name.blur();
+            }
+        }
+    );   
+
+    name.addEventListener("blur", () => {
+            name.contentEditable = "false";
+            name.style.outline = "none";
+            if(name.textContent !== oldname){
+                const result = confirm("프로젝트 이름을 변경하겠습니까?");
+                if(!result){
+                    name.textContent = oldname;
+                }
+            }
+        }
+    );        
+
     function openhistory() {
         window.open(
             'history_pop.html',       
@@ -369,21 +404,6 @@
         );
     }
 
-    async function changename(){
-        const name = document.getElementById("pjname");
-        name.addEventListener("click", () => {
-            name.contentEditable = "true";
-            name.style.border = "none";
-            name.focus();
-        });
-
-        name.addEventListener("keydown", n => {
-            if (n.key === "Enter") {
-                n.preventDefault();
-                name.blur();
-            }
-        });     
-    }
 
     document.addEventListener('DOMContentLoaded', () => {
         const newWorkBtn = document.getElementById('newwork');

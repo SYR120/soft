@@ -324,3 +324,7 @@ dialog.modal2[open] {
     font-family: 'Pretendard-Regular';
     border-radius: 4px;
 }
+.middle_pb {
+            position: relative;
+            width: 100%;
+        }

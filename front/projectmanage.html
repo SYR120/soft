@@ -266,7 +266,7 @@
         }
 
         /* 컬러 인풋 */
-        #groupcolor {
+        .groupcolor {
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
@@ -276,11 +276,11 @@
             border: none;
             cursor: pointer;
         }
-        #groupcolor::-webkit-color-swatch {
+        .groupcolor::-webkit-color-swatch {
             border-radius: 50%;
             border: none;
         }
-        #groupcolor::-moz-color-swatch {
+        .groupcolor::-moz-color-swatch {
             border-radius: 50%;
             border: none;
         }
@@ -456,7 +456,7 @@
     <script src="approot.js"></script>
 
     <dialog class="modal_pb">
-        <div class="middle" style="text-align: center;">
+        <div class="middle_pb" style="text-align: center;">
             <div class="green">업무 생성</div>
             <div style="width: 100%;">
                 <hr style="border: 1px solid rgb(0, 0, 0); "/>
@@ -496,12 +496,12 @@
         <div id = "1">
             <div class="memu_name">
                 <span>멤버(유저) 관리</span>
-                <div class="button_return drag1" onclick="window.location.href='projectboard.html';">프로젝트로 돌아가기</div>
+                <div class="button_return drag1" onclick="Returnpj()">프로젝트로 돌아가기</div>
             </div>
     
             <div class="complete">
                 <div class="button_yes" onclick="Saveproject()">변경사항 저장</div>
-                <div class="button_cancel">취소</div>
+                <div class="button_cancel" onclick="Nosave()">취소</div>
             </div> 
     
             <div style="display: flex; flex-direction: row; height: 100%; width: 100%;">
@@ -542,7 +542,7 @@
         <div id = "2">
             <div class="memu_name">
                 <span>그룹 관리</span>
-                <div class="button_return drag1" onclick="window.location.href='projectboard.html';" >프로젝트로 돌아가기</div>
+                <div class="button_return drag1" onclick="Returnpj()">프로젝트로 돌아가기</div>
             </div>
 
             <div class="complete">
@@ -564,7 +564,7 @@
 
                     <div class="work_select_content">
                         <table class="table table-hover" id="group_table_2">
-                            <tbody>
+                            <tbody id="tbody_group">
                                 <tr><td class="group_list_2">
                                     <div style="display: flex; flex-direction: row; gap: 10px;">
                                         <span>그룹명</span>   
@@ -572,7 +572,7 @@
                                     </div>
                                     <div style="margin-left: auto; display: flex; flex-direction: row; gap: 10px;">
                                         <span>그룹 색상 수정</span>
-                                        <input type="color" id="groupcolor"/>                            
+                                        <input type="color" class="groupcolor"/>                            
                                     </div>
                                 </td></tr>
                                 <tr><td class="group_list_2">
@@ -582,7 +582,7 @@
                                     </div>
                                     <div style="margin-left: auto; display: flex; flex-direction: row; gap: 10px;">
                                         <span>그룹 색상 수정</span>
-                                        <input type="color" id="groupcolor"/>                            
+                                        <input type="color" class="groupcolor"/>                            
                                     </div>
                                 </td></tr>
                             </tbody>
@@ -645,7 +645,7 @@
         <div id = "3">
             <div class="memu_name">
                 <span>업무 할당</span>
-                <div class="button_return drag1" onclick="window.location.href='projectboard.html';">프로젝트로 돌아가기</div>
+                <div class="button_return drag1"onclick="Returnpj()">프로젝트로 돌아가기</div>
             </div>
 
             <div class="complete">
@@ -922,27 +922,33 @@
             'width=600,height=600,left=100,top=100' 
         );
     }
-
+    
+    let groupcolorid = 0;
     document.getElementById("add3").addEventListener("click", function () {
         const groupName = prompt("그룹 이름을 작성하세요");
         if (!groupName) {
             return;
         }
-        
-        /* 나중에 하겠습니다.
-        const container = document.getElementById("group");
+    
+        /*새로 만든 그룹 누를때도 유저선택 창 나오게만 해주세용 지금은 추가만 됨*/
+        const container = document.getElementById("tbody_group");
 
-        const newBox = document.createElement("div");
-        newBox.className = "box15";
-        newBox.innerHTML = `
-            <div class="black">${groupName}</div>
-            <div style="display: flex; margin:5px; justify-content: flex-end;" >
-                <img src="icon_root/addfriend.png" style="height: 40px; width:40px; margin-top: 30px;"/>
+        const id =`groupcolor_${(groupcolorid = groupcolorid + 1)}`;
+        const tr = document.createElement("tr");
+        const td = document.createElement("td");
+        td.className = "tbody_group";
+        td.innerHTML = `
+            <div style="display: flex; flex-direction: row; gap: 10px;">
+                <span>${groupName}</span>   
+                <img src="icon_root/edit.png" style="height:20px; width:20px;"/>                        
+            </div>
+            <div style="margin-left: auto; display: flex; flex-direction: row; gap: 10px;">
+                <span>그룹 색상 수정</span>
+                <input type="color" id="${id}" class="groupcolor"/>                            
             </div>
         `;
-        */
-
-        container.appendChild(newBox);
+        tr.appendChild(td);
+        container.appendChild(tr);
     });
 
     function Deleteuser() {
@@ -956,11 +962,20 @@
     // 이거는 프로젝트로 돌아가기에.
     // 물어보고 확인 하면 프로젝트로 돌아가고, 취소하면 그대로 설정창
     // (취소버튼은 변경사항 되돌리기 용도)
-    function Nosave(){
+    //넹
+    function Returnpj(){
         const result = confirm("변경 사항이 저장되지 않을 수 있습니다.");
         if (result) {
             window.location.href="projectboard.html";
         } 
+    }
+    
+    function Nosave(){
+        const result = confirm("변경 사항을 되돌리겠습니까?");
+        if(!result){
+            return;
+        }
+        alert("변경 사항이 초기화되었습니다.");
     }
 
     function openFindid() {
