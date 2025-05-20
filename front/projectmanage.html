@@ -443,6 +443,9 @@
         dialog.modal_pb::backdrop {
             background: rgba(0,0,0,0.4);
         }
+        .hidden {
+            display: none;
+        }       
 
     </style>    
 </head>
@@ -725,8 +728,10 @@
                                             <div style="background-color: black; height: 20px; width: 20px; border-radius: 50%;"></div>
                                         </div>                                       
                                 </td></tr>
-
-                                <!-- 그룹 선택시 -->
+                            </tbody>
+                        </table>
+                        <table class="table table-hover" id="group_table_3">
+                            <tbody>
                                 <tr><td class="user_list">
                                     <div style="margin-right: 10px; display: flex; flex-direction: row; align-items: center; gap: 10px;">
                                         <span>그룹명</span>
@@ -736,9 +741,8 @@
                                         <img src="icon_root/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
                                         <img src="icon_root/user2.png" style="height: 30px; width: 30px; margin:5px;"/>                                         
                                         <img src="icon_root/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
-                                    </div>  
-                                                                      
-                            </td></tr>
+                                    </div>                                  
+                                </td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -798,23 +802,23 @@
             });
         });
 
-        document.querySelectorAll('#user_table_2 td').forEach(row => {
-            row.addEventListener('click', () => {
-                if (!groupSelected && row.getElementById) {
+        document.querySelectorAll('#user_table_2 td').forEach(item => {
+            item.addEventListener('click', () => {
+                if (!groupSelected && item.getElementById) {
                     alert("먼저 그룹을 선택해야 합니다.");
                     return;
                 }
-                row.classList.toggle('active');
+                item.classList.toggle('active');
             });
         });
 
-        document.querySelectorAll('#authority_table_2 td').forEach(row => {
-            row.addEventListener('click', () => {
-                if (!groupSelected && row.getElementById) {
+        document.querySelectorAll('#authority_table_2 td').forEach(item => {
+            item.addEventListener('click', () => {
+                if (!groupSelected && item.getElementById) {
                     alert("먼저 그룹을 선택해야 합니다.");
                     return;
                 }
-                row.classList.toggle('active');
+                item.classList.toggle('active');
             });
         });
 
@@ -822,15 +826,16 @@
         // 업무할당
         let taskSelected = false;
         const ugSelect3 = document.getElementById("ug_select_3");
-        const taskRows = document.querySelectorAll("#work_table_3 td");
-        const userGroupRows = document.querySelectorAll("#user_table_3 td");       
+        const workTable = document.querySelectorAll("#work_table_3 td");
+        const userTable = document.querySelectorAll("#user_table_3 td");
+        const groupTable = document.querySelectorAll("#group_table_3 td");    
     
-        taskRows.forEach(row => {
-            row.addEventListener("click", () => {
-                taskRows.forEach(r => r.classList.remove("active"));
-                row.classList.add("active");
+        workTable.forEach(item => {
+            item.addEventListener("click", () => {
+                workTable.forEach(r => r.classList.remove("active"));
+                item.classList.add("active");
                 taskSelected = true;
-                userGroupRows.forEach(u => u.classList.remove("active"));
+                userTable.forEach(u => u.classList.remove("active"));
 
                 // 유저,그룹 선택 보이는 애니메이션
                 if (!ugSelect3.classList.contains("show")) {
@@ -843,14 +848,25 @@
 
         });
 
-        userGroupRows.forEach(row => {
-            row.addEventListener("click", () => {
+        userTable.forEach(item => {
+            item.addEventListener("click", () => {
                 if (!taskSelected) {
                     alert("먼저 업무를 선택해야 합니다.");
                     return;
                 }
 
-                row.classList.toggle("active");
+                item.classList.toggle("active");
+            });
+        });
+
+        groupTable.forEach(item => {
+            item.addEventListener("click", () => {
+                if (!taskSelected) {
+                    alert("먼저 업무를 선택해야 합니다.");
+                    return;
+                }
+
+                item.classList.toggle("active");
             });
         });
 
@@ -879,6 +895,24 @@
     }
     window.addEventListener('load', () => Watchdiv2('1'));
     window.Watchdiv2 = Watchdiv2;
+
+    // 그룹할당에서 유저, 그룹 선택
+    const userRadio = document.getElementById('userS');
+    const groupRadio = document.getElementById('groupS');
+    const userTable = document.getElementById('user_table_3');
+    const groupTable = document.getElementById('group_table_3');
+    function toggleTables() {
+      if (userRadio.checked) {
+        userTable.classList.remove('hidden');
+        groupTable.classList.add('hidden');
+      } else {
+        userTable.classList.add('hidden');
+        groupTable.classList.remove('hidden');
+      }
+    }
+    userRadio.addEventListener('change', toggleTables);
+    groupRadio.addEventListener('change', toggleTables);
+    toggleTables();
 
 
      function openFindid() {
