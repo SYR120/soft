@@ -261,9 +261,9 @@
             <div style="display: flex; align-items: center; margin-top: 5px; font-weight: bold;" >
                 <div style="display: flex; align-items: center; gap: 10px; margin-left: 30px;">
                     <div id="pjname" contenteditable="false">프로젝트 이름</div>
-                    <img id="edit" src="icon_root/edit.png" style="height:20px; width:20px; margin-left: 10px; "/>
+                    <img id="edit" class="drag1" src="icon_root/edit.png" style="height:20px; width:20px; margin-left: 10px; "/>
                 </div>
-                <img src="icon_root/gear.png" style="height:20px; width:20px; margin-right: 10px; margin-left: auto;" onclick="window.location.href='projectmanage.html';"/>
+                <img src="icon_root/gear.png" class="drag1" style="height:20px; width:20px; margin-right: 10px; margin-left: auto;" onclick="window.location.href='projectmanage.html';"/>
             </div>
         </div>
 
@@ -404,11 +404,20 @@
         );
     }
 
+    function closeModal(dialog){
+        dialog.addEventListener('click', function(e){
+            if(e.target === dialog){
+                dialog.close();
+            }
+        });
+    }
+    window.closeModal = closeModal;
 
     document.addEventListener('DOMContentLoaded', () => {
         const newWorkBtn = document.getElementById('newwork');
         const modal = document.querySelector('.modal_pb');
 
+        closeModal(modal); /*여기서는 안됨. */
         newWorkBtn.addEventListener('click', () => {
             modal.showModal();
         });

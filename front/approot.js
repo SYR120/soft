@@ -2,6 +2,14 @@
   const { createElement, Fragment } = React;
   const { createRoot } = ReactDOM;
   
+  function closeModal(dialog){
+    dialog.addEventListener('click', function(e){
+        if(e.target === dialog){
+            dialog.close();
+        }
+    });
+  }
+  window.closeModal = closeModal;
 
   function openAlert() {
     const modal = document.querySelector(".modal1");
@@ -175,6 +183,8 @@
             </div>
         </dialog>`;
         document.body.appendChild(div);
+        const closemodal = document.querySelector('.modal1');
+        closeModal(closemodal);
     }
     
     const modalBtn = document.querySelector("#alert");
@@ -358,6 +368,8 @@
             </div>
         </dialog>`;
         document.body.appendChild(div);
+        const closemodal = document.querySelector('.modal2');
+        closeModal(closemodal);
     }
     const modalBtn = document.querySelector("#friend");
     
@@ -389,6 +401,15 @@
   window.addEventListener('load', () => Watchdiv('1'));
   window.Watchdiv = Watchdiv;
   
+  function logout(){
+    const result = confirm("로그아웃 하겠습니까?");
+    if(!result){
+        return;
+    }
+    window.location.href=('index.html');
+  }
+  window.logout = logout;
+
   function openMyPage() {
     const modal = document.querySelector(".modal3");
     if(!modal){
@@ -397,11 +418,9 @@
       <dialog class="modal3">
         <div class="middle3">
         
-            <div style="display: flex; justify-content: flex-start;" >
-                <img src="icon_root/online.png" style="height:15px; width:15px;"/>
-                <div id="online" style="font-size:small;">접속중</div>
+            <div style="display: flex; justify-content: flex-end;" >
                 <form method="dialog">
-                    <button style="background-color:none; border:none; margin-left:270px;" class="font1">X</button>
+                    <button style="background-color:none; border:none;" class="font1">X</button>
                 </form>
             </div>
 
@@ -419,11 +438,13 @@
     
             <div style="display: flex; justify-content: flex-end; margin:5px 5px 0 0; ">
                 <button class="button_pro" style="margin-right:5px;" onclick="window.location.href='profile.html';">프로필 수정</button>
-                <button class="button_pro">로그아웃</button>
+                <button class="button_pro" onclick="logout()">로그아웃</button>
             </div>
         </div>  
       </dialog>`;
       document.body.appendChild(div);
+      const closemodal = document.querySelector('.modal3');
+      closeModal(closemodal);
 
     }
     const modelBtn = document.querySelector("#mypage");
@@ -479,4 +500,6 @@ window.onload = function() {openAlert(); openFriend(); openMyPage();;};
  let option = { attributes: true, childList: true, characterData: true };
  observer.observe(target, option);
 })();
+
+
 
