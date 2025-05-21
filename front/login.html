@@ -14,7 +14,7 @@
             height:40px;
             width:200px;
             color:rgb(25, 25, 52);
-            border: 1px solid rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(180, 180, 180);
             font-size: small;
             font-weight: 300;   
             margin-bottom: 10px;
@@ -76,7 +76,7 @@
             background-color: rgb(236, 207, 37)
         }
 
-        .font1:active {
+        .font1:hover {
             color: rgb(55,158,144)
         }
     
@@ -95,12 +95,11 @@
 
             &nbsp;
 
-            <input class="button_login1" type="text" id="id" placeholder=" 아이디" autofocus/> 
-            <input class="button_login1" type="password" id="password" placeholder=" 비밀번호" />
-         
-
-            <button class="button_final drag1" style="margin-bottom: 10px;" onclick="login()">로그인</button>
-
+            <form action="projectlist.html" method="post" style="display: flex; flex-direction: column;">
+                <input class="button_login1" type="text" id="id" placeholder=" 아이디" autofocus required/> 
+                <input class="button_login1" type="password" id="password" placeholder=" 비밀번호" required/>
+                <button type="submit" class="button_final drag1" style="margin-bottom: 10px;" onclick="login()">로그인</button>
+            </form>
 
             <div class="content_w" style="margin-top: 5px;">
                 <div class="font1 drag1" onclick="window.location.href='join.html'; float: right;">회원가입</div>
@@ -120,6 +119,7 @@
 </body>
 
 <script>
+    /*
     async function login(){
             if(id.value.length < 1){
                 alert("아이디를 입력하세요.")
@@ -134,6 +134,7 @@
                 window.location.href="projectlist.html";
             }
         }
+    */
     function naverlog(){
         alert("네이버 로그인 페이지로 이동합니다.");
         window.location.href="https://nid.naver.com/nidlogin.login?mode=form&url=https://www.naver.com/"

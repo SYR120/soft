@@ -42,6 +42,10 @@
     color: #3a6b5b;
 }
 
+:root {
+    color-scheme: light only;
+}
+
 body {
     display: flex;
     height: 100vh;
