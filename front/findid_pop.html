@@ -33,39 +33,46 @@
 </head>
 
 <body>
-    <div class="green" style="text-align: center; margin-top: 10px;">유저 찾기</div>
-    <hr/>
-
-    <div style="justify-items: center;">
-        <div>
-            <input class="button_find" type="text" id="findid" placeholder="닉네임 #태그"/>
-            <img src="icon_root/finding.png" style="height: 25px; width: 25px; margin-top:5px;" class="margin2 drag1"/>
+    <div class="middle">
+        <div style="flex-direction: column;">
+            <div class="green" style="text-align: center; margin-top: 5px;">유저 찾기</div>
+            <div style="width: 100%;">
+                <hr style="border: 1px solid rgb(0, 0, 0); "/>
+            </div>
         </div>
-    
-        <div style="margin:5px;">
-            <input type="radio" name="option" style="height:15px; width:15px;"/>
-            <a>친구</a>
-            <input type="radio" name="option" style="height:15px; width:15px;"/>
-            <a>전체</a>
-        </div>
-        <div class="box8">
-            <table>
-                <thead>
-                    <tr>
-                        <th><img src="icon_root/user2.png" style="height: 25px; width: 25px; margin:5px;"/></th>
-                        <th>닉네임</th>
-                        <th>#태그</th>
-                        <th><img src="icon_root/plus.png" style="height: 15px; width: 15px;"/></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                </tbody>
-            </table>
-        </div>
-        <br/>
-        <div>
-            <button class="button_final">선택완료</button>
+        <div style="flex-direction: column;">
+            <div style="justify-items: center;">
+                <div>
+                    <input class="button_find" type="text" id="findid" placeholder="닉네임 #태그"/>
+                    <img src="icon_root/finding.png" style="height: 25px; width: 25px; margin-top:5px;" class="margin2 drag1"/>
+                </div>
+            
+                <div style="margin:5px;">
+                    <input type="radio" name="option" style="height:15px; width:15px;"/>
+                    <a>친구</a>
+                    <input type="radio" name="option" style="height:15px; width:15px;"/>
+                    <a>전체</a>
+                </div>
+                <div class="box8">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><img src="icon_root/user2.png" style="height: 25px; width: 25px; margin:5px;"/></th>
+                                <th>닉네임</th>
+                                <th>#태그</th>
+                                <th><img src="icon_root/plus.png" style="height: 15px; width: 15px;"/></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <br/>
+                <div>
+                    <button class="button_final">선택완료</button>
+                </div>
+            </div>
         </div>
     </div>
 

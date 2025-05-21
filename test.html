@@ -92,5 +92,37 @@
     //         }
     //     });
 
+function editname(){
+        const name = document.getElementById("pjname");
+        const edit = document.getElementById("edit");
+        let oldname = name.textContent;
+        edit.addEventListener("click", () => {
+                name.contentEditable = "true";
+                name.style.outline = "1px solid #aaa";
+                name.focus();
+
+                oldname = name.textContent;
+            }
+        );
+        name.addEventListener("keydown", e => {
+                if (e.key === "Enter") {
+                    e.preventDefault();
+                    name.blur();
+                }
+            }
+        );   
+
+        name.addEventListener("blur", () => {
+                name.contentEditable = "false";
+                name.style.outline = "none";
+                if(name.textContent !== oldname){
+                    const result = confirm("프로젝트 이름을 변경하겠습니까?");
+                    if(!result){
+                        name.textContent = oldname;
+                    }
+                }
+            }
+        );        
+    }
 </script>
 </html>
