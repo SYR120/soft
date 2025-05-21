@@ -445,7 +445,29 @@
         }
         .hidden {
             display: none;
-        }       
+        }
+        .tooltip1 {
+            position: absolute;
+            top: 100%;
+            background-color: rgb(255, 255, 255);
+            box-shadow : 0px 0px 3px rgba(0, 0, 0, 0.2);
+            color: black;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            max-width: 300px;
+            z-index: 10;
+            display: none;
+            pointer-events: none;
+        }
+        .lenCut {
+            max-width: 150px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .lenCut_container {
+            position: relative;
+        }
 
     </style>    
 </head>
@@ -519,17 +541,23 @@
                         <table class="table table-hover" id="user_table_1">
                             <tbody>
                                 <tr><td class="user_list">
-                                        <img src="icon_root/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
-                                        <span>닉네임</span>
-                                        <span style="font-size: small; color: rgba(0, 0, 0, 0.5);">identification</span>
-                                        <span style="color: #3a6b5b; margin-left:10px;">#0000</span>
-                                        <div style="margin-left: auto; margin-right: 10px; display: flex; flex-direction: row; align-items: center; gap: 10px;">
-                                            <span>그룹명</span>
-                                            <div style="background-color: black; height: 20px; width: 20px; border-radius: 50%;"></div>
+                                        <img src="icon_root/user2.png" style="height: 30px; width: 30px; margin:5px;"/>                                    
+                                    <div class="lenCut_container">
+                                        <span class="lenCut">닉네임이아주길어요길어우하학</span>
+                                        <div class="tooltip1" id="tooltip"></div>                                        
+                                    </div>
+                                    <span style="font-size: small; color: rgba(0, 0, 0, 0.5);">identification</span>
+                                    <span style="color: #3a6b5b; margin-left:10px;">#0000</span>
+                                    <div style="margin-left: auto; margin-right: 10px; display: flex; flex-direction: row; align-items: center; gap: 10px;">
+                                        <div class="lenCut_container">
+                                            <span class="lenCut">그룹명</span>
+                                            <div class="tooltip1" id="tooltip"></div>                                        
                                         </div>
-                                        <div style="margin-left: auto; margin-right: 10px; display: flex; flex-direction: row; align-items: center; gap: 10px;">
-                                            <button class="button_expel" onclick="Deleteuser()">제명</button>
-                                        </div>                               
+                                        <div style="background-color: black; height: 20px; width: 20px; border-radius: 50%;"></div>
+                                    </div>
+                                    <div style="margin-left: auto; margin-right: 10px; display: flex; flex-direction: row; align-items: center; gap: 10px;">
+                                        <button class="button_expel" onclick="Deleteuser()">제명</button>
+                                    </div>                               
                                 </td></tr>
                             </tbody>
                         </table>                        
@@ -567,7 +595,10 @@
                             <tbody id="tbody_group">
                                 <tr><td class="group_list_2">
                                     <div style="display: flex; flex-direction: row; gap: 10px;">
-                                        <span>그룹명</span>   
+                                        <div class="lenCut_container">
+                                            <span class="lenCut">그룹명이 매우길다랗다 우와악</span>
+                                            <div class="tooltip1" id="tooltip"></div>                                        
+                                        </div>  
                                         <img src="icon_root/edit.png" style="height:20px; width:20px;"/>                        
                                     </div>
                                     <div style="margin-left: auto; display: flex; flex-direction: row; gap: 10px;">
@@ -577,7 +608,10 @@
                                 </td></tr>
                                 <tr><td class="group_list_2">
                                     <div style="display: flex; flex-direction: row; gap: 10px;">
-                                        <span>그룹명</span>   
+                                        <div class="lenCut_container">
+                                            <span class="lenCut">그루우우우우우ㅜ웁명</span>
+                                            <div class="tooltip1" id="tooltip"></div>                                        
+                                        </div>   
                                         <img src="icon_root/edit.png" style="height:20px; width:20px;"/>                        
                                     </div>
                                     <div style="margin-left: auto; display: flex; flex-direction: row; gap: 10px;">
@@ -606,13 +640,19 @@
                             <tbody>
                                 <tr><td class="user_list">
                                     <img src="icon_root/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
-                                    <span>닉네임</span>
+                                    <div class="lenCut_container">
+                                        <span class="lenCut">닉네임</span>
+                                        <div class="tooltip1" id="tooltip"></div>                                        
+                                    </div>
                                     <span style="font-size: small; color: rgba(0, 0, 0, 0.5);">identification</span>
                                     <span style="color: #3a6b5b; margin-left:10px;">#0000</span>                                      
                                 </td></tr>
                                 <tr><td class="user_list">
                                     <img src="icon_root/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
-                                    <span>닉네임</span>
+                                    <div class="lenCut_container">
+                                        <span class="lenCut">닉네임</span>
+                                        <div class="tooltip1" id="tooltip"></div>                                        
+                                    </div>
                                     <span style="font-size: small; color: rgba(0, 0, 0, 0.5);">identification</span>
                                     <span style="color: #3a6b5b; margin-left:10px;">#0000</span>                                      
                                 </td></tr>
@@ -710,21 +750,33 @@
                             <tbody>
                                 <tr><td class="user_list">
                                         <img src="icon_root/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
-                                        <span>닉네임</span>
+                                        <div class="lenCut_container">
+                                            <span class="lenCut">닉네임</span>
+                                            <div class="tooltip1" id="tooltip"></div>                                        
+                                        </div>
                                         <span style="font-size: small; color: rgba(0, 0, 0, 0.5);">identification</span>
                                         <span style="color: #3a6b5b; margin-left:10px;">#0000</span>
                                         <div style="margin-left: auto; margin-right: 10px; display: flex; flex-direction: row; align-items: center; gap: 10px;">
-                                            <span>그룹명</span>
+                                            <div class="lenCut_container">
+                                                <span class="lenCut">그룹명</span>
+                                                <div class="tooltip1" id="tooltip"></div>                                        
+                                            </div>
                                             <div style="background-color: black; height: 20px; width: 20px; border-radius: 50%;"></div>
                                         </div>                                       
                                 </td></tr>
                                 <tr><td class="user_list">
                                         <img src="icon_root/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
-                                        <span>닉네임</span>
+                                        <div class="lenCut_container">
+                                            <span class="lenCut">닉네임</span>
+                                            <div class="tooltip1" id="tooltip"></div>                                        
+                                        </div>
                                         <span style="font-size: small; color: rgba(0, 0, 0, 0.5);">identification</span>
                                         <span style="color: #3a6b5b; margin-left:10px;">#0000</span>
                                         <div style="margin-left: auto; margin-right: 10px; display: flex; flex-direction: row; align-items: center; gap: 10px;">
-                                            <span>그룹명</span>
+                                            <div class="lenCut_container">
+                                                <span class="lenCut">그룹명</span>
+                                                <div class="tooltip1" id="tooltip"></div>                                        
+                                            </div>
                                             <div style="background-color: black; height: 20px; width: 20px; border-radius: 50%;"></div>
                                         </div>                                       
                                 </td></tr>
@@ -734,7 +786,10 @@
                             <tbody>
                                 <tr><td class="user_list">
                                     <div style="margin-right: 10px; display: flex; flex-direction: row; align-items: center; gap: 10px;">
-                                        <span>그룹명</span>
+                                        <div class="lenCut_container">
+                                            <span class="lenCut">그룹명</span>
+                                            <div class="tooltip1" id="tooltip"></div>                                        
+                                        </div>
                                         <div style="background-color: black; height: 20px; width: 20px; border-radius: 50%;"></div>
                                     </div>
                                     <div style="margin-left: auto;">
@@ -872,6 +927,27 @@
 
     });
 
+    
+    //말줄임표, 전문 툴팁
+    document.querySelectorAll('.lenCut_container').forEach(container => {
+        const spanText = container.querySelector(".lenCut");
+        const tooltip = container.querySelector('.tooltip1');
+        const spanTextOriginal = spanText.textContent;
+
+        if (spanTextOriginal.length > 8 ) {
+            spanText.textContent = spanTextOriginal.substr(0, 8) + "...";
+            
+            spanText.addEventListener('mouseenter', function () {
+                tooltip.style.display = 'block';
+                tooltip.textContent = spanTextOriginal;
+            });
+            spanText.addEventListener('mouseleave', function () {
+                tooltip.style.display = 'none';
+            });            
+        }
+        
+
+    });
 
 
 </script>        
@@ -1035,5 +1111,7 @@
         modal.close();
     
     }
+
+
 </script>
 </html>
