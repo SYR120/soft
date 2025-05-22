@@ -515,17 +515,16 @@
     </aside>
 
     <div class="main">
+        <div class="memu_name">
+            <span id="spanText">멤버(유저) 관리</span>
+            <div class="button_return drag1" onclick="Returnpj()">프로젝트로 돌아가기</div>
+        </div>
+
+        <div class="complete">
+            <div class="button_yes" onclick="Saveproject()">변경사항 저장</div>
+            <div class="button_cancel" onclick="Nosave()">취소</div>
+        </div> 
         <div id = "1">
-            <div class="memu_name">
-                <span>멤버(유저) 관리</span>
-                <div class="button_return drag1" onclick="Returnpj()">프로젝트로 돌아가기</div>
-            </div>
-    
-            <div class="complete">
-                <div class="button_yes" onclick="Saveproject()">변경사항 저장</div>
-                <div class="button_cancel" onclick="Nosave()">취소</div>
-            </div> 
-    
             <div style="display: flex; flex-direction: row; height: 100%; width: 100%;">
                 <div class="work_select_user">
                     <div class="work_select_user_head">
@@ -568,16 +567,6 @@
             </div>
         </div>
         <div id = "2">
-            <div class="memu_name">
-                <span>그룹 관리</span>
-                <div class="button_return drag1" onclick="Returnpj()">프로젝트로 돌아가기</div>
-            </div>
-
-            <div class="complete">
-                <div class="button_yes" onclick="Saveproject()">변경사항 저장</div>
-                <div class="button_cancel" onclick="Nosave()">취소</div>
-            </div> 
-
             <div style="display: flex; flex-direction: row; height: 100%; width: 100%;">
 
                 <div class="work_select">
@@ -683,16 +672,6 @@
             </div>
         </div>
         <div id = "3">
-            <div class="memu_name">
-                <span>업무 할당</span>
-                <div class="button_return drag1"onclick="Returnpj()">프로젝트로 돌아가기</div>
-            </div>
-
-            <div class="complete">
-                <div class="button_yes" onclick="Saveproject()">변경사항 저장</div>
-                <div class="button_cancel" onclick="Nosave()">취소</div>
-            </div> 
-
             <div style="display: flex; flex-direction: row; height: 100%; width: 100%;">
                 <div class="work_select">
                     <div class="work_select_head">
@@ -967,8 +946,16 @@
             const watch = ((index + 1).toString() === i);
             li.classList.toggle('on', watch);
         });
-        
+
+        const spanText = document.getElementById('spanText');
+        if(i==="2"){
+            spanText.innerText="그룹 관리";
+        }
+        if(i==="3"){
+            spanText.innerText="업무 할당";
+        }
     }
+
     window.addEventListener('load', () => Watchdiv2('1'));
     window.Watchdiv2 = Watchdiv2;
 
@@ -1006,13 +993,13 @@
             return;
         }
     
-        /*새로 만든 그룹 누를때도 유저선택 창 나오게만 해주세용 지금은 추가만 됨*/
+        /*새로 만든 그룹 누를때도 유저선택 창 나오게만 해주세용 지금은 추가만 됨 네~*/
         const container = document.getElementById("tbody_group");
 
         const id =`groupcolor_${(groupcolorid = groupcolorid + 1)}`;
         const tr = document.createElement("tr");
         const td = document.createElement("td");
-        td.className = "tbody_group";
+        td.className = "group_list_2";
         td.innerHTML = `
             <div style="display: flex; flex-direction: row; gap: 10px;">
                 <span>${groupName}</span>   
@@ -1025,6 +1012,30 @@
         `;
         tr.appendChild(td);
         container.appendChild(tr);
+
+        td.addEventListener('click',function(){
+            if(td.classList.contains('active')) {
+                    td.classList.remove('active');
+                    groupSelected = false;
+            }
+            else {
+                document.querySelectorAll('.group_list_2').forEach(el => el.classList.remove('active'));                    
+                td.classList.add('active');
+                groupSelected = true;
+
+                if (!ugSelect2.classList.contains("show")) {
+                    ugSelect2.style.display = "block";
+                    setTimeout(() => {
+                        ugSelect2.classList.add("show");
+                    }, 10);
+                    authoritySelect2.style.display = "block";
+                    setTimeout(() => {
+                        authoritySelect2.classList.add("show");
+                    }, 10);
+                }
+            }
+                
+        });
     });
 
     function Deleteuser() {
