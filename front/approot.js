@@ -361,7 +361,7 @@
                 </div>
               </div>
             </div>
-            <div style="display: flex; justify-content: flex-end; margin-top:470px; ">
+            <div style="display: flex; justify-content: flex-end; margin-top:450px; ">
                 <form method="dialog">
                     <button style="background-color:none; border:none;" class="font1">닫기</button>
                 </form>  
