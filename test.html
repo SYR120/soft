@@ -10,119 +10,260 @@
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>  
     <title>test</title>
+    <style>
+        .modal_wl{
+            position: absolute;
+    
+        }
+        .main {
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            margin-top: 100px;
+    
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        
+        .worklist_box {
+            border: none;
+            height: 100%;
+            max-height: 80vh;
+            width: 250px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow : 0px 0px 3px rgba(0, 0, 0, 0.2);
+    
+            
+            overflow-y: scroll;
+        }
+        .worklist_box::-webkit-scrollbar{
+            width: 5px;
+        }
+        .worklist_box::-webkit-scrollbar-thumb {
+            background-color: rgba(230, 230, 230);
+            box-shadow : 0px 0px 3px rgba(150, 150, 150, 0.8);
+            border-radius: 10px;
+        }
+        .worklist_box::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+    
+        .worklist_box2 {
+            border: none;
+            height: 100%;
+            max-height: 80vh;
+            width: 250px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow : 0px 0px 3px rgba(0, 0, 0, 0.2);
+    
+            
+            overflow-y: scroll;
+        }
+        .worklist_box2::-webkit-scrollbar{
+            display: none;
+        }
+    
+        .button_work {
+            background-color: transparent;
+            border: solid 1px rgb(112, 165, 139);            
+            /* background-color:rgb(183, 228, 206);
+            border: none; */
+    
+            height:25px;
+            width:50px;
+    
+            color:rgb(112, 165, 139);
+            font-size: 15px;
+            font-weight: 500;
+            border-radius: 4px;
+            font-family: 'Pretendard-Regular';
+        }
+        .button_work2 {
+            background-color:rgb(255, 255, 255);
+            border: none;
+            height:25px;
+            width:50px;
+            box-shadow : 0px 0px 2px rgba(150, 150, 150, 0.8);
+    
+            color:rgb(10, 10, 10);
+            font-size: 15px;
+            font-weight: 500;
+            border-radius: 4px;
+            font-family: 'Pretendard-Regular';
+        }
+    
+        .comment_box {
+            border: 1px solid gray;
+            background-color: rgb(235, 235, 235);
+            width: 100%;
+            padding: 10px;
+    
+            border-radius: 10px;
+            border: none;
+        }
+    
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            padding: 15px;
+            border-bottom: 1px solid rgb(230, 230, 230);
+            text-align: left;
+        }
+        
+        .high_box{
+            height: 70px;
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items:flex-end;
+        }
+    
+        .button_done{
+            height: 50px;
+            width: 250px;
+            margin-top:20px;
+    
+            border-radius: 20px;
+            border: none;
+    
+            background-color: rgb(112, 165, 139);
+            box-shadow : 0px 0px 3px rgba(0, 0, 0, 0.2);
+    
+            color:rgb(255, 255, 255);
+            font-size: 15px;
+            font-weight: 500;
+            font-family: 'Pretendard-Regular';
+    
+            display: flex;
+            justify-content:center;
+            align-items: center;
+        }
+        .button_done:hover {
+            background-color: rgb(84, 133, 129);
+            transition: 0.1s;
+        }
+    
+        .button_done:hover span{
+            display: none;
+        }
+        .button_done:hover::before{
+            content:"Done으로 상태 변경하기";
+        }
+    
+    </style>
 </head>
 
-<style>
-   
-</style>
-
 <body>
-    <div class="work_select">
-        <div class="work_select_head">
-            <span style="margin-left: 5px;">그룹</span>
-            <div class="find" style="width: 250px; display: flex; align-items: center; margin-left: auto;">
-                <input class="button_find" type="text" id="find" placeholder="그룹 검색" style="font-size: small; width: 400px;"/> 
-                <img src="icon_root/finding.png" style="width: 25px; height: 25px; margin: 5px"/>                    
-            </div>
-            <button class="button_add" id="add3">그룹 추가</button>
-        </div>
+    <dialog class="modal_wl">
 
-        <div class="work_select_content">
-            <table class="table table-hover" id="group_table_2">
-                <tbody id="tbody_group">
-                    <tr><td class="group_list_2">
-                        <div style="display: flex; flex-direction: row; gap: 10px;">
-                            <span>그룹명</span>   
-                            <img src="icon_root/edit.png" style="height:20px; width:20px;"/>                        
-                        </div>
-                        <div style="margin-left: auto; display: flex; flex-direction: row; gap: 10px;">
-                            <span>그룹 색상 수정</span>
-                            <input type="color" id="groupcolor"/>                            
-                        </div>
-                    </td></tr>
-                    <tr><td class="group_list_2">
-                        <div style="display: flex; flex-direction: row; gap: 10px;">
-                            <span>그룹명</span>   
-                            <img src="icon_root/edit.png" style="height:20px; width:20px;"/>                        
-                        </div>
-                        <div style="margin-left: auto; display: flex; flex-direction: row; gap: 10px;">
-                            <span>그룹 색상 수정</span>
-                            <input type="color" id="groupcolor"/>                            
-                        </div>
-                    </td></tr>
-                </tbody>
-            </table>
+    </dialog>
+    <div id="work_detail_box" style="display: flex; flex-direction: column;" >
+        <div class="high_box">
+            <span style="position: relative; font-size: 35px; color:white;">업무명</span>
+            <div style="margin-left: auto; padding: 5px; background-color: rgb(81,123,95); font-size: medium; color: white;">In Progress</div>
         </div>
+        <div class="worklist_box" style="width: 700px; flex-direction: column;" id="workbox">
+            <div style="margin: 15px;">
+                <div style="margin:10px;">
+                    <div style="font-weight: bold; font-size:25px;">제목</div>
+                    <div style="display: flex;">
+                        <div style="margin:5px;">
+                            <img src="icon_root/user2.png" style="height: 30px; width: 30px;"/>
+                        </div>
+                        <div>
+                            <div style="font-size: 15px;">작성자</div>
+                            <div style="font-size: 12px; color:rgb(105, 105, 105)">2025/05/05 12:00</div>
+                        </div>
+                    </div>
+                </div>
+                <hr style="border: 1px solid rgb(160, 160, 160);" />
+                <div style="margin:10px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div></div>
+                        <div>
+                            <img src="icon_root/link.png" style="height:20px; width:20px;"/>
+                            <a style="font-size: small; color: rgb(105, 105, 105)">파일 다운로드</a>
+                        </div>
+                    </div>
+                    <div style="height:300px;">
+                        <div style="font-weight: 400;">내용</div>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top:5px;">
+                    <div style="margin-left:5px; display: flex;">
+                        <img src = "icon_root/comment.png" style="height:25px; width:25px;"/>
+                        <div style="font-size: small; color: rgb(105, 105, 105); margin-top:2px;" id="comcount">0</div>
+                    </div>
+                    <div style="display: flex; justify-content: end;"> 
+                        <button class="button_work" style="margin-right: 5px;" onclick="window.location.href='writework.html';">수정</button>
+                        <button class="button_work" style="border: solid 1px rgb(173, 98, 98); color:rgb(173, 98, 98)" onclick="deletewrite()">삭제</button>
+                    </div>
+                </div>
+                <div style="width:100%">
+                    <hr style="border: 1px solid rgb(160, 160, 160);" />
+                </div>
+                <div style="display: flex;">
+                    <div style="flex-direction: column; margin:5px;" id="commentlist">
+                        <!-- <div style="margin-left:5px;">
+                            <img src="icon_root/user2.png" style="height: 30px; width: 30px;" id="userimage"/>
+                        </div>
+                        <div style="flex-direction: column; margin-left:5px;">
+                            <div style="font-size: 15px;" id="usernickname">사과 #1231</div>
+                            <div style="font-size: 13px;" id="usercomment">수고하셨습니다.</div>
+                        </div> -->
+
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <div class="comment_box">
+                        <div style="font-size: medium;">나</div>
+                        <input style="font-size: small; border: none; background-color: transparent; outline: none; width:500px; " type="text" id="comment" placeholder="댓글 작성하기" />
+                        <div style="width:100%">
+                            <hr style="border: 1px solid rgb(160, 160, 160);" />
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <img src="icon_root/link.png" style="height:20px; width:20px;"/>
+                                <button class="button_work2" style="width:70px;" onclick="addcomment()">등록</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; margin-top: 20px;">
+                    <button class="button_work" style="width:70px; margin-right: auto;" onclick="prev()">이전글</button>
+                    <button class="button_work" style="width:70px; margin-left: auto;" onclick="next()">다음글</button>
+                </div>
+            </div>
+
+        </div>                
     </div>
 </body>
 <script>
-   function addgroup(){
-        const container = document.getElementById("group");
+   function openWorkModal() {
+    const dialog = document.querySelector('.modal_wl');
 
-        const newBox = document.createElement("div");
-        newBox.className = "tbody_group";
-        newBox.innerHTML = `
-            <div style="display: flex; flex-direction: row; gap: 10px;">
-                <span>${groupName}</span>   
-                <img src="icon_root/edit.png" style="height:20px; width:20px;"/>                        
-            </div>
-            <div style="margin-left: auto; display: flex; flex-direction: row; gap: 10px;">
-                <span>그룹 색상 수정</span>
-                <input type="color" id="groupcolor"/>                            
-            </div>
-        `;
-        container.appendChild(newBox);
+    const detailBox = document.getElementById('work_detail_box');
+    dialog.innerHTML = `
+        <div style="position:relative; min-width:400px; min-height:200px; background:white; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.2); padding:32px;">
+            <button onclick="closeWorkModal()" style="position:absolute; top:12px; right:16px; border:none; background:transparent; font-size:28px; cursor:pointer;">&times;</button>
+            ${detailBox.innerHTML}
+        </div>
+    `;
+    dialog.showModal();
     }
-    
-    document.getElementById("add3").addEventListener("click", function () {
-        const groupName = prompt("그룹 이름을 작성하세요");
-        if (!groupName) {
-            return;
-        }
-        addgroup();
-    });
-   
-    // fetch('http://localhost:8080/api/test')
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         if (data.length > 0) {
-    //         document.getElementById('id').textContent = data[0].name;
-    //         } else {
-    //         document.getElementById('id').textContent = '유저 없음';
-    //         }
-    //     });
 
-function editname(){
-        const name = document.getElementById("pjname");
-        const edit = document.getElementById("edit");
-        let oldname = name.textContent;
-        edit.addEventListener("click", () => {
-                name.contentEditable = "true";
-                name.style.outline = "1px solid #aaa";
-                name.focus();
-
-                oldname = name.textContent;
-            }
-        );
-        name.addEventListener("keydown", e => {
-                if (e.key === "Enter") {
-                    e.preventDefault();
-                    name.blur();
-                }
-            }
-        );   
-
-        name.addEventListener("blur", () => {
-                name.contentEditable = "false";
-                name.style.outline = "none";
-                if(name.textContent !== oldname){
-                    const result = confirm("프로젝트 이름을 변경하겠습니까?");
-                    if(!result){
-                        name.textContent = oldname;
-                    }
-                }
-            }
-        );        
+    function closeWorkModal() {
+        const dialog = document.querySelector('.modal_wl');
+        dialog.close();
     }
+    document.getElementById('work_detail_box').addEventListener('click', openWorkModal);
+
+    /*게시글 모달 창 하는중*/
 </script>
 </html>

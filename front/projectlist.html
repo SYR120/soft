@@ -277,15 +277,26 @@
         );
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const modalBtn = document.querySelector("#addnewproject");
-        const modal = document.querySelector(".modal_nw");
-        modalBtn.addEventListener("click", () => {
-            modal.showModal()
-        })
+    function closeModal(dialog){
+        dialog.addEventListener('click', function(e){
+            if(e.target === dialog){
+                dialog.close();
+            }
+        });
+    }
+    window.closeModal = closeModal;
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const newpj = document.getElementById('addnewproject');
+        const modal = document.querySelector('.modal_nw');
+
+        closeModal(modal); 
+        newpj.addEventListener('click', () => {
+            modal.showModal();
+        });
     });
 
-    async function addproject(){
+    function addproject(){
         const worktitle = document.getElementById("worktitle");
         const deadline = document.getElementById("deadline");
         const friend = document.getElementById("tbody_fd");
@@ -294,11 +305,11 @@
         const dl = deadline.value.trim();
 
         if (!title) {
-            alert("제목을 입력해주세요.");
+            alert("프로젝트 명을 입력해주세요.");
             title.focus();
         }
         else if(!dl){
-            alert("마감 기간을 설정해주세요.");
+            alert("최종 마감 기간을 설정해주세요.");
             return;
         }
         
@@ -320,5 +331,6 @@
         modal.close();
 
     }
+    
 </script>
 </html>

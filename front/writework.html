@@ -12,21 +12,38 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <style>
         .box15{
-            border: 1px solid gray;
-            height: 550px;
-            width: 600px;
+            margin-top: 50px;
+            height: 600px;
+            width: 650px;
             display: flex;  
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            border: 1px solid gray;  
+            border-radius: 4px;
+        }
+        .editor-wrapper {
+            width: 100%;
+            flex: 1;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        #editor {
+            flex: 1;
+            width: 100%;
+            min-height: 0;
+            max-height: 100%;
+            box-sizing: border-box;
+        }
+        .ql-toolbar.ql-snow {
+             display: flex;
+            flex-wrap: wrap;
         }
         .mid{
            margin: 0; 
            padding: 0; 
            height: 100vh; 
            display: flex; 
-           justify-content: center; 
-           align-items: center;
+           
         }
     </style>
 
@@ -35,33 +52,28 @@
     <div id="root"></div>
     <script src="approot.js"></script>
     
-    <div>
-        <div style="flex-direction: column;">
-            <div class="box15">
-                <div style="width:100%">
-                    <hr />
-                </div>
-                <div >
-                    <input type="text" id="title" style="width:400px; outline:none;" class="border-0" placeholder="제목" autofocus/>
-                </div>
-                <div style="width:100%"> 
-                    <hr />
-                </div>
-                <div>
-                    <div id="editor" style="height: 300px;"></div>
-                </div>
+    <div style="flex-direction: column;">
+        <div class="box15">
+            <div style="width:100%"><hr /></div>
+            <div style="margin-left:10px;">
+                <input type="text" id="title" style="width:600px; background-color: rgb(245, 245, 245); border: none; outline: none;"  placeholder="제목" autofocus/>
             </div>
-            <div style="display: flex; justify-content: center; margin-top: 10px;">
-                <button class="button_final" style="width:60px; margin-right:10px;">발행</button>
-                <button class="button_final" style="width:60px;" onclick="cancelwrite()">취소</button>
+            <div style="width:100%"><hr /></div>
+            <div class="editor-wrapper">
+                <div id="editor"></div>
             </div>
         </div>
+        <div style="display: flex; justify-content: center; margin-top:5px;">
+            <button class="button_final" style="width:60px; margin-right:10px;">발행</button>
+            <button class="button_final" style="width:60px;" onclick="cancelwrite()">취소</button>
+        </div>
     </div>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 <script>
-    async function cancelwrite(){
+    function cancelwrite(){
         const result = confirm("작성중인 내용이 저장되지 않을 수 있습니다.");
         if (result) {
             window.location.href="worklist.html";
