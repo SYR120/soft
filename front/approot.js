@@ -201,7 +201,7 @@
     if(!modal){
       const div = document.createElement("div");
       div.innerHTML=`
-        <dialog class="modal2">
+        <dialog class="modal2" style="border: none; background-color: transparent;>
             <div style="margin-top:30px;">
                 <div>
                     <button class="button_friend" onclick="Watchdiv('1')">친구 목록</button>
@@ -260,55 +260,84 @@
                 </div>
 
                 <div id="2">
-                    <div class="green" style="text-align: center;">유저 찾기</div>
-                    <div style="width: 100%;">
-                        <hr style="border: 1px solid rgb(0, 0, 0); "/>
+                    <div class="green">유저 찾기</div>
+            
+                    <div class="container_radio">
+                        <input type="radio" name="option" style="height:15px; width:15px; margin: 5px;" checked="checked"><span>친구</span>
+                        <input type="radio" name="option" style="height:15px; width:15px; margin: 5px; margin-left: 35px;"><span>전체</span>
                     </div>
-                    <div style="margin-bottom: 10px; margin-left: 10px;">
-                        <input class="button_find2" type="text" id="findid" placeholder="닉네임 #태그"/>
-                        <img src="public/icon/finding.png" style="height: 25px; width: 25px;" class="margin2 drag1"/>
+            
+                    <div class="find3">
+                        <input class="button_find3" type="text" id="find" placeholder="아이디 / 태그로 유저 검색" style="font-size: small; width: 400px;"/> 
+                        <img src="public/icon/finding.png" style="width: 25px; height: 25px; margin: 5px; margin-left: auto;"/>                    
                     </div>
-                    <div style="margin-left: 10px;">
-
-                        <div class="box8 ">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th><img src="public/icon/user2.png" style="height: 25px; width: 25px; margin:5px;"/></th>
-                                        <th>닉네임</th>
-                                        <th>#태그</th>
-                                        <th><img src="public/icon/adduser.png" style="height: 15px; width: 15px;"/></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
+            
+            
+                    <div class="box10">
+                        <table class="table table-hover" style="border-collapse: separate; border-spacing: 0;">
+                            <thead>
+                                <tr>
+                                    <th style="width: 55px;"></th>
+                                    <th style="width: 100px;">닉네임</th>
+                                    <th style="width: 100px;">아이디</th>
+                                    <th style="width: 60px;">#태그</th>
+                                    <th style="width: 50px;">선택</th>
+                                    <!-- <img src="icon/plus.png" style="height: 15px; width: 15px;"/> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="public/icon/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
+                                    </td>
+                                    <td class="lenCut_container">
+                                        <span class="lenCut">닉네임이아주아주아주길어요</span>
+                                        <div class="tooltip1" id="tooltip"></div>                                                      
+                                    </td>
+                                    <td>
+                                        <div class="lenCut_container">
+                                            <span class="lenCutE" style="font-size: small; color: rgba(0, 0, 0, 0.5);">identification123</span>                            
+                                            <div class="tooltip1" id="tooltip"></div>                                        
+                                        </div>                            
+                                    </td>
+                                    <td>
+                                        <span style="color: #3a6b5b;">#0000</span>                               
+                                    </td>  
+                                    <td>
+                                        <button class="button_select">선택</button>
+                                    </td>                           
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-        
+                                    <td>
+                                        <img src="public/icon/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
+                                    </td>
+                                    <td class="lenCut_container">
+                                        <span class="lenCut">정예은</span>
+                                        <div class="tooltip1" id="tooltip"></div>                                                      
+                                    </td>
+                                    <td>
+                                        <div class="lenCut_container">
+                                            <span class="lenCutE" style="font-size: small; color: rgba(0, 0, 0, 0.5);">yeeun13</span>                            
+                                            <div class="tooltip1" id="tooltip"></div>                                        
+                                        </div>                            
+                                    </td>
+                                    <td>
+                                        <span style="color: #3a6b5b;">#3697</span>                               
+                                    </td>  
+                                    <td>
+                                        <button class="button_select">선택</button>
+                                    </td>                           
                                 </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                                <tr><td>
+                                    스크롤 테스트용 아무말 ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
+                                    ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
+                                </td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br/>
+                    <div>
+                        <button class="button_final">선택완료</button>
                     </div>
                 </div>
                 <div id="3">
@@ -503,3 +532,74 @@ window.onload = function() {openAlert(); openFriend(); openMyPage();;};
 
 
 
+// 밑에 두 개 여기서 적용 되게 수정해야함...
+
+//말줄임표, 전문 툴팁
+document.querySelectorAll('.lenCut_container').forEach(container => {
+    const spanText = container.querySelector(".lenCut");
+    const spanTextE = container.querySelector(".lenCutE");
+    const tooltip = container.querySelector('.tooltip1');
+
+
+
+    if (spanText) {
+        const spanTextOriginal = spanText.textContent;
+        if ( spanTextOriginal.length > 6) {
+            spanText.textContent = spanTextOriginal.slice(0, 6) + "...";
+            
+            spanText.addEventListener('mouseenter', function () {
+                tooltip.style.display = 'block';
+                tooltip.textContent = spanTextOriginal;
+            });
+            spanText.addEventListener('mouseleave', function () {
+                tooltip.style.display = 'none';
+            });            
+        }
+    }
+
+    if (spanTextE){
+        const spanTextOriginalE = spanTextE.textContent;
+        if ( spanTextOriginalE.length > 15) {
+            spanTextE.textContent = spanTextOriginalE.slice(0, 15) + "...";
+            
+            spanTextE.addEventListener('mouseenter', function () {
+                tooltip.style.display = 'block';
+                tooltip.textContent = spanTextOriginalE;
+            });
+            spanTextE.addEventListener('mouseleave', function () {
+                tooltip.style.display = 'none';
+            });            
+        }            
+    }
+
+});
+
+// 선택 버튼 토글
+const btnCheck = document.querySelectorAll(".button_select");
+btnCheck.forEach((btn) => {
+    let isActive = false;
+
+    btn.addEventListener('click', () => {
+        isActive = !isActive;
+        btn.classList.toggle('active');
+
+        if (isActive) {
+            btn.textContent = '취소';
+        } else {
+            btn.textContent = '선택';
+        }
+
+    });
+
+    // 클린 된 상태에서 마우스 오버 시 글자 취소로 변하게
+    btn.addEventListener('mouseenter', () => {
+        if (isActive) {
+            btn.textContent = '취소';
+        }
+    });
+    btn.addEventListener('mouseleave', () => {
+        if (isActive) {
+            btn.textContent = '선택';
+        }
+    });
+});

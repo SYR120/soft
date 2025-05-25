@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find User</title>
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="public/css/bootstrap.css" />
+    <link rel="stylesheet" href="public/css/styles.css">
     <style>
         .margin2 {
             position: absolute;
@@ -42,7 +42,7 @@
             background-color: rgb(245, 245, 245);
         }
 
-        .box7{
+        .box10{
             position: relative;
             border: 1px solid gray;
             height: 800px;
@@ -59,7 +59,7 @@
             padding-top: 30px;
             padding-bottom: 30px;
         }
-        .box8{
+        .box11{
             border: 1px solid gray;
             border-radius: 10px;
             height: 800px;
@@ -69,50 +69,27 @@
 
             overflow-y: scroll;
         } 
-        .box8::-webkit-scrollbar{
+        .box11::-webkit-scrollbar{
             width: 5px;      
         }
-        .box8::-webkit-scrollbar-thumb {
+        .box11::-webkit-scrollbar-thumb {
             background-color: rgba(230, 230, 230);
             border-radius: 10px;
         }
-        .box8::-webkit-scrollbar-thumb:active {
+        .box11::-webkit-scrollbar-thumb:active {
             background-color: rgba(200, 200, 200);
             border-radius: 10px;   
         }
-        .box8::-webkit-scrollbar-track {
+        .box11::-webkit-scrollbar-track {
             background-color: transparent;
         }
-        .tooltip1 {
-            position: absolute;
-            top: 100%;
-            background-color: rgb(255, 255, 255);
-            box-shadow : 0px 0px 3px rgba(0, 0, 0, 0.2);
-            color: black;
-            padding: 6px 10px;
-            border-radius: 4px;
-            font-size: 12px;
-            max-width: 300px;
-            z-index: 10;
-            display: none;
-            pointer-events: none;
-        }
-        .lenCut, .lenCutE {
-            max-width: 100px;
-            overflow: hidden;
-            cursor: pointer;
-            white-space: nowrap;
-        }
-        .lenCut_container {
-            position: relative;
-        }
-        td, th {
+        .box10 td, th {
             height: 45px;
             max-width: 100px;
             text-align: left;
             vertical-align: middle;
         }
-        th {
+        .box10 th {
             position: sticky;
             top: 0px;
             background-color: white !important;
@@ -179,7 +156,7 @@
 </head>
 <!--X 파일은 안쓰는파일-->
 <body style="margin: 0; padding: 0; white-space: normal;">
-    <div class="box7">
+    <div class="box10">
         <div class="green">유저 찾기</div>
 
         
@@ -191,11 +168,11 @@
 
         <div class="find">
             <input class="button_find" type="text" id="find" placeholder="아이디 / 태그로 유저 검색" style="font-size: small; width: 400px;"/> 
-            <img src="icon/finding.png" style="width: 25px; height: 25px; margin: 5px; margin-left: auto;"/>                    
+            <img src="public/icon/finding.png" style="width: 25px; height: 25px; margin: 5px; margin-left: auto;"/>                    
         </div>
    
 
-        <div class="box8">
+        <div class="box11">
             <table class="table table-hover" style="border-collapse: separate; border-spacing: 0;">
                 <thead>
                     <tr>
@@ -210,7 +187,7 @@
                 <tbody>
                     <tr>
                         <td>
-                            <img src="icon/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
+                            <img src="public/icon/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
                         </td>
                         <td class="lenCut_container">
                             <span class="lenCut">닉네임이아주아주아주길어요</span>
@@ -231,7 +208,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="icon/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
+                            <img src="public/icon/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
                         </td>
                         <td class="lenCut_container">
                             <span class="lenCut">정예은</span>
