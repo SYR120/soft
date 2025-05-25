@@ -1,3 +1,10 @@
+import logoUrl  from './public/icon/logo.png'
+import trashUrl from './public/icon/trash.png'
+import user2Url from './public/icon/user2.png'
+import findingUrl from './public/icon/finding.png'
+import plusUrl from './public/icon/plus.png'
+
+
 (function() {
   const { createElement, Fragment } = React;
   const { createRoot } = ReactDOM;
@@ -37,7 +44,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="${trashUrl}" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -55,7 +62,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="${trashUrl}" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td> 
                     </tr>
@@ -74,7 +81,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="${trashUrl}" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td> 
                     </tr>
@@ -90,7 +97,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="${trashUrl}" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -106,7 +113,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="${trashUrl}" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -122,7 +129,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="${trashUrl}" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -138,7 +145,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="${trashUrl}" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -154,7 +161,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="${trashUrl}" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -170,7 +177,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="${trashUrl}" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -201,7 +208,7 @@
     if(!modal){
       const div = document.createElement("div");
       div.innerHTML=`
-        <dialog class="modal2" style="border: none; background-color: transparent;>
+        <dialog class="modal2" style="border: none; background-color: transparent;">
             <div style="margin-top:30px;">
                 <div>
                     <button class="button_friend" onclick="Watchdiv('1')">친구 목록</button>
@@ -223,7 +230,7 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th><img src="public/icon/user2.png" style="height: 25px; width: 25px; "/></th>
+                                <th><img src="${user2Url}" style="height: 25px; width: 25px; "/></th>
                                 <th>닉네임</th>
                                 <th>#태그</th>
                                 <th>마지막 접속시간</th>
@@ -260,84 +267,87 @@
                 </div>
 
                 <div id="2">
-                    <div class="green">유저 찾기</div>
-            
-                    <div class="container_radio">
-                        <input type="radio" name="option" style="height:15px; width:15px; margin: 5px;" checked="checked"><span>친구</span>
-                        <input type="radio" name="option" style="height:15px; width:15px; margin: 5px; margin-left: 35px;"><span>전체</span>
-                    </div>
-            
-                    <div class="find3">
-                        <input class="button_find3" type="text" id="find" placeholder="아이디 / 태그로 유저 검색" style="font-size: small; width: 400px;"/> 
-                        <img src="public/icon/finding.png" style="width: 25px; height: 25px; margin: 5px; margin-left: auto;"/>                    
-                    </div>
-            
-            
-                    <div class="box10">
-                        <table class="table table-hover" style="border-collapse: separate; border-spacing: 0;">
-                            <thead>
-                                <tr>
-                                    <th style="width: 55px;"></th>
-                                    <th style="width: 100px;">닉네임</th>
-                                    <th style="width: 100px;">아이디</th>
-                                    <th style="width: 60px;">#태그</th>
-                                    <th style="width: 50px;">선택</th>
-                                    <!-- <img src="icon/plus.png" style="height: 15px; width: 15px;"/> -->
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <img src="public/icon/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
-                                    </td>
-                                    <td class="lenCut_container">
-                                        <span class="lenCut">닉네임이아주아주아주길어요</span>
-                                        <div class="tooltip1" id="tooltip"></div>                                                      
-                                    </td>
-                                    <td>
-                                        <div class="lenCut_container">
-                                            <span class="lenCutE" style="font-size: small; color: rgba(0, 0, 0, 0.5);">identification123</span>                            
-                                            <div class="tooltip1" id="tooltip"></div>                                        
-                                        </div>                            
-                                    </td>
-                                    <td>
-                                        <span style="color: #3a6b5b;">#0000</span>                               
-                                    </td>  
-                                    <td>
-                                        <button class="button_select">선택</button>
-                                    </td>                           
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="public/icon/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
-                                    </td>
-                                    <td class="lenCut_container">
-                                        <span class="lenCut">정예은</span>
-                                        <div class="tooltip1" id="tooltip"></div>                                                      
-                                    </td>
-                                    <td>
-                                        <div class="lenCut_container">
-                                            <span class="lenCutE" style="font-size: small; color: rgba(0, 0, 0, 0.5);">yeeun13</span>                            
-                                            <div class="tooltip1" id="tooltip"></div>                                        
-                                        </div>                            
-                                    </td>
-                                    <td>
-                                        <span style="color: #3a6b5b;">#3697</span>                               
-                                    </td>  
-                                    <td>
-                                        <button class="button_select">선택</button>
-                                    </td>                           
-                                </tr>
-                                <tr><td>
-                                    스크롤 테스트용 아무말 ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
-                                    ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
-                                </td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <br/>
-                    <div>
-                        <button class="button_final">선택완료</button>
+                    <div style="margin: 0; padding: 0; white-space: normal;">
+                        <div class="box10">
+                            <div class="green">유저 찾기</div>
+
+                            <div class="container_radio">
+                                <input type="radio" name="option" style="height:15px; width:15px; margin: 5px;" checked="checked"><span>친구</span>
+                                <input type="radio" name="option" style="height:15px; width:15px; margin: 5px; margin-left: 35px;"><span>전체</span>
+                            </div>
+
+                            <div class="find">
+                                <input class="button_find" type="text" id="find" placeholder="아이디 / 태그로 유저 검색" style="font-size: small; width: 400px;"/> 
+                                <img src="${findingUrl}" style="width: 25px; height: 25px; margin: 5px; margin-left: auto;"/>                    
+                            </div>
+                    
+
+                            <div class="box11">
+                                <table class="table table-hover" style="border-collapse: separate; border-spacing: 0;">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 55px;"></th>
+                                            <th style="width: 100px;">닉네임</th>
+                                            <th style="width: 100px;">아이디</th>
+                                            <th style="width: 60px;">#태그</th>
+                                            <th style="width: 50px;">선택</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <img src="${user2Url}" style="height: 30px; width: 30px; margin:5px;"/>
+                                            </td>
+                                            <td class="lenCut_container">
+                                                <span class="lenCut">닉네임이아주아주아주길어요</span>
+                                                <div class="tooltip1" id="tooltip"></div>                                                      
+                                            </td>
+                                            <td>
+                                                <div class="lenCut_container">
+                                                    <span class="lenCutE" style="font-size: small; color: rgba(0, 0, 0, 0.5);">identification123</span>                            
+                                                    <div class="tooltip1" id="tooltip"></div>                                        
+                                                </div>                            
+                                            </td>
+                                            <td>
+                                                <span style="color: #3a6b5b;">#0000</span>                               
+                                            </td>  
+                                            <td>
+                                                <button class="button_select">선택</button>
+                                            </td>                           
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img src="${user2Url}" style="height: 30px; width: 30px; margin:5px;"/>
+                                            </td>
+                                            <td class="lenCut_container">
+                                                <span class="lenCut">정예은</span>
+                                                <div class="tooltip1" id="tooltip"></div>                                                      
+                                            </td>
+                                            <td>
+                                                <div class="lenCut_container">
+                                                    <span class="lenCutE" style="font-size: small; color: rgba(0, 0, 0, 0.5);">yeeun13</span>                            
+                                                    <div class="tooltip1" id="tooltip"></div>                                        
+                                                </div>                            
+                                            </td>
+                                            <td>
+                                                <span style="color: #3a6b5b;">#3697</span>                               
+                                            </td>  
+                                            <td>
+                                                <button class="button_select">선택</button>
+                                            </td>                           
+                                        </tr>
+                                        <tr><td>
+                                            스크롤 테스트용 아무말 ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
+                                            ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
+                                        </td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <br/>
+                            <div>
+                                <button class="button_final">선택완료</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div id="3">
@@ -348,7 +358,7 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th><img src="public/icon/user2.png" style="height: 25px; width: 25px; margin:5px;"/></th>
+                                <th><img src="${user2Url}" style="height: 25px; width: 25px; margin:5px;"/></th>
                                 <th>닉네임</th>
                                 <th>#태그</th>
                                 <th>수락</th>
@@ -388,7 +398,7 @@
                         </tbody>
                     </table>
                 </div>
-              </div>
+            </div>
             </div>
             <div style="display: flex; justify-content: flex-end; margin-top:450px; ">
                 <form method="dialog">
@@ -454,7 +464,7 @@
             </div>
 
             <div style="display: flex;">
-                <img src="public/icon/user2.png" style="height:100px; width:100px; margin:30px;"/>
+                <img src="${user2Url}" style="height:100px; width:100px; margin:30px;"/>
                 <div style="margin:50px ;">
                     <div class="black">닉네임</div>
                     <div style="display: flex;">
@@ -481,61 +491,7 @@
       modal.showModal();
     });
   }
-  function openProjectList() {
-    window.location.href=('projectlist.html');
-  }
-
-  function approot() {
-  return createElement(
-    'div',
-    { className: 'root' },
-    
-    createElement(
-      'button',
-      { className: 'left1 drag1 clear', onClick: openProjectList},
-      createElement('img', { src: 'public/icon/logo.png', className: 'logo', style: {height: '50px'} })
-    ),
-
-    createElement(
-      'button',
-      { className: 'right3 drag1 clear', onClick: openMyPage, id: 'mypage'},
-      createElement('i', { className: 'fa-solid fa-user fa-2x', style: { fontSize: '25px'} })
-    ),
-
-    createElement(
-      'button',
-      { className: 'right2 drag1 clear', onClick: openFriend, id:'friend'},
-      createElement('i', { className: 'fa-solid fa-user-group fa-2x', style: { fontSize: '25px'} })
-    ),
-    
-    createElement(
-      'button',
-      { className: 'right1 drag1 clear', onClick: openAlert, id:'alert' },
-      createElement('i', { className: 'fa-solid fa-bell fa-2x', style: { fontSize: '25px'}})
-    )
-  );
-
-}
-  createRoot(document.getElementById('root')).render(createElement(approot));
-  
-  let target = document.querySelector("#root");
-  let observer = new MutationObserver(() => {
-    openAlert();
-    openFriend();
-    openMyPage();   
-});   
-window.onload = function() {openAlert(); openFriend(); openMyPage();;};
-
- let option = { attributes: true, childList: true, characterData: true };
- observer.observe(target, option);
-})();
-
-
-
-// 밑에 두 개 여기서 적용 되게 수정해야함...
-
-//말줄임표, 전문 툴팁
-document.querySelectorAll('.lenCut_container').forEach(container => {
+  document.querySelectorAll('.lenCut_container').forEach(container => {
     const spanText = container.querySelector(".lenCut");
     const spanTextE = container.querySelector(".lenCutE");
     const tooltip = container.querySelector('.tooltip1');
@@ -603,3 +559,53 @@ btnCheck.forEach((btn) => {
         }
     });
 });
+
+
+  function openProjectList() {
+    window.location.href=('projectlist.html');
+  }
+
+  function approot() {
+  return createElement(
+    'div',
+    { className: 'root' },
+    
+    createElement(
+      'button',
+      { className: 'left1 drag1 clear', onClick: openProjectList},
+      createElement('img', { src: logoUrl, className: 'logo', style: {height: '50px'} })
+    ),
+
+    createElement(
+      'button',
+      { className: 'right3 drag1 clear', onClick: openMyPage, id: 'mypage'},
+      createElement('i', { className: 'fa-solid fa-user fa-2x', style: { fontSize: '25px'} })
+    ),
+
+    createElement(
+      'button',
+      { className: 'right2 drag1 clear', onClick: openFriend, id:'friend'},
+      createElement('i', { className: 'fa-solid fa-user-group fa-2x', style: { fontSize: '25px'} })
+    ),
+    
+    createElement(
+      'button',
+      { className: 'right1 drag1 clear', onClick: openAlert, id:'alert' },
+      createElement('i', { className: 'fa-solid fa-bell fa-2x', style: { fontSize: '25px'}})
+    )
+  );
+
+}
+  createRoot(document.getElementById('root')).render(createElement(approot));
+  
+  let target = document.querySelector("#root");
+  let observer = new MutationObserver(() => {
+    openAlert();
+    openFriend();
+    openMyPage();   
+});   
+window.onload = function() {openAlert(); openFriend(); openMyPage();;};
+
+ let option = { attributes: true, childList: true, characterData: true };
+ observer.observe(target, option);
+})();

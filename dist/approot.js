@@ -1,4 +1,4 @@
-(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))n(t);new MutationObserver(t=>{for(const e of t)if(e.type==="childList")for(const r of e.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&n(r)}).observe(document,{childList:!0,subtree:!0});function v(t){const e={};return t.integrity&&(e.integrity=t.integrity),t.referrerPolicy&&(e.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?e.credentials="include":t.crossOrigin==="anonymous"?e.credentials="omit":e.credentials="same-origin",e}function n(t){if(t.ep)return;t.ep=!0;const e=v(t);fetch(t.href,e)}})();(function(){const{createElement:i,Fragment:a}=React,{createRoot:v}=ReactDOM;function n(d){d.addEventListener("click",function(s){s.target===d&&d.close()})}window.closeModal=n;function t(){const d=document.querySelector(".modal1");if(!d){const l=document.createElement("div");l.innerHTML=`<dialog class="modal1" style="overflow-y:scroll; ">
+const x=""+new URL("icon/logo.png",import.meta.url).href,n=""+new URL("icon/trash.png",import.meta.url).href,s=""+new URL("icon/user2.png",import.meta.url).href,w=""+new URL("icon/finding.png",import.meta.url).href;(function(){const{createElement:o,Fragment:k}=React,{createRoot:u}=ReactDOM;function a(t){t.addEventListener("click",function(d){d.target===t&&t.close()})}window.closeModal=a;function r(){const t=document.querySelector(".modal1");if(!t){const i=document.createElement("div");i.innerHTML=`<dialog class="modal1" style="overflow-y:scroll; ">
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -19,7 +19,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="${n}" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -37,7 +37,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="${n}" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td> 
                     </tr>
@@ -56,7 +56,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="${n}" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td> 
                     </tr>
@@ -72,7 +72,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="${n}" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -88,7 +88,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="${n}" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -104,7 +104,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="${n}" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -120,7 +120,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="${n}" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -136,7 +136,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="${n}" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -152,7 +152,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="${n}" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -163,8 +163,8 @@
                     <button style="background-color:none; border:none;" class="font1">닫기</button>
                 </form>  
             </div>
-        </dialog>`,document.body.appendChild(l);const o=document.querySelector(".modal1");n(o)}document.querySelector("#alert").addEventListener("click",()=>{d.showModal()})}function e(){const d=document.querySelector(".modal2");if(!d){const l=document.createElement("div");l.innerHTML=`
-        <dialog class="modal2">
+        </dialog>`,document.body.appendChild(i);const e=document.querySelector(".modal1");a(e)}document.querySelector("#alert").addEventListener("click",()=>{t.showModal()})}function c(){const t=document.querySelector(".modal2");if(!t){const i=document.createElement("div");i.innerHTML=`
+        <dialog class="modal2" style="border: none; background-color: transparent;">
             <div style="margin-top:30px;">
                 <div>
                     <button class="button_friend" onclick="Watchdiv('1')">친구 목록</button>
@@ -186,7 +186,7 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th><img src="/icon/user2.png" style="height: 25px; width: 25px; "/></th>
+                                <th><img src="${s}" style="height: 25px; width: 25px; "/></th>
                                 <th>닉네임</th>
                                 <th>#태그</th>
                                 <th>마지막 접속시간</th>
@@ -223,54 +223,86 @@
                 </div>
 
                 <div id="2">
-                    <div class="green" style="text-align: center;">유저 찾기</div>
-                    <div style="width: 100%;">
-                        <hr style="border: 1px solid rgb(0, 0, 0); "/>
-                    </div>
-                    <div style="margin-bottom: 10px; margin-left: 10px;">
-                        <input class="button_find2" type="text" id="findid" placeholder="닉네임 #태그"/>
-                        <img src="/icon/finding.png" style="height: 25px; width: 25px;" class="margin2 drag1"/>
-                    </div>
-                    <div style="margin-left: 10px;">
+                    <div style="margin: 0; padding: 0; white-space: normal;">
+                        <div class="box10">
+                            <div class="green">유저 찾기</div>
 
-                        <div class="box8 ">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th><img src="/icon/user2.png" style="height: 25px; width: 25px; margin:5px;"/></th>
-                                        <th>닉네임</th>
-                                        <th>#태그</th>
-                                        <th><img src="/icon/adduser.png" style="height: 15px; width: 15px;"/></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-        
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                </tr>
-                                </tbody>
-                            </table>
+                            <div class="container_radio">
+                                <input type="radio" name="option" style="height:15px; width:15px; margin: 5px;" checked="checked"><span>친구</span>
+                                <input type="radio" name="option" style="height:15px; width:15px; margin: 5px; margin-left: 35px;"><span>전체</span>
+                            </div>
+
+                            <div class="find">
+                                <input class="button_find" type="text" id="find" placeholder="아이디 / 태그로 유저 검색" style="font-size: small; width: 400px;"/> 
+                                <img src="${w}" style="width: 25px; height: 25px; margin: 5px; margin-left: auto;"/>                    
+                            </div>
+                    
+
+                            <div class="box11">
+                                <table class="table table-hover" style="border-collapse: separate; border-spacing: 0;">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 55px;"></th>
+                                            <th style="width: 100px;">닉네임</th>
+                                            <th style="width: 100px;">아이디</th>
+                                            <th style="width: 60px;">#태그</th>
+                                            <th style="width: 50px;">선택</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <img src="${s}" style="height: 30px; width: 30px; margin:5px;"/>
+                                            </td>
+                                            <td class="lenCut_container">
+                                                <span class="lenCut">닉네임이아주아주아주길어요</span>
+                                                <div class="tooltip1" id="tooltip"></div>                                                      
+                                            </td>
+                                            <td>
+                                                <div class="lenCut_container">
+                                                    <span class="lenCutE" style="font-size: small; color: rgba(0, 0, 0, 0.5);">identification123</span>                            
+                                                    <div class="tooltip1" id="tooltip"></div>                                        
+                                                </div>                            
+                                            </td>
+                                            <td>
+                                                <span style="color: #3a6b5b;">#0000</span>                               
+                                            </td>  
+                                            <td>
+                                                <button class="button_select">선택</button>
+                                            </td>                           
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img src="${s}" style="height: 30px; width: 30px; margin:5px;"/>
+                                            </td>
+                                            <td class="lenCut_container">
+                                                <span class="lenCut">정예은</span>
+                                                <div class="tooltip1" id="tooltip"></div>                                                      
+                                            </td>
+                                            <td>
+                                                <div class="lenCut_container">
+                                                    <span class="lenCutE" style="font-size: small; color: rgba(0, 0, 0, 0.5);">yeeun13</span>                            
+                                                    <div class="tooltip1" id="tooltip"></div>                                        
+                                                </div>                            
+                                            </td>
+                                            <td>
+                                                <span style="color: #3a6b5b;">#3697</span>                               
+                                            </td>  
+                                            <td>
+                                                <button class="button_select">선택</button>
+                                            </td>                           
+                                        </tr>
+                                        <tr><td>
+                                            스크롤 테스트용 아무말 ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
+                                            ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
+                                        </td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <br/>
+                            <div>
+                                <button class="button_final">선택완료</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -282,7 +314,7 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th><img src="/icon/user2.png" style="height: 25px; width: 25px; margin:5px;"/></th>
+                                <th><img src="${s}" style="height: 25px; width: 25px; margin:5px;"/></th>
                                 <th>닉네임</th>
                                 <th>#태그</th>
                                 <th>수락</th>
@@ -322,14 +354,14 @@
                         </tbody>
                     </table>
                 </div>
-              </div>
+            </div>
             </div>
             <div style="display: flex; justify-content: flex-end; margin-top:450px; ">
                 <form method="dialog">
                     <button style="background-color:none; border:none;" class="font1">닫기</button>
                 </form>  
             </div>
-        </dialog>`,document.body.appendChild(l);const o=document.querySelector(".modal2");n(o)}document.querySelector("#friend").addEventListener("click",()=>{d.showModal()})}function r(d){["1","2","3"].forEach(o=>{const c=document.getElementById(o);c&&(c.style.display=o===d?"block":"none")}),document.querySelectorAll(".button_friend").forEach((o,c)=>{(c+1).toString()===d?o.classList.add("active"):o.classList.remove("active")})}window.addEventListener("load",()=>r("1")),window.Watchdiv=r;function y(){confirm("로그아웃 하겠습니까?")&&(window.location.href="index.html")}window.logout=y;function u(){const d=document.querySelector(".modal3");if(!d){const l=document.createElement("div");l.innerHTML=`
+        </dialog>`,document.body.appendChild(i);const e=document.querySelector(".modal2");a(e)}document.querySelector("#friend").addEventListener("click",()=>{t.showModal()})}function p(t){["1","2","3"].forEach(e=>{const l=document.getElementById(e);l&&(l.style.display=e===t?"block":"none")}),document.querySelectorAll(".button_friend").forEach((e,l)=>{(l+1).toString()===t?e.classList.add("active"):e.classList.remove("active")})}window.addEventListener("load",()=>p("1")),window.Watchdiv=p;function y(){confirm("로그아웃 하겠습니까?")&&(window.location.href="index.html")}window.logout=y;function v(){const t=document.querySelector(".modal3");if(!t){const i=document.createElement("div");i.innerHTML=`
       <dialog class="modal3">
         <div class="middle3">
         
@@ -340,7 +372,7 @@
             </div>
 
             <div style="display: flex;">
-                <img src="/icon/user2.png" style="height:100px; width:100px; margin:30px;"/>
+                <img src="${s}" style="height:100px; width:100px; margin:30px;"/>
                 <div style="margin:50px ;">
                     <div class="black">닉네임</div>
                     <div style="display: flex;">
@@ -356,4 +388,4 @@
                 <button class="button_pro" onclick="logout()">로그아웃</button>
             </div>
         </div>  
-      </dialog>`,document.body.appendChild(l);const o=document.querySelector(".modal3");n(o)}document.querySelector("#mypage").addEventListener("click",()=>{d.showModal()})}function p(){window.location.href="projectlist.html"}function g(){return i("div",{className:"root"},i("button",{className:"left1 drag1 clear",onClick:p},i("img",{src:"icon/logo.png",className:"logo",style:{height:"50px"}})),i("button",{className:"right3 drag1 clear",onClick:u,id:"mypage"},i("i",{className:"fa-solid fa-user fa-2x",style:{fontSize:"25px"}})),i("button",{className:"right2 drag1 clear",onClick:e,id:"friend"},i("i",{className:"fa-solid fa-user-group fa-2x",style:{fontSize:"25px"}})),i("button",{className:"right1 drag1 clear",onClick:t,id:"alert"},i("i",{className:"fa-solid fa-bell fa-2x",style:{fontSize:"25px"}})))}v(document.getElementById("root")).render(i(g));let h=document.querySelector("#root"),m=new MutationObserver(()=>{t(),e(),u()});window.onload=function(){t(),e(),u()};let b={attributes:!0,childList:!0,characterData:!0};m.observe(h,b)})();
+      </dialog>`,document.body.appendChild(i);const e=document.querySelector(".modal3");a(e)}document.querySelector("#mypage").addEventListener("click",()=>{t.showModal()})}document.querySelectorAll(".lenCut_container").forEach(t=>{const d=t.querySelector(".lenCut"),i=t.querySelector(".lenCutE"),e=t.querySelector(".tooltip1");if(d){const l=d.textContent;l.length>6&&(d.textContent=l.slice(0,6)+"...",d.addEventListener("mouseenter",function(){e.style.display="block",e.textContent=l}),d.addEventListener("mouseleave",function(){e.style.display="none"}))}if(i){const l=i.textContent;l.length>15&&(i.textContent=l.slice(0,15)+"...",i.addEventListener("mouseenter",function(){e.style.display="block",e.textContent=l}),i.addEventListener("mouseleave",function(){e.style.display="none"}))}}),document.querySelectorAll(".button_select").forEach(t=>{let d=!1;t.addEventListener("click",()=>{d=!d,t.classList.toggle("active"),d?t.textContent="취소":t.textContent="선택"}),t.addEventListener("mouseenter",()=>{d&&(t.textContent="취소")}),t.addEventListener("mouseleave",()=>{d&&(t.textContent="선택")})});function h(){window.location.href="projectlist.html"}function m(){return o("div",{className:"root"},o("button",{className:"left1 drag1 clear",onClick:h},o("img",{src:x,className:"logo",style:{height:"50px"}})),o("button",{className:"right3 drag1 clear",onClick:v,id:"mypage"},o("i",{className:"fa-solid fa-user fa-2x",style:{fontSize:"25px"}})),o("button",{className:"right2 drag1 clear",onClick:c,id:"friend"},o("i",{className:"fa-solid fa-user-group fa-2x",style:{fontSize:"25px"}})),o("button",{className:"right1 drag1 clear",onClick:r,id:"alert"},o("i",{className:"fa-solid fa-bell fa-2x",style:{fontSize:"25px"}})))}u(document.getElementById("root")).render(o(m));let b=document.querySelector("#root"),g=new MutationObserver(()=>{r(),c(),v()});window.onload=function(){r(),c(),v()};let f={attributes:!0,childList:!0,characterData:!0};g.observe(b,f)})();
