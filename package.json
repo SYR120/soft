@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +15,8 @@
   "description": "",
   "dependencies": {
     "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "vite-plugin-static-copy": "^2.3.1"
   }
 }

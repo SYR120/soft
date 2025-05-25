@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/styles.css">
     <script src="https://kit.fontawesome.com/289a62abf7.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
@@ -44,7 +44,7 @@
 </head>
 <body>
     <div id="root"></div>
-    <script src="approot.js"></script>
+    <script type="module" src="approot.js"></script>
     <div class="middle">
         <div class="box" style="height:400px;">
             <div class="green">프로필 수정</div>
@@ -52,7 +52,7 @@
                 <hr style="border: 1px solid rgb(0, 0, 0); "/>
             </div>
             <div>
-                <img src="icon/user2.png"  style="height: 80px; width: 80px; margin-bottom:10px;"/>
+                <img src="/icon/user2.png"  style="height: 80px; width: 80px; margin-bottom:10px;"/>
             </div>
             <div>
                 <input class="button_pro" type="text" id="nickname" placeholder="닉네임 (2 ~ 20자)" />

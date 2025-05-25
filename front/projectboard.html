@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/styles.css">
 
     <script src="https://kit.fontawesome.com/289a62abf7.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
@@ -219,7 +219,7 @@
 
 <body>
     <div id="root"></div>
-    <script src="approot.js"></script>
+    <script type="module" src="approot.js"></script>
 
     <dialog class="modal_pb">
         <div class="middle_pb" style="text-align: center;">
@@ -261,9 +261,9 @@
             <div style="display: flex; align-items: center; margin-top: 5px; font-weight: bold;" >
                 <div style="display: flex; align-items: center; gap: 10px; margin-left: 30px;">
                     <div id="pjname" contenteditable="false">프로젝트 이름</div>
-                    <img id="edit" class="drag1" src="icon/edit.png" style="height:20px; width:20px; margin-left: 10px; "/>
+                    <img id="edit" class="drag1" src="/icon/edit.png" style="height:20px; width:20px; margin-left: 10px; "/>
                 </div>
-                <img src="icon/gear.png" class="drag1" style="height:20px; width:20px; margin-right: 10px; margin-left: auto;" onclick="window.location.href='projectmanage.html';"/>
+                <img src="/icon/gear.png" class="drag1" style="height:20px; width:20px; margin-right: 10px; margin-left: auto;" onclick="window.location.href='projectmanage.html';"/>
             </div>
         </div>
 
@@ -276,18 +276,18 @@
                         <div class="workhead">To do</div>
                         <div class="workbox" onclick="window.location.href='worklist.html';">
                             <span>업무명</span>
-                            <div style="border-bottom: solid 1px rgb(200, 200, 200)";></div>
+                            <div style="border-bottom: solid 1px rgb(200, 200, 200);"></div>
                             <span style="color: gray; font-size: smaller;">마감 - 2025/00/00 00:00</span>
                             <div style="display: flex; flex-direction: row; margin-top: auto; gap: 5px;">
-                                <img src="icon/user2.png" style="height: 25px; width: 25px;"/>
-                                <img src="icon/user2.png" style="height: 25px; width: 25px;"/>                                         
-                                <img src="icon/user2.png" style="height: 25px; width: 25px;"/>                                
+                                <img src="/icon/user2.png" style="height: 25px; width: 25px;"/>
+                                <img src="/icon/user2.png" style="height: 25px; width: 25px;"/>                                         
+                                <img src="/icon/user2.png" style="height: 25px; width: 25px;"/>                                
                             </div>
                         </div>
 
                     </section>
                     <section class="worksection">
-                        <img src="icon/add.png" style="height:30px; width:30px;" id="newwork"/>                        
+                        <img src="/icon/add.png" style="height:30px; width:30px;" id="newwork"/>                        
                     </section>
                 </div>
                 
@@ -295,7 +295,7 @@
                     <div class="workhead">In progress</div>
                         <div class="workbox" onclick="window.location.href='worklist.html';">
                             <span>업무명</span>
-                            <div style="border-bottom: solid 1px rgb(200, 200, 200)";></div>
+                            <div style="border-bottom: solid 1px rgb(200, 200, 200);"></div>
                             <span style="color: gray; font-size: smaller;">마감 - 2025/00/00 00:00</span>
                             <div style="display: flex; flex-direction: row; margin-top: auto; gap: 5px;">
                                 <div style="background-color: black; height: 20px; width: 20px; border-radius: 50%;"></div>
@@ -321,7 +321,7 @@
                 <table class="table table-hover">
                     <tbody>
                         <tr><td class="user_list">
-                            <img src="icon/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
+                            <img src="/icon/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
                             <span>닉네임</span>
                             <span style="font-size: small; color: rgba(0, 0, 0, 0.5);">identification</span>
                             <span style="color: #3a6b5b;">#0000</span>   
