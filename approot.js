@@ -599,7 +599,7 @@
     createElement(
       'button',
       { className: 'left1 drag1 clear', onClick: openProjectList},
-      createElement('img', { src: 'public/assets/icon/logo.png', className: 'logo', style: {height: '50px'} })
+      createElement('img', { src: 'src/assets/icon/logo.png', className: 'logo', style: {height: '50px'} })
     ),
 
     createElement(

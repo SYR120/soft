@@ -1,12 +1,7 @@
-(function(){const v=document.createElement("link").relList;if(v&&v.supports&&v.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))n(i);new MutationObserver(i=>{for(const o of i)if(o.type==="childList")for(const c of o.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&n(c)}).observe(document,{childList:!0,subtree:!0});function y(i){const o={};return i.integrity&&(o.integrity=i.integrity),i.referrerPolicy&&(o.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?o.credentials="include":i.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function n(i){if(i.ep)return;i.ep=!0;const o=y(i);fetch(i.href,o)}})();(function(){const{createElement:l,Fragment:v}=React,{createRoot:y}=ReactDOM;function n(d){d.addEventListener("click",function(s){s.target===d&&d.close()})}window.closeModal=n;function i(){const d=document.querySelector(".modal1");if(!d){const t=document.createElement("div");t.innerHTML=`
+(function(){const v=document.createElement("link").relList;if(v&&v.supports&&v.supports("modulepreload"))return;for(const d of document.querySelectorAll('link[rel="modulepreload"]'))s(d);new MutationObserver(d=>{for(const o of d)if(o.type==="childList")for(const c of o.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&s(c)}).observe(document,{childList:!0,subtree:!0});function y(d){const o={};return d.integrity&&(o.integrity=d.integrity),d.referrerPolicy&&(o.referrerPolicy=d.referrerPolicy),d.crossOrigin==="use-credentials"?o.credentials="include":d.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function s(d){if(d.ep)return;d.ep=!0;const o=y(d);fetch(d.href,o)}})();(function(){const{createElement:l,Fragment:v}=React,{createRoot:y}=ReactDOM;function s(e){e.addEventListener("click",function(n){n.target===e&&e.close()})}window.closeModal=s;function d(){const e=document.querySelector(".modal1");if(!e){const t=document.createElement("div");t.innerHTML=`
       <dialog class="modal1">
+      <div class="box_scroll" style="padding: 15px;">
             <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
                 <tbody>
                     <tr>
                         <td>
@@ -164,8 +159,10 @@
                     <button style="background-color:none; border:none;" class="font1">닫기</button>
                 </form>  
             </div>
-        </dialog>`,document.body.appendChild(t);const e=document.querySelector(".modal1");n(e)}const s=document.querySelector("#alert"),r=()=>{const t=s.getBoundingClientRect();root.getBoundingClientRect();const e=d.getBoundingClientRect();d.style.position="fixed",d.style.left=`${t.right-e.width}px`,d.style.top=`${t.bottom}px`};s.addEventListener("click",()=>{d.showModal(),r()}),window.addEventListener("resize",()=>{d.open&&r()})}function o(){const d=document.querySelector(".modal2");if(!d){const t=document.createElement("div");t.innerHTML=`
-        <dialog class="modal2" style="border: none; background-color: transparent;>
+        </div>
+        </dialog>`,document.body.appendChild(t);const i=document.querySelector(".modal1");s(i)}const n=document.querySelector("#alert"),r=()=>{const t=n.getBoundingClientRect(),i=e.getBoundingClientRect();e.style.position="fixed",e.style.left=`${t.right-i.width}px`,e.style.top=`${t.bottom}px`};n.addEventListener("click",()=>{e.showModal(),r()}),window.addEventListener("resize",()=>{e.open&&r()})}function o(){const e=document.querySelector(".modal2");if(!e){const t=document.createElement("div");t.innerHTML=`
+        <dialog class="modal2" style="border: none; background-color: transparent;">
+        
             <div style="margin-top:30px;">
                 <div>
                     <button class="button_friend" onclick="Watchdiv('1')">친구 목록</button>
@@ -177,7 +174,7 @@
                     <button class="button_friend" onclick="Watchdiv('3')">요청 대기</button>
                 </div>
             </div>
-            <div>
+
             <div class="box_friend">
                 <div id="1">
                     <div class="green" style="text-align: center;">친구 목록</div>
@@ -238,6 +235,7 @@
             
             
                     <div class="box10">
+                    <div class="box_scroll">
                         <table class="table table-hover" style="border-collapse: separate; border-spacing: 0;">
                             <thead>
                                 <tr>
@@ -299,6 +297,7 @@
                             </tbody>
                         </table>
                     </div>
+                    </div>
                     <br/>
                     <div>
                         <button class="button_final">선택완료</button>
@@ -359,10 +358,10 @@
                     <button style="background-color:none; border:none;" class="font1">닫기</button>
                 </form>  
             </div>
-        </dialog>`,document.body.appendChild(t);const e=document.querySelector(".modal2");n(e)}document.querySelector("#friend").addEventListener("click",()=>{d.showModal()}),document.querySelectorAll(".lenCut_container").forEach(t=>{const e=t.querySelector(".lenCut"),u=t.querySelector(".lenCutE"),p=t.querySelector(".tooltip1");if(e){const a=e.textContent;a.length>6&&(e.textContent=a.slice(0,6)+"...",e.addEventListener("mouseenter",function(){p.style.display="block",p.textContent=a}),e.addEventListener("mouseleave",function(){p.style.display="none"}))}if(u){const a=u.textContent;a.length>15&&(u.textContent=a.slice(0,15)+"...",u.addEventListener("mouseenter",function(){p.style.display="block",p.textContent=a}),u.addEventListener("mouseleave",function(){p.style.display="none"}))}}),document.querySelectorAll(".button_select").forEach(t=>{let e=!1;t.addEventListener("click",()=>{e=!e,t.classList.toggle("active"),e?t.textContent="취소":t.textContent="선택"}),t.addEventListener("mouseenter",()=>{e&&(t.textContent="취소")}),t.addEventListener("mouseleave",()=>{e&&(t.textContent="선택")})})}function c(d){["1","2","3"].forEach(t=>{const e=document.getElementById(t);e&&(e.style.display=t===d?"block":"none")}),document.querySelectorAll(".button_friend").forEach((t,e)=>{(e+1).toString()===d?t.classList.add("active"):t.classList.remove("active")})}window.addEventListener("load",()=>c("1")),window.Watchdiv=c;function g(){confirm("로그아웃 하겠습니까?")&&(window.location.href="index.html")}window.logout=g;function b(){const d=document.querySelector(".modal3");if(!d){const r=document.createElement("div");r.innerHTML=`
+        </dialog>`,document.body.appendChild(t);const i=document.querySelector(".modal2");s(i)}document.querySelector("#friend").addEventListener("click",()=>{e.showModal()}),document.querySelectorAll(".lenCut_container").forEach(t=>{const i=t.querySelector(".lenCut"),u=t.querySelector(".lenCutE"),p=t.querySelector(".tooltip1");if(i){const a=i.textContent;a.length>6&&(i.textContent=a.slice(0,6)+"...",i.addEventListener("mouseenter",function(){p.style.display="block",p.textContent=a}),i.addEventListener("mouseleave",function(){p.style.display="none"}))}if(u){const a=u.textContent;a.length>15&&(u.textContent=a.slice(0,15)+"...",u.addEventListener("mouseenter",function(){p.style.display="block",p.textContent=a}),u.addEventListener("mouseleave",function(){p.style.display="none"}))}}),document.querySelectorAll(".button_select").forEach(t=>{let i=!1;t.addEventListener("click",()=>{i=!i,t.classList.toggle("active"),i?t.textContent="취소":t.textContent="선택"}),t.addEventListener("mouseenter",()=>{i&&(t.textContent="취소")}),t.addEventListener("mouseleave",()=>{i&&(t.textContent="선택")})})}function c(e){["1","2","3"].forEach(t=>{const i=document.getElementById(t);i&&(i.style.display=t===e?"block":"none")}),document.querySelectorAll(".button_friend").forEach((t,i)=>{(i+1).toString()===e?t.classList.add("active"):t.classList.remove("active")})}window.addEventListener("load",()=>c("1")),window.Watchdiv=c;function b(){confirm("로그아웃 하겠습니까?")&&(window.location.href="index.html")}window.logout=b;function g(){const e=document.querySelector(".modal3");if(!e){const t=document.createElement("div");t.innerHTML=`
       <dialog class="modal3">
         <div class="middle3">
-        
+                
             <div style="display: flex; justify-content: flex-end;" >
                 <form method="dialog">
                     <button style="background-color:none; border:none;" class="font1">X</button>
@@ -370,20 +369,24 @@
             </div>
 
             <div style="display: flex;">
-                <img src="public/icon/user2.png" style="height:100px; width:100px; margin:30px;"/>
-                <div style="margin:50px ;">
-                    <div class="black">닉네임</div>
-                    <div style="display: flex;">
-                        <div style="color:green">아이디</div>
-                        <div style="color:green">#태그</div>
+                <img src="public/icon/user2.png" style="height:100px; width:100px; margin:10px; margin-right: 30px; margin-left: 20px"/>
+                <div style="display: flex; flex-direction: column; justify-content: center; padding: 5px;">
+                    <div style="display: flex; gap: 5px;">
+                        <div class="black" style="font-size: larger;">닉네임</div>
+                        <div style="color:green">#0000</div>
                     </div>
-                    <div>자기소개</div>
+                    <div style="color:gray;">identification</div>
+                    <div class="box_introduce">
+                        자기소개ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
+                    </div>
+
+                    <div style="display: flex; flex-direction: row; margin-top: 30px;">
+                        <button class="button_pro" style="margin-right:5px;" onclick="window.location.href='profile.html';">프로필 수정</button>
+                        <button class="button_pro" onclick="logout()">로그아웃</button>
+                    </div>  
+
                 </div>
-            </div>
-    
-            <div style="display: flex; justify-content: flex-end; margin:5px 5px 0 0; ">
-                <button class="button_pro" style="margin-right:5px;" onclick="window.location.href='profile.html';">프로필 수정</button>
-                <button class="button_pro" onclick="logout()">로그아웃</button>
-            </div>
+            </div> 
+
         </div>  
-      </dialog>`,document.body.appendChild(r);const t=document.querySelector(".modal3");n(t)}document.querySelector("#mypage").addEventListener("click",()=>{d.showModal()})}function h(){window.location.href="projectlist.html"}function f(){return l("div",{className:"root"},l("button",{className:"left1 drag1 clear",onClick:h},l("img",{src:"public/assets/icon/logo.png",className:"logo",style:{height:"50px"}})),l("button",{className:"right3 drag1 clear",onClick:b,id:"mypage"},l("i",{className:"fa-solid fa-user fa-2x",style:{fontSize:"25px"}})),l("button",{className:"right2 drag1 clear",onClick:o,id:"friend"},l("i",{className:"fa-solid fa-user-group fa-2x",style:{fontSize:"25px"}})),l("button",{className:"right1 drag1 clear",onClick:i,id:"alert"},l("i",{className:"fa-solid fa-bell fa-2x",style:{fontSize:"25px"}})))}y(document.getElementById("root")).render(l(f));let m=document.querySelector("#root"),x=new MutationObserver(()=>{i(),o(),b()});window.onload=function(){i(),o(),b()};let w={attributes:!0,childList:!0,characterData:!0};x.observe(m,w)})();
+      </dialog>`,document.body.appendChild(t);const i=document.querySelector(".modal3");s(i)}const n=document.querySelector("#mypage"),r=()=>{const t=n.getBoundingClientRect(),i=e.getBoundingClientRect();e.style.position="fixed",e.style.left=`${t.right-i.width}px`,e.style.top=`${t.bottom}px`};n.addEventListener("click",()=>{e.showModal(),r()}),window.addEventListener("resize",()=>{e.open&&r()})}function f(){window.location.href="projectlist.html"}function h(){return l("div",{className:"root"},l("button",{className:"left1 drag1 clear",onClick:f},l("img",{src:"src/assets/icon/logo.png",className:"logo",style:{height:"50px"}})),l("button",{className:"right3 drag1 clear",onClick:g,id:"mypage"},l("i",{className:"fa-solid fa-user fa-2x",style:{fontSize:"25px"}})),l("button",{className:"right2 drag1 clear",onClick:o,id:"friend"},l("i",{className:"fa-solid fa-user-group fa-2x",style:{fontSize:"25px"}})),l("button",{className:"right1 drag1 clear",onClick:d,id:"alert"},l("i",{className:"fa-solid fa-bell fa-2x",style:{fontSize:"25px"}})))}y(document.getElementById("root")).render(l(h));let m=document.querySelector("#root"),x=new MutationObserver(()=>{d(),o(),g()});window.onload=function(){d(),o(),g()};let w={attributes:!0,childList:!0,characterData:!0};x.observe(m,w)})();
