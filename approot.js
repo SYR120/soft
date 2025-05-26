@@ -18,13 +18,8 @@
       const div = document.createElement("div");
       div.innerHTML =  `
       <dialog class="modal1">
+      <div class="box_scroll" style="padding: 15px;">
             <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
                 <tbody>
                     <tr>
                         <td>
@@ -182,6 +177,7 @@
                     <button style="background-color:none; border:none;" class="font1">닫기</button>
                 </form>  
             </div>
+        </div>
         </dialog>`;
         document.body.appendChild(div);
         const closemodal = document.querySelector('.modal1');
@@ -192,7 +188,6 @@
 
     const updateModalPosition = () => {
         const rect = modalBtn.getBoundingClientRect();
-        const rootRect = root.getBoundingClientRect();
         const modalRect = modal.getBoundingClientRect();
         modal.style.position = "fixed";
         modal.style.left = `${rect.right - modalRect.width}px`;
@@ -202,13 +197,13 @@
     modalBtn.addEventListener("click", () => {
         modal.showModal();
         updateModalPosition();
-  });
+    });
 
-  window.addEventListener("resize", () => {
-    if (modal.open) {
-        updateModalPosition();
-    }
-});
+    window.addEventListener("resize", () => {
+        if (modal.open) {
+            updateModalPosition();
+        }
+    });
     
 }
   function openFriend() {
@@ -216,7 +211,8 @@
     if(!modal){
       const div = document.createElement("div");
       div.innerHTML=`
-        <dialog class="modal2" style="border: none; background-color: transparent;>
+        <dialog class="modal2" style="border: none; background-color: transparent;">
+        
             <div style="margin-top:30px;">
                 <div>
                     <button class="button_friend" onclick="Watchdiv('1')">친구 목록</button>
@@ -228,7 +224,7 @@
                     <button class="button_friend" onclick="Watchdiv('3')">요청 대기</button>
                 </div>
             </div>
-            <div>
+
             <div class="box_friend">
                 <div id="1">
                     <div class="green" style="text-align: center;">친구 목록</div>
@@ -289,6 +285,7 @@
             
             
                     <div class="box10">
+                    <div class="box_scroll">
                         <table class="table table-hover" style="border-collapse: separate; border-spacing: 0;">
                             <thead>
                                 <tr>
@@ -349,6 +346,7 @@
                                 </td></tr>
                             </tbody>
                         </table>
+                    </div>
                     </div>
                     <br/>
                     <div>
@@ -422,7 +420,7 @@
       }
     );
 
-    //말줄임표, 전문 툴팁
+    //말줄임표, 전문 툴팁  (지금 문제 있음. 전문이 보여야 하는데, 줄인 버전이 툴팁에서 보임)
     document.querySelectorAll('.lenCut_container').forEach(container => {
         const spanText = container.querySelector(".lenCut");
         const spanTextE = container.querySelector(".lenCutE");
@@ -532,7 +530,7 @@
       div.innerHTML=`
       <dialog class="modal3">
         <div class="middle3">
-        
+                
             <div style="display: flex; justify-content: flex-end;" >
                 <form method="dialog">
                     <button style="background-color:none; border:none;" class="font1">X</button>
@@ -540,21 +538,25 @@
             </div>
 
             <div style="display: flex;">
-                <img src="public/icon/user2.png" style="height:100px; width:100px; margin:30px;"/>
-                <div style="margin:50px ;">
-                    <div class="black">닉네임</div>
-                    <div style="display: flex;">
-                        <div style="color:green">아이디</div>
-                        <div style="color:green">#태그</div>
+                <img src="public/icon/user2.png" style="height:100px; width:100px; margin:10px; margin-right: 30px; margin-left: 20px"/>
+                <div style="display: flex; flex-direction: column; justify-content: center; padding: 5px;">
+                    <div style="display: flex; gap: 5px;">
+                        <div class="black" style="font-size: larger;">닉네임</div>
+                        <div style="color:green">#0000</div>
                     </div>
-                    <div>자기소개</div>
+                    <div style="color:gray;">identification</div>
+                    <div class="box_introduce">
+                        자기소개ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
+                    </div>
+
+                    <div style="display: flex; flex-direction: row; margin-top: 30px;">
+                        <button class="button_pro" style="margin-right:5px;" onclick="window.location.href='profile.html';">프로필 수정</button>
+                        <button class="button_pro" onclick="logout()">로그아웃</button>
+                    </div>  
+
                 </div>
-            </div>
-    
-            <div style="display: flex; justify-content: flex-end; margin:5px 5px 0 0; ">
-                <button class="button_pro" style="margin-right:5px;" onclick="window.location.href='profile.html';">프로필 수정</button>
-                <button class="button_pro" onclick="logout()">로그아웃</button>
-            </div>
+            </div> 
+
         </div>  
       </dialog>`;
       document.body.appendChild(div);
@@ -562,11 +564,29 @@
       closeModal(closemodal);
 
     }
-    const modelBtn = document.querySelector("#mypage");
-    modelBtn.addEventListener("click", () => {
+    const modalBtn = document.querySelector("#mypage");
+
+    const updateModalPosition = () => {
+        const rect = modalBtn.getBoundingClientRect();
+        const modalRect = modal.getBoundingClientRect();
+        modal.style.position = "fixed";
+        modal.style.left = `${rect.right - modalRect.width}px`;
+        modal.style.top = `${rect.bottom}px`;
+    };
+
+    modalBtn.addEventListener("click", () => {
       modal.showModal();
+      updateModalPosition();
     });
+
+    window.addEventListener("resize", () => {
+        if (modal.open) {
+            updateModalPosition();
+        }
+    });
+    
   }
+  
   function openProjectList() {
     window.location.href=('projectlist.html');
   }
