@@ -1,4 +1,4 @@
-(function(){const v=document.createElement("link").relList;if(v&&v.supports&&v.supports("modulepreload"))return;for(const d of document.querySelectorAll('link[rel="modulepreload"]'))s(d);new MutationObserver(d=>{for(const o of d)if(o.type==="childList")for(const c of o.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&s(c)}).observe(document,{childList:!0,subtree:!0});function y(d){const o={};return d.integrity&&(o.integrity=d.integrity),d.referrerPolicy&&(o.referrerPolicy=d.referrerPolicy),d.crossOrigin==="use-credentials"?o.credentials="include":d.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function s(d){if(d.ep)return;d.ep=!0;const o=y(d);fetch(d.href,o)}})();(function(){const{createElement:l,Fragment:v}=React,{createRoot:y}=ReactDOM;function s(e){e.addEventListener("click",function(n){n.target===e&&e.close()})}window.closeModal=s;function d(){const e=document.querySelector(".modal1");if(!e){const t=document.createElement("div");t.innerHTML=`
+(function(){const v=document.createElement("link").relList;if(v&&v.supports&&v.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))s(i);new MutationObserver(i=>{for(const o of i)if(o.type==="childList")for(const c of o.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&s(c)}).observe(document,{childList:!0,subtree:!0});function y(i){const o={};return i.integrity&&(o.integrity=i.integrity),i.referrerPolicy&&(o.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?o.credentials="include":i.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function s(i){if(i.ep)return;i.ep=!0;const o=y(i);fetch(i.href,o)}})();(function(){const{createElement:n,Fragment:v}=React,{createRoot:y}=ReactDOM;function s(e){e.addEventListener("click",function(l){l.target===e&&e.close()})}window.closeModal=s;function i(){const e=document.querySelector(".modal1");if(!e){const t=document.createElement("div");t.innerHTML=`
       <dialog class="modal1">
       <div class="box_scroll" style="padding: 15px;">
             <table class="table table-hover">
@@ -15,7 +15,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -33,7 +33,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td> 
                     </tr>
@@ -52,7 +52,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td> 
                     </tr>
@@ -68,7 +68,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -84,7 +84,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -100,7 +100,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -116,7 +116,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -132,7 +132,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -148,7 +148,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -160,7 +160,7 @@
                 </form>  
             </div>
         </div>
-        </dialog>`,document.body.appendChild(t);const i=document.querySelector(".modal1");s(i)}const n=document.querySelector("#alert"),r=()=>{const t=n.getBoundingClientRect(),i=e.getBoundingClientRect();e.style.position="fixed",e.style.left=`${t.right-i.width}px`,e.style.top=`${t.bottom}px`};n.addEventListener("click",()=>{e.showModal(),r()}),window.addEventListener("resize",()=>{e.open&&r()})}function o(){const e=document.querySelector(".modal2");if(!e){const t=document.createElement("div");t.innerHTML=`
+        </dialog>`,document.body.appendChild(t);const d=document.querySelector(".modal1");s(d)}const l=document.querySelector("#alert"),r=()=>{const t=l.getBoundingClientRect(),d=e.getBoundingClientRect();e.style.position="fixed",e.style.left=`${t.right-d.width}px`,e.style.top=`${t.bottom}px`};l.addEventListener("click",()=>{e.showModal(),r()}),window.addEventListener("resize",()=>{e.open&&r()})}function o(){const e=document.querySelector(".modal2");if(!e){const t=document.createElement("div");t.innerHTML=`
         <dialog class="modal2" style="border: none; background-color: transparent;">
         
             <div style="margin-top:30px;">
@@ -184,7 +184,7 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th><img src="public/icon/user2.png" style="height: 25px; width: 25px; "/></th>
+                                <th><img src="icon/user2.png" style="height: 25px; width: 25px; "/></th>
                                 <th>닉네임</th>
                                 <th>#태그</th>
                                 <th>마지막 접속시간</th>
@@ -230,7 +230,7 @@
             
                     <div class="find3">
                         <input class="button_find3" type="text" id="find" placeholder="아이디 / 태그로 유저 검색" style="font-size: small; width: 400px;"/> 
-                        <img src="public/icon/finding.png" style="width: 25px; height: 25px; margin: 5px; margin-left: auto;"/>                    
+                        <img src="icon/finding.png" style="width: 25px; height: 25px; margin: 5px; margin-left: auto;"/>                    
                     </div>
             
             
@@ -250,7 +250,7 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <img src="public/icon/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
+                                        <img src="icon/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
                                     </td>
                                     <td class="lenCut_container">
                                         <span class="lenCut">닉네임이아주아주아주길어요</span>
@@ -271,7 +271,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img src="public/icon/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
+                                        <img src="icon/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
                                     </td>
                                     <td class="lenCut_container">
                                         <span class="lenCut">정예은</span>
@@ -311,7 +311,7 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th><img src="public/icon/user2.png" style="height: 25px; width: 25px; margin:5px;"/></th>
+                                <th><img src="icon/user2.png" style="height: 25px; width: 25px; margin:5px;"/></th>
                                 <th>닉네임</th>
                                 <th>#태그</th>
                                 <th>수락</th>
@@ -358,7 +358,7 @@
                     <button style="background-color:none; border:none;" class="font1">닫기</button>
                 </form>  
             </div>
-        </dialog>`,document.body.appendChild(t);const i=document.querySelector(".modal2");s(i)}document.querySelector("#friend").addEventListener("click",()=>{e.showModal()}),document.querySelectorAll(".lenCut_container").forEach(t=>{const i=t.querySelector(".lenCut"),u=t.querySelector(".lenCutE"),p=t.querySelector(".tooltip1");if(i){const a=i.textContent;a.length>6&&(i.textContent=a.slice(0,6)+"...",i.addEventListener("mouseenter",function(){p.style.display="block",p.textContent=a}),i.addEventListener("mouseleave",function(){p.style.display="none"}))}if(u){const a=u.textContent;a.length>15&&(u.textContent=a.slice(0,15)+"...",u.addEventListener("mouseenter",function(){p.style.display="block",p.textContent=a}),u.addEventListener("mouseleave",function(){p.style.display="none"}))}}),document.querySelectorAll(".button_select").forEach(t=>{let i=!1;t.addEventListener("click",()=>{i=!i,t.classList.toggle("active"),i?t.textContent="취소":t.textContent="선택"}),t.addEventListener("mouseenter",()=>{i&&(t.textContent="취소")}),t.addEventListener("mouseleave",()=>{i&&(t.textContent="선택")})})}function c(e){["1","2","3"].forEach(t=>{const i=document.getElementById(t);i&&(i.style.display=t===e?"block":"none")}),document.querySelectorAll(".button_friend").forEach((t,i)=>{(i+1).toString()===e?t.classList.add("active"):t.classList.remove("active")})}window.addEventListener("load",()=>c("1")),window.Watchdiv=c;function b(){confirm("로그아웃 하겠습니까?")&&(window.location.href="index.html")}window.logout=b;function g(){const e=document.querySelector(".modal3");if(!e){const t=document.createElement("div");t.innerHTML=`
+        </dialog>`,document.body.appendChild(t);const d=document.querySelector(".modal2");s(d)}document.querySelector("#friend").addEventListener("click",()=>{e.showModal()}),document.querySelectorAll(".lenCut_container").forEach(t=>{const d=t.querySelector(".lenCut"),u=t.querySelector(".lenCutE"),p=t.querySelector(".tooltip1");if(d){const a=d.textContent;a.length>6&&(d.textContent=a.slice(0,6)+"...",d.addEventListener("mouseenter",function(){p.style.display="block",p.textContent=a}),d.addEventListener("mouseleave",function(){p.style.display="none"}))}if(u){const a=u.textContent;a.length>15&&(u.textContent=a.slice(0,15)+"...",u.addEventListener("mouseenter",function(){p.style.display="block",p.textContent=a}),u.addEventListener("mouseleave",function(){p.style.display="none"}))}}),document.querySelectorAll(".button_select").forEach(t=>{let d=!1;t.addEventListener("click",()=>{d=!d,t.classList.toggle("active"),d?t.textContent="취소":t.textContent="선택"}),t.addEventListener("mouseenter",()=>{d&&(t.textContent="취소")}),t.addEventListener("mouseleave",()=>{d&&(t.textContent="선택")})})}function c(e){["1","2","3"].forEach(t=>{const d=document.getElementById(t);d&&(d.style.display=t===e?"block":"none")}),document.querySelectorAll(".button_friend").forEach((t,d)=>{(d+1).toString()===e?t.classList.add("active"):t.classList.remove("active")})}window.addEventListener("load",()=>c("1")),window.Watchdiv=c;function f(){confirm("로그아웃 하겠습니까?")&&(window.location.href="index.html")}window.logout=f;function g(){const e=document.querySelector(".modal3");if(!e){const t=document.createElement("div");t.innerHTML=`
       <dialog class="modal3">
         <div class="middle3">
                 
@@ -369,7 +369,7 @@
             </div>
 
             <div style="display: flex;">
-                <img src="public/icon/user2.png" style="height:100px; width:100px; margin:10px; margin-right: 30px; margin-left: 20px"/>
+                <img src="icon/user2.png" style="height:100px; width:100px; margin:10px; margin-right: 30px; margin-left: 20px"/>
                 <div style="display: flex; flex-direction: column; justify-content: center; padding: 5px;">
                     <div style="display: flex; gap: 5px;">
                         <div class="black" style="font-size: larger;">닉네임</div>
@@ -389,4 +389,4 @@
             </div> 
 
         </div>  
-      </dialog>`,document.body.appendChild(t);const i=document.querySelector(".modal3");s(i)}const n=document.querySelector("#mypage"),r=()=>{const t=n.getBoundingClientRect(),i=e.getBoundingClientRect();e.style.position="fixed",e.style.left=`${t.right-i.width}px`,e.style.top=`${t.bottom}px`};n.addEventListener("click",()=>{e.showModal(),r()}),window.addEventListener("resize",()=>{e.open&&r()})}function f(){window.location.href="projectlist.html"}function h(){return l("div",{className:"root"},l("button",{className:"left1 drag1 clear",onClick:f},l("img",{src:"src/assets/icon/logo.png",className:"logo",style:{height:"50px"}})),l("button",{className:"right3 drag1 clear",onClick:g,id:"mypage"},l("i",{className:"fa-solid fa-user fa-2x",style:{fontSize:"25px"}})),l("button",{className:"right2 drag1 clear",onClick:o,id:"friend"},l("i",{className:"fa-solid fa-user-group fa-2x",style:{fontSize:"25px"}})),l("button",{className:"right1 drag1 clear",onClick:d,id:"alert"},l("i",{className:"fa-solid fa-bell fa-2x",style:{fontSize:"25px"}})))}y(document.getElementById("root")).render(l(h));let m=document.querySelector("#root"),x=new MutationObserver(()=>{d(),o(),g()});window.onload=function(){d(),o(),g()};let w={attributes:!0,childList:!0,characterData:!0};x.observe(m,w)})();
+      </dialog>`,document.body.appendChild(t);const d=document.querySelector(".modal3");s(d)}const l=document.querySelector("#mypage"),r=()=>{const t=l.getBoundingClientRect(),d=e.getBoundingClientRect();e.style.position="fixed",e.style.left=`${t.right-d.width}px`,e.style.top=`${t.bottom}px`};l.addEventListener("click",()=>{e.showModal(),r()}),window.addEventListener("resize",()=>{e.open&&r()})}function h(){window.location.href="projectlist.html"}function m(){return n("div",{className:"root"},n("button",{className:"left1 drag1 clear",onClick:h},n("img",{src:"icon/logo.png",className:"logo",style:{height:"50px"}})),n("button",{className:"right3 drag1 clear",onClick:g,id:"mypage"},n("i",{className:"fa-solid fa-user fa-2x",style:{fontSize:"25px"}})),n("button",{className:"right2 drag1 clear",onClick:o,id:"friend"},n("i",{className:"fa-solid fa-user-group fa-2x",style:{fontSize:"25px"}})),n("button",{className:"right1 drag1 clear",onClick:i,id:"alert"},n("i",{className:"fa-solid fa-bell fa-2x",style:{fontSize:"25px"}})))}y(document.getElementById("root")).render(n(m)),setTimeout(()=>{i(),o(),g()},0),window.onload=function(){i(),o(),g()};let b={attributes:!0,childList:!0,characterData:!0};observer.observe(target,b)})();

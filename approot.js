@@ -33,7 +33,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -51,7 +51,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td> 
                     </tr>
@@ -70,7 +70,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td> 
                     </tr>
@@ -86,7 +86,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -102,7 +102,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -118,7 +118,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -134,7 +134,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -150,7 +150,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -166,7 +166,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -234,7 +234,7 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th><img src="public/icon/user2.png" style="height: 25px; width: 25px; "/></th>
+                                <th><img src="icon/user2.png" style="height: 25px; width: 25px; "/></th>
                                 <th>닉네임</th>
                                 <th>#태그</th>
                                 <th>마지막 접속시간</th>
@@ -280,7 +280,7 @@
             
                     <div class="find3">
                         <input class="button_find3" type="text" id="find" placeholder="아이디 / 태그로 유저 검색" style="font-size: small; width: 400px;"/> 
-                        <img src="public/icon/finding.png" style="width: 25px; height: 25px; margin: 5px; margin-left: auto;"/>                    
+                        <img src="icon/finding.png" style="width: 25px; height: 25px; margin: 5px; margin-left: auto;"/>                    
                     </div>
             
             
@@ -300,7 +300,7 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <img src="public/icon/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
+                                        <img src="icon/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
                                     </td>
                                     <td class="lenCut_container">
                                         <span class="lenCut">닉네임이아주아주아주길어요</span>
@@ -321,7 +321,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img src="public/icon/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
+                                        <img src="icon/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
                                     </td>
                                     <td class="lenCut_container">
                                         <span class="lenCut">정예은</span>
@@ -361,7 +361,7 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th><img src="public/icon/user2.png" style="height: 25px; width: 25px; margin:5px;"/></th>
+                                <th><img src="icon/user2.png" style="height: 25px; width: 25px; margin:5px;"/></th>
                                 <th>닉네임</th>
                                 <th>#태그</th>
                                 <th>수락</th>
@@ -538,7 +538,7 @@
             </div>
 
             <div style="display: flex;">
-                <img src="public/icon/user2.png" style="height:100px; width:100px; margin:10px; margin-right: 30px; margin-left: 20px"/>
+                <img src="icon/user2.png" style="height:100px; width:100px; margin:10px; margin-right: 30px; margin-left: 20px"/>
                 <div style="display: flex; flex-direction: column; justify-content: center; padding: 5px;">
                     <div style="display: flex; gap: 5px;">
                         <div class="black" style="font-size: larger;">닉네임</div>
@@ -599,7 +599,7 @@
     createElement(
       'button',
       { className: 'left1 drag1 clear', onClick: openProjectList},
-      createElement('img', { src: 'src/assets/icon/logo.png', className: 'logo', style: {height: '50px'} })
+      createElement('img', { src: 'icon/logo.png', className: 'logo', style: {height: '50px'} })
     ),
 
     createElement(
@@ -624,12 +624,17 @@
 }
   createRoot(document.getElementById('root')).render(createElement(approot));
   
-  let target = document.querySelector("#root");
+  /*let target = document.querySelector("#root");
   let observer = new MutationObserver(() => {
     openAlert();
     openFriend();
     openMyPage();   
-});   
+});  */
+ setTimeout(() => {
+    openAlert();
+    openFriend();
+    openMyPage();
+  }, 0);
 window.onload = function() {openAlert(); openFriend(); openMyPage();;};
 
  let option = { attributes: true, childList: true, characterData: true };

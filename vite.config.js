@@ -7,6 +7,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
+    cssCodeSplit: false,
     rollupOptions: {
       input: {
         index: resolve(__dirname, 'index.html'),
@@ -30,9 +31,6 @@ export default defineConfig({
         assetFileNames: (info) => {
           const ext = info.name?.split('.').pop();
 
-          if (ext === 'css') {
-            return 'assets/css/[name].[hash].[ext]';
-          }
           if (ext === 'png') {
             return 'assets/icon/[name].[hash].[ext]';
           }
