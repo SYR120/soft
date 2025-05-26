@@ -18,6 +18,7 @@
       const div = document.createElement("div");
       div.innerHTML =  `
       <dialog class="modal1">
+      <div class="box_scroll">
             <table class="table table-hover">
                 <tbody>
                     <tr>
@@ -176,6 +177,7 @@
                     <button style="background-color:none; border:none;" class="font1">닫기</button>
                 </form>  
             </div>
+        </div>
         </dialog>`;
         document.body.appendChild(div);
         const closemodal = document.querySelector('.modal1');
