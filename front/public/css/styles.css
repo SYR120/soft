@@ -218,19 +218,25 @@ body {
     border: 1px solid #aaa; 
 }
 
+/* 모달 */
 .dialog.modal1 {
     width: 500px;               
     height: 800px;          
-    padding: 20px;   
+    display: none;
+ }
+ /* 박스 */
+dialog.modal1 {
+    overflow-y:scroll;
+    border: none;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    display: none;
-    background-color: transparent;
-    border: none;
+
+    padding: 10px;
+    margin: 0px;
  }
 
-.dialog.modal1::backdrop {
-    background: rgba(0,0,0,0.4);
+dialog.modal1::backdrop {
+    background: transparent;
 }
 
 .modal2 {
@@ -246,8 +252,9 @@ dialog.modal2[open] {
   flex-direction: column;
 }
 
-.dialog.modal2::backdrop {
-    background: rgba(0,0,0,0.4);
+dialog.modal2::backdrop {
+    background: rgba(0,0,0,0.1);
+    backdrop-filter: blur(3px);
 }
 
 .dialog.modal3 {
@@ -257,10 +264,14 @@ dialog.modal2[open] {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     display: none;
- }
-
-.dialog.modal3::backdrop {
-    background: rgba(0,0,0,0.4);
+}
+dialog.modal3 {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+dialog.modal3::backdrop {
+    background: transparent;
 }
 
 .box_friend {

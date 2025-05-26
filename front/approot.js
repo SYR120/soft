@@ -16,7 +16,8 @@
     
     if (!modal) {
       const div = document.createElement("div");
-      div.innerHTML =  `<dialog class="modal1" style="overflow-y:scroll; ">
+      div.innerHTML =  `
+      <dialog class="modal1">
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -188,14 +189,28 @@
     }
     
     const modalBtn = document.querySelector("#alert");
-    
+
+    const updateModalPosition = () => {
+        const rect = modalBtn.getBoundingClientRect();
+        const rootRect = root.getBoundingClientRect();
+        const modalRect = modal.getBoundingClientRect();
+        modal.style.position = "fixed";
+        modal.style.left = `${rect.right - modalRect.width}px`;
+        modal.style.top = `${rect.bottom}px`;
+    };
 
     modalBtn.addEventListener("click", () => {
         modal.showModal();
+        updateModalPosition();
+  });
+
+  window.addEventListener("resize", () => {
+    if (modal.open) {
+        updateModalPosition();
     }
-  );
-   
-  }
+});
+    
+}
   function openFriend() {
     const modal = document.querySelector(".modal2");
     if(!modal){
@@ -406,6 +421,77 @@
         modal.showModal();
       }
     );
+
+    //말줄임표, 전문 툴팁
+    document.querySelectorAll('.lenCut_container').forEach(container => {
+        const spanText = container.querySelector(".lenCut");
+        const spanTextE = container.querySelector(".lenCutE");
+        const tooltip = container.querySelector('.tooltip1');
+
+
+
+        if (spanText) {
+            const spanTextOriginal = spanText.textContent;
+            if ( spanTextOriginal.length > 6) {
+                spanText.textContent = spanTextOriginal.slice(0, 6) + "...";
+                
+                spanText.addEventListener('mouseenter', function () {
+                    tooltip.style.display = 'block';
+                    tooltip.textContent = spanTextOriginal;
+                });
+                spanText.addEventListener('mouseleave', function () {
+                    tooltip.style.display = 'none';
+                });            
+            }
+        }
+
+        if (spanTextE){
+            const spanTextOriginalE = spanTextE.textContent;
+            if ( spanTextOriginalE.length > 15) {
+                spanTextE.textContent = spanTextOriginalE.slice(0, 15) + "...";
+                
+                spanTextE.addEventListener('mouseenter', function () {
+                    tooltip.style.display = 'block';
+                    tooltip.textContent = spanTextOriginalE;
+                });
+                spanTextE.addEventListener('mouseleave', function () {
+                    tooltip.style.display = 'none';
+                });            
+            }            
+        }
+
+    });
+
+    // 선택 버튼 토글
+    const btnCheck = document.querySelectorAll(".button_select");
+    btnCheck.forEach((btn) => {
+        let isActive = false;
+
+        btn.addEventListener('click', () => {
+            isActive = !isActive;
+            btn.classList.toggle('active');
+
+            if (isActive) {
+                btn.textContent = '취소';
+            } else {
+                btn.textContent = '선택';
+            }
+
+        });
+
+        // 클린 된 상태에서 마우스 오버 시 글자 취소로 변하게
+        btn.addEventListener('mouseenter', () => {
+            if (isActive) {
+                btn.textContent = '취소';
+            }
+        });
+        btn.addEventListener('mouseleave', () => {
+            if (isActive) {
+                btn.textContent = '선택';
+            }
+        });
+    });
+    
   }
   function Watchdiv(i) {
       const sections = ["1", "2", "3"];
@@ -532,74 +618,3 @@ window.onload = function() {openAlert(); openFriend(); openMyPage();;};
 
 
 
-// 밑에 두 개 여기서 적용 되게 수정해야함...
-
-//말줄임표, 전문 툴팁
-document.querySelectorAll('.lenCut_container').forEach(container => {
-    const spanText = container.querySelector(".lenCut");
-    const spanTextE = container.querySelector(".lenCutE");
-    const tooltip = container.querySelector('.tooltip1');
-
-
-
-    if (spanText) {
-        const spanTextOriginal = spanText.textContent;
-        if ( spanTextOriginal.length > 6) {
-            spanText.textContent = spanTextOriginal.slice(0, 6) + "...";
-            
-            spanText.addEventListener('mouseenter', function () {
-                tooltip.style.display = 'block';
-                tooltip.textContent = spanTextOriginal;
-            });
-            spanText.addEventListener('mouseleave', function () {
-                tooltip.style.display = 'none';
-            });            
-        }
-    }
-
-    if (spanTextE){
-        const spanTextOriginalE = spanTextE.textContent;
-        if ( spanTextOriginalE.length > 15) {
-            spanTextE.textContent = spanTextOriginalE.slice(0, 15) + "...";
-            
-            spanTextE.addEventListener('mouseenter', function () {
-                tooltip.style.display = 'block';
-                tooltip.textContent = spanTextOriginalE;
-            });
-            spanTextE.addEventListener('mouseleave', function () {
-                tooltip.style.display = 'none';
-            });            
-        }            
-    }
-
-});
-
-// 선택 버튼 토글
-const btnCheck = document.querySelectorAll(".button_select");
-btnCheck.forEach((btn) => {
-    let isActive = false;
-
-    btn.addEventListener('click', () => {
-        isActive = !isActive;
-        btn.classList.toggle('active');
-
-        if (isActive) {
-            btn.textContent = '취소';
-        } else {
-            btn.textContent = '선택';
-        }
-
-    });
-
-    // 클린 된 상태에서 마우스 오버 시 글자 취소로 변하게
-    btn.addEventListener('mouseenter', () => {
-        if (isActive) {
-            btn.textContent = '취소';
-        }
-    });
-    btn.addEventListener('mouseleave', () => {
-        if (isActive) {
-            btn.textContent = '선택';
-        }
-    });
-});

@@ -1,4 +1,5 @@
-(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))n(t);new MutationObserver(t=>{for(const e of t)if(e.type==="childList")for(const r of e.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&n(r)}).observe(document,{childList:!0,subtree:!0});function v(t){const e={};return t.integrity&&(e.integrity=t.integrity),t.referrerPolicy&&(e.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?e.credentials="include":t.crossOrigin==="anonymous"?e.credentials="omit":e.credentials="same-origin",e}function n(t){if(t.ep)return;t.ep=!0;const e=v(t);fetch(t.href,e)}})();(function(){const{createElement:i,Fragment:a}=React,{createRoot:v}=ReactDOM;function n(d){d.addEventListener("click",function(s){s.target===d&&d.close()})}window.closeModal=n;function t(){const d=document.querySelector(".modal1");if(!d){const l=document.createElement("div");l.innerHTML=`<dialog class="modal1" style="overflow-y:scroll; ">
+(function(){const v=document.createElement("link").relList;if(v&&v.supports&&v.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))n(i);new MutationObserver(i=>{for(const o of i)if(o.type==="childList")for(const c of o.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&n(c)}).observe(document,{childList:!0,subtree:!0});function y(i){const o={};return i.integrity&&(o.integrity=i.integrity),i.referrerPolicy&&(o.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?o.credentials="include":i.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function n(i){if(i.ep)return;i.ep=!0;const o=y(i);fetch(i.href,o)}})();(function(){const{createElement:l,Fragment:v}=React,{createRoot:y}=ReactDOM;function n(d){d.addEventListener("click",function(s){s.target===d&&d.close()})}window.closeModal=n;function i(){const d=document.querySelector(".modal1");if(!d){const t=document.createElement("div");t.innerHTML=`
+      <dialog class="modal1">
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -19,7 +20,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -37,7 +38,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td> 
                     </tr>
@@ -56,7 +57,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td> 
                     </tr>
@@ -72,7 +73,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -88,7 +89,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -104,7 +105,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -120,7 +121,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -136,7 +137,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -152,7 +153,7 @@
                         </td>
                         <td>
                             <div>
-                                <img src="/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
+                                <img src="public/icon/trash.png" style="height: 20px; width: 20px; margin-top:55px;"/>
                             </div>
                         </td>
                     </tr>
@@ -163,8 +164,8 @@
                     <button style="background-color:none; border:none;" class="font1">닫기</button>
                 </form>  
             </div>
-        </dialog>`,document.body.appendChild(l);const o=document.querySelector(".modal1");n(o)}document.querySelector("#alert").addEventListener("click",()=>{d.showModal()})}function e(){const d=document.querySelector(".modal2");if(!d){const l=document.createElement("div");l.innerHTML=`
-        <dialog class="modal2">
+        </dialog>`,document.body.appendChild(t);const e=document.querySelector(".modal1");n(e)}const s=document.querySelector("#alert"),r=()=>{const t=s.getBoundingClientRect();root.getBoundingClientRect();const e=d.getBoundingClientRect();d.style.position="fixed",d.style.left=`${t.right-e.width}px`,d.style.top=`${t.bottom}px`};s.addEventListener("click",()=>{d.showModal(),r()}),window.addEventListener("resize",()=>{d.open&&r()})}function o(){const d=document.querySelector(".modal2");if(!d){const t=document.createElement("div");t.innerHTML=`
+        <dialog class="modal2" style="border: none; background-color: transparent;>
             <div style="margin-top:30px;">
                 <div>
                     <button class="button_friend" onclick="Watchdiv('1')">친구 목록</button>
@@ -186,7 +187,7 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th><img src="/icon/user2.png" style="height: 25px; width: 25px; "/></th>
+                                <th><img src="public/icon/user2.png" style="height: 25px; width: 25px; "/></th>
                                 <th>닉네임</th>
                                 <th>#태그</th>
                                 <th>마지막 접속시간</th>
@@ -223,55 +224,84 @@
                 </div>
 
                 <div id="2">
-                    <div class="green" style="text-align: center;">유저 찾기</div>
-                    <div style="width: 100%;">
-                        <hr style="border: 1px solid rgb(0, 0, 0); "/>
+                    <div class="green">유저 찾기</div>
+            
+                    <div class="container_radio">
+                        <input type="radio" name="option" style="height:15px; width:15px; margin: 5px;" checked="checked"><span>친구</span>
+                        <input type="radio" name="option" style="height:15px; width:15px; margin: 5px; margin-left: 35px;"><span>전체</span>
                     </div>
-                    <div style="margin-bottom: 10px; margin-left: 10px;">
-                        <input class="button_find2" type="text" id="findid" placeholder="닉네임 #태그"/>
-                        <img src="/icon/finding.png" style="height: 25px; width: 25px;" class="margin2 drag1"/>
+            
+                    <div class="find3">
+                        <input class="button_find3" type="text" id="find" placeholder="아이디 / 태그로 유저 검색" style="font-size: small; width: 400px;"/> 
+                        <img src="public/icon/finding.png" style="width: 25px; height: 25px; margin: 5px; margin-left: auto;"/>                    
                     </div>
-                    <div style="margin-left: 10px;">
-
-                        <div class="box8 ">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th><img src="/icon/user2.png" style="height: 25px; width: 25px; margin:5px;"/></th>
-                                        <th>닉네임</th>
-                                        <th>#태그</th>
-                                        <th><img src="/icon/adduser.png" style="height: 15px; width: 15px;"/></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
+            
+            
+                    <div class="box10">
+                        <table class="table table-hover" style="border-collapse: separate; border-spacing: 0;">
+                            <thead>
+                                <tr>
+                                    <th style="width: 55px;"></th>
+                                    <th style="width: 100px;">닉네임</th>
+                                    <th style="width: 100px;">아이디</th>
+                                    <th style="width: 60px;">#태그</th>
+                                    <th style="width: 50px;">선택</th>
+                                    <!-- <img src="icon/plus.png" style="height: 15px; width: 15px;"/> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="public/icon/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
+                                    </td>
+                                    <td class="lenCut_container">
+                                        <span class="lenCut">닉네임이아주아주아주길어요</span>
+                                        <div class="tooltip1" id="tooltip"></div>                                                      
+                                    </td>
+                                    <td>
+                                        <div class="lenCut_container">
+                                            <span class="lenCutE" style="font-size: small; color: rgba(0, 0, 0, 0.5);">identification123</span>                            
+                                            <div class="tooltip1" id="tooltip"></div>                                        
+                                        </div>                            
+                                    </td>
+                                    <td>
+                                        <span style="color: #3a6b5b;">#0000</span>                               
+                                    </td>  
+                                    <td>
+                                        <button class="button_select">선택</button>
+                                    </td>                           
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-        
+                                    <td>
+                                        <img src="public/icon/user2.png" style="height: 30px; width: 30px; margin:5px;"/>
+                                    </td>
+                                    <td class="lenCut_container">
+                                        <span class="lenCut">정예은</span>
+                                        <div class="tooltip1" id="tooltip"></div>                                                      
+                                    </td>
+                                    <td>
+                                        <div class="lenCut_container">
+                                            <span class="lenCutE" style="font-size: small; color: rgba(0, 0, 0, 0.5);">yeeun13</span>                            
+                                            <div class="tooltip1" id="tooltip"></div>                                        
+                                        </div>                            
+                                    </td>
+                                    <td>
+                                        <span style="color: #3a6b5b;">#3697</span>                               
+                                    </td>  
+                                    <td>
+                                        <button class="button_select">선택</button>
+                                    </td>                           
                                 </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                                <tr><td>
+                                    스크롤 테스트용 아무말 ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
+                                    ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
+                                </td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br/>
+                    <div>
+                        <button class="button_final">선택완료</button>
                     </div>
                 </div>
                 <div id="3">
@@ -282,7 +312,7 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th><img src="/icon/user2.png" style="height: 25px; width: 25px; margin:5px;"/></th>
+                                <th><img src="public/icon/user2.png" style="height: 25px; width: 25px; margin:5px;"/></th>
                                 <th>닉네임</th>
                                 <th>#태그</th>
                                 <th>수락</th>
@@ -329,7 +359,7 @@
                     <button style="background-color:none; border:none;" class="font1">닫기</button>
                 </form>  
             </div>
-        </dialog>`,document.body.appendChild(l);const o=document.querySelector(".modal2");n(o)}document.querySelector("#friend").addEventListener("click",()=>{d.showModal()})}function r(d){["1","2","3"].forEach(o=>{const c=document.getElementById(o);c&&(c.style.display=o===d?"block":"none")}),document.querySelectorAll(".button_friend").forEach((o,c)=>{(c+1).toString()===d?o.classList.add("active"):o.classList.remove("active")})}window.addEventListener("load",()=>r("1")),window.Watchdiv=r;function y(){confirm("로그아웃 하겠습니까?")&&(window.location.href="index.html")}window.logout=y;function u(){const d=document.querySelector(".modal3");if(!d){const l=document.createElement("div");l.innerHTML=`
+        </dialog>`,document.body.appendChild(t);const e=document.querySelector(".modal2");n(e)}document.querySelector("#friend").addEventListener("click",()=>{d.showModal()}),document.querySelectorAll(".lenCut_container").forEach(t=>{const e=t.querySelector(".lenCut"),u=t.querySelector(".lenCutE"),p=t.querySelector(".tooltip1");if(e){const a=e.textContent;a.length>6&&(e.textContent=a.slice(0,6)+"...",e.addEventListener("mouseenter",function(){p.style.display="block",p.textContent=a}),e.addEventListener("mouseleave",function(){p.style.display="none"}))}if(u){const a=u.textContent;a.length>15&&(u.textContent=a.slice(0,15)+"...",u.addEventListener("mouseenter",function(){p.style.display="block",p.textContent=a}),u.addEventListener("mouseleave",function(){p.style.display="none"}))}}),document.querySelectorAll(".button_select").forEach(t=>{let e=!1;t.addEventListener("click",()=>{e=!e,t.classList.toggle("active"),e?t.textContent="취소":t.textContent="선택"}),t.addEventListener("mouseenter",()=>{e&&(t.textContent="취소")}),t.addEventListener("mouseleave",()=>{e&&(t.textContent="선택")})})}function c(d){["1","2","3"].forEach(t=>{const e=document.getElementById(t);e&&(e.style.display=t===d?"block":"none")}),document.querySelectorAll(".button_friend").forEach((t,e)=>{(e+1).toString()===d?t.classList.add("active"):t.classList.remove("active")})}window.addEventListener("load",()=>c("1")),window.Watchdiv=c;function g(){confirm("로그아웃 하겠습니까?")&&(window.location.href="index.html")}window.logout=g;function b(){const d=document.querySelector(".modal3");if(!d){const r=document.createElement("div");r.innerHTML=`
       <dialog class="modal3">
         <div class="middle3">
         
@@ -340,7 +370,7 @@
             </div>
 
             <div style="display: flex;">
-                <img src="/icon/user2.png" style="height:100px; width:100px; margin:30px;"/>
+                <img src="public/icon/user2.png" style="height:100px; width:100px; margin:30px;"/>
                 <div style="margin:50px ;">
                     <div class="black">닉네임</div>
                     <div style="display: flex;">
@@ -356,4 +386,4 @@
                 <button class="button_pro" onclick="logout()">로그아웃</button>
             </div>
         </div>  
-      </dialog>`,document.body.appendChild(l);const o=document.querySelector(".modal3");n(o)}document.querySelector("#mypage").addEventListener("click",()=>{d.showModal()})}function p(){window.location.href="projectlist.html"}function g(){return i("div",{className:"root"},i("button",{className:"left1 drag1 clear",onClick:p},i("img",{src:"icon/logo.png",className:"logo",style:{height:"50px"}})),i("button",{className:"right3 drag1 clear",onClick:u,id:"mypage"},i("i",{className:"fa-solid fa-user fa-2x",style:{fontSize:"25px"}})),i("button",{className:"right2 drag1 clear",onClick:e,id:"friend"},i("i",{className:"fa-solid fa-user-group fa-2x",style:{fontSize:"25px"}})),i("button",{className:"right1 drag1 clear",onClick:t,id:"alert"},i("i",{className:"fa-solid fa-bell fa-2x",style:{fontSize:"25px"}})))}v(document.getElementById("root")).render(i(g));let h=document.querySelector("#root"),m=new MutationObserver(()=>{t(),e(),u()});window.onload=function(){t(),e(),u()};let b={attributes:!0,childList:!0,characterData:!0};m.observe(h,b)})();
+      </dialog>`,document.body.appendChild(r);const t=document.querySelector(".modal3");n(t)}document.querySelector("#mypage").addEventListener("click",()=>{d.showModal()})}function h(){window.location.href="projectlist.html"}function f(){return l("div",{className:"root"},l("button",{className:"left1 drag1 clear",onClick:h},l("img",{src:"public/icon/logo.png",className:"logo",style:{height:"50px"}})),l("button",{className:"right3 drag1 clear",onClick:b,id:"mypage"},l("i",{className:"fa-solid fa-user fa-2x",style:{fontSize:"25px"}})),l("button",{className:"right2 drag1 clear",onClick:o,id:"friend"},l("i",{className:"fa-solid fa-user-group fa-2x",style:{fontSize:"25px"}})),l("button",{className:"right1 drag1 clear",onClick:i,id:"alert"},l("i",{className:"fa-solid fa-bell fa-2x",style:{fontSize:"25px"}})))}y(document.getElementById("root")).render(l(f));let m=document.querySelector("#root"),x=new MutationObserver(()=>{i(),o(),b()});window.onload=function(){i(),o(),b()};let w={attributes:!0,childList:!0,characterData:!0};x.observe(m,w)})();
