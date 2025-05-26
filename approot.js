@@ -624,18 +624,13 @@
 }
   createRoot(document.getElementById('root')).render(createElement(approot));
   
-  /*let target = document.querySelector("#root");
+  let target = document.querySelector("#root");
   let observer = new MutationObserver(() => {
     openAlert();
     openFriend();
     openMyPage();   
-});  */
- setTimeout(() => {
-    openAlert();
-    openFriend();
-    openMyPage();
-  }, 0);
-window.onload = function() {openAlert(); openFriend(); openMyPage();;};
+});  
+window.onload = function() {openAlert(); openFriend(); openMyPage();};
 
  let option = { attributes: true, childList: true, characterData: true };
  observer.observe(target, option);
