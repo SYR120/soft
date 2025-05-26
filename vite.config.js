@@ -3,12 +3,9 @@ import { resolve } from 'path';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
-  root: 'front',
-  publicDir: 'public',
-  base: './',
 
   build: {
-    outDir: '../dist',
+    outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
       input: {
@@ -23,40 +20,51 @@ export default defineConfig({
         projectlist: resolve(__dirname, 'front/projectlist.html'),
         worklist: resolve(__dirname, 'front/worklist.html'),
         writework: resolve(__dirname, 'front/writework.html'),
-        approot: resolve(__dirname, 'front/approot.js'),
+        
       },
       output: {
-        entryFileNames: '[name].js',
-        chunkFileNames: '[name].js',
-        assetFileNames: assetInfo => {
-          const file = assetInfo.fileName ?? assetInfo.name ?? '';
-          if (/\.(png|jpe?g|svg|gif)$/.test(file)) {
-            return 'icon/[name][extname]';
-          }
-          return 'assets/[name][extname]';
+        // entryFileNames: '[name].js',
+        // chunkFileNames: '[name].js',
+        // assetFileNames: '[name][extname]'
+
+        assetFileNames(info) {
+            const name = info.name;
+            if (!name) {
+                return 'assets/[name].[hash][extname]';
+            }
+            if (name.startsWith('front/icon/')) {
+                return '[name][extname]';
+            }
+            if (name.endsWith('.css')){
+                return 'css/[name].[hash][extname]';    
+            }
+
+            if (/\.(png|jpe?g|svg|json)$/.test(name)) {
+                const parts = name.split('/');
+                const file  = parts.pop();          
+                const dir   = parts.join('/');   
+                    
+                const match = file.match(/^(.*)(\.[^\.]+)$/);
+                if (match) {
+                    const [, base, ext] = match;
+                    return dir
+                    ? `${dir}/${base}.[hash]${ext}`
+                    : `${base}.[hash]${ext}`;
+                }
+                return `${file}.[hash]`;
+            }
+            return 'assets/[name].[hash][extname]';
         }
       }
     }
   },
   
   plugins: [
-    {
-      name: 'inject-approot-script',
-      transformIndexHtml(html) {
-        return html.replace(
-          /<\/body>/,
-          `  <script type="module" src="approot.js"></script>\n</body>`
-        );
-      }
-    }
+    viteStaticCopy({
+      targets: [
+        { src: 'front/public/css',  dest: '' },  
+        { src: 'front/public/icon', dest: '' }
+      ]
+    })
   ]
-
-  // plugins: [
-  //   viteStaticCopy({
-  //     targets: [
-  //       { src: 'front/public/css',  dest: '' },  
-  //       { src: 'front/public/icon', dest: '' }
-  //     ]
-  //   })
-  // ]
 });
