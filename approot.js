@@ -1,4 +1,22 @@
-(function(){const v=document.createElement("link").relList;if(v&&v.supports&&v.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))n(i);new MutationObserver(i=>{for(const o of i)if(o.type==="childList")for(const c of o.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&n(c)}).observe(document,{childList:!0,subtree:!0});function y(i){const o={};return i.integrity&&(o.integrity=i.integrity),i.referrerPolicy&&(o.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?o.credentials="include":i.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function n(i){if(i.ep)return;i.ep=!0;const o=y(i);fetch(i.href,o)}})();(function(){const{createElement:l,Fragment:v}=React,{createRoot:y}=ReactDOM;function n(d){d.addEventListener("click",function(s){s.target===d&&d.close()})}window.closeModal=n;function i(){const d=document.querySelector(".modal1");if(!d){const t=document.createElement("div");t.innerHTML=`
+(function() {
+  const { createElement, Fragment } = React;
+  const { createRoot } = ReactDOM;
+  
+  function closeModal(dialog){
+    dialog.addEventListener('click', function(e){
+        if(e.target === dialog){
+            dialog.close();
+        }
+    });
+  }
+  window.closeModal = closeModal;
+
+  function openAlert() {
+    const modal = document.querySelector(".modal1");
+    
+    if (!modal) {
+      const div = document.createElement("div");
+      div.innerHTML =  `
       <dialog class="modal1">
             <table class="table table-hover">
                 <thead>
@@ -164,7 +182,40 @@
                     <button style="background-color:none; border:none;" class="font1">닫기</button>
                 </form>  
             </div>
-        </dialog>`,document.body.appendChild(t);const e=document.querySelector(".modal1");n(e)}const s=document.querySelector("#alert"),r=()=>{const t=s.getBoundingClientRect();root.getBoundingClientRect();const e=d.getBoundingClientRect();d.style.position="fixed",d.style.left=`${t.right-e.width}px`,d.style.top=`${t.bottom}px`};s.addEventListener("click",()=>{d.showModal(),r()}),window.addEventListener("resize",()=>{d.open&&r()})}function o(){const d=document.querySelector(".modal2");if(!d){const t=document.createElement("div");t.innerHTML=`
+        </dialog>`;
+        document.body.appendChild(div);
+        const closemodal = document.querySelector('.modal1');
+        closeModal(closemodal);
+    }
+    
+    const modalBtn = document.querySelector("#alert");
+
+    const updateModalPosition = () => {
+        const rect = modalBtn.getBoundingClientRect();
+        const rootRect = root.getBoundingClientRect();
+        const modalRect = modal.getBoundingClientRect();
+        modal.style.position = "fixed";
+        modal.style.left = `${rect.right - modalRect.width}px`;
+        modal.style.top = `${rect.bottom}px`;
+    };
+
+    modalBtn.addEventListener("click", () => {
+        modal.showModal();
+        updateModalPosition();
+  });
+
+  window.addEventListener("resize", () => {
+    if (modal.open) {
+        updateModalPosition();
+    }
+});
+    
+}
+  function openFriend() {
+    const modal = document.querySelector(".modal2");
+    if(!modal){
+      const div = document.createElement("div");
+      div.innerHTML=`
         <dialog class="modal2" style="border: none; background-color: transparent;>
             <div style="margin-top:30px;">
                 <div>
@@ -359,7 +410,126 @@
                     <button style="background-color:none; border:none;" class="font1">닫기</button>
                 </form>  
             </div>
-        </dialog>`,document.body.appendChild(t);const e=document.querySelector(".modal2");n(e)}document.querySelector("#friend").addEventListener("click",()=>{d.showModal()}),document.querySelectorAll(".lenCut_container").forEach(t=>{const e=t.querySelector(".lenCut"),u=t.querySelector(".lenCutE"),p=t.querySelector(".tooltip1");if(e){const a=e.textContent;a.length>6&&(e.textContent=a.slice(0,6)+"...",e.addEventListener("mouseenter",function(){p.style.display="block",p.textContent=a}),e.addEventListener("mouseleave",function(){p.style.display="none"}))}if(u){const a=u.textContent;a.length>15&&(u.textContent=a.slice(0,15)+"...",u.addEventListener("mouseenter",function(){p.style.display="block",p.textContent=a}),u.addEventListener("mouseleave",function(){p.style.display="none"}))}}),document.querySelectorAll(".button_select").forEach(t=>{let e=!1;t.addEventListener("click",()=>{e=!e,t.classList.toggle("active"),e?t.textContent="취소":t.textContent="선택"}),t.addEventListener("mouseenter",()=>{e&&(t.textContent="취소")}),t.addEventListener("mouseleave",()=>{e&&(t.textContent="선택")})})}function c(d){["1","2","3"].forEach(t=>{const e=document.getElementById(t);e&&(e.style.display=t===d?"block":"none")}),document.querySelectorAll(".button_friend").forEach((t,e)=>{(e+1).toString()===d?t.classList.add("active"):t.classList.remove("active")})}window.addEventListener("load",()=>c("1")),window.Watchdiv=c;function g(){confirm("로그아웃 하겠습니까?")&&(window.location.href="index.html")}window.logout=g;function b(){const d=document.querySelector(".modal3");if(!d){const r=document.createElement("div");r.innerHTML=`
+        </dialog>`;
+        document.body.appendChild(div);
+        const closemodal = document.querySelector('.modal2');
+        closeModal(closemodal);
+    }
+    const modalBtn = document.querySelector("#friend");
+    
+    modalBtn.addEventListener("click", () => {
+        modal.showModal();
+      }
+    );
+
+    //말줄임표, 전문 툴팁
+    document.querySelectorAll('.lenCut_container').forEach(container => {
+        const spanText = container.querySelector(".lenCut");
+        const spanTextE = container.querySelector(".lenCutE");
+        const tooltip = container.querySelector('.tooltip1');
+
+
+
+        if (spanText) {
+            const spanTextOriginal = spanText.textContent;
+            if ( spanTextOriginal.length > 6) {
+                spanText.textContent = spanTextOriginal.slice(0, 6) + "...";
+                
+                spanText.addEventListener('mouseenter', function () {
+                    tooltip.style.display = 'block';
+                    tooltip.textContent = spanTextOriginal;
+                });
+                spanText.addEventListener('mouseleave', function () {
+                    tooltip.style.display = 'none';
+                });            
+            }
+        }
+
+        if (spanTextE){
+            const spanTextOriginalE = spanTextE.textContent;
+            if ( spanTextOriginalE.length > 15) {
+                spanTextE.textContent = spanTextOriginalE.slice(0, 15) + "...";
+                
+                spanTextE.addEventListener('mouseenter', function () {
+                    tooltip.style.display = 'block';
+                    tooltip.textContent = spanTextOriginalE;
+                });
+                spanTextE.addEventListener('mouseleave', function () {
+                    tooltip.style.display = 'none';
+                });            
+            }            
+        }
+
+    });
+
+    // 선택 버튼 토글
+    const btnCheck = document.querySelectorAll(".button_select");
+    btnCheck.forEach((btn) => {
+        let isActive = false;
+
+        btn.addEventListener('click', () => {
+            isActive = !isActive;
+            btn.classList.toggle('active');
+
+            if (isActive) {
+                btn.textContent = '취소';
+            } else {
+                btn.textContent = '선택';
+            }
+
+        });
+
+        // 클린 된 상태에서 마우스 오버 시 글자 취소로 변하게
+        btn.addEventListener('mouseenter', () => {
+            if (isActive) {
+                btn.textContent = '취소';
+            }
+        });
+        btn.addEventListener('mouseleave', () => {
+            if (isActive) {
+                btn.textContent = '선택';
+            }
+        });
+    });
+    
+  }
+  function Watchdiv(i) {
+      const sections = ["1", "2", "3"];
+      sections.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) {
+              el.style.display = (id === i) ? 'block' : 'none';
+          }
+      });
+
+      const button = document.querySelectorAll('.button_friend');
+      button.forEach((btn,index) => {
+          if((index + 1).toString() === i){
+              btn.classList.add('active');
+          }
+          else{
+              btn.classList.remove('active');
+          }
+
+      });
+  }
+  window.addEventListener('load', () => Watchdiv('1'));
+  window.Watchdiv = Watchdiv;
+  
+  function logout(){
+    const result = confirm("로그아웃 하겠습니까?");
+    if(!result){
+        return;
+    }
+    window.location.href=('index.html');
+  }
+  window.logout = logout;
+
+  function openMyPage() {
+    const modal = document.querySelector(".modal3");
+    if(!modal){
+      const div = document.createElement("div");
+      div.innerHTML=`
       <dialog class="modal3">
         <div class="middle3">
         
@@ -386,4 +556,65 @@
                 <button class="button_pro" onclick="logout()">로그아웃</button>
             </div>
         </div>  
-      </dialog>`,document.body.appendChild(r);const t=document.querySelector(".modal3");n(t)}document.querySelector("#mypage").addEventListener("click",()=>{d.showModal()})}function h(){window.location.href="projectlist.html"}function f(){return l("div",{className:"root"},l("button",{className:"left1 drag1 clear",onClick:h},l("img",{src:"public/icon/logo.png",className:"logo",style:{height:"50px"}})),l("button",{className:"right3 drag1 clear",onClick:b,id:"mypage"},l("i",{className:"fa-solid fa-user fa-2x",style:{fontSize:"25px"}})),l("button",{className:"right2 drag1 clear",onClick:o,id:"friend"},l("i",{className:"fa-solid fa-user-group fa-2x",style:{fontSize:"25px"}})),l("button",{className:"right1 drag1 clear",onClick:i,id:"alert"},l("i",{className:"fa-solid fa-bell fa-2x",style:{fontSize:"25px"}})))}y(document.getElementById("root")).render(l(f));let m=document.querySelector("#root"),x=new MutationObserver(()=>{i(),o(),b()});window.onload=function(){i(),o(),b()};let w={attributes:!0,childList:!0,characterData:!0};x.observe(m,w)})();
+      </dialog>`;
+      document.body.appendChild(div);
+      const closemodal = document.querySelector('.modal3');
+      closeModal(closemodal);
+
+    }
+    const modelBtn = document.querySelector("#mypage");
+    modelBtn.addEventListener("click", () => {
+      modal.showModal();
+    });
+  }
+  function openProjectList() {
+    window.location.href=('projectlist.html');
+  }
+
+  function approot() {
+  return createElement(
+    'div',
+    { className: 'root' },
+    
+    createElement(
+      'button',
+      { className: 'left1 drag1 clear', onClick: openProjectList},
+      createElement('img', { src: 'public/assets/icon/logo.png', className: 'logo', style: {height: '50px'} })
+    ),
+
+    createElement(
+      'button',
+      { className: 'right3 drag1 clear', onClick: openMyPage, id: 'mypage'},
+      createElement('i', { className: 'fa-solid fa-user fa-2x', style: { fontSize: '25px'} })
+    ),
+
+    createElement(
+      'button',
+      { className: 'right2 drag1 clear', onClick: openFriend, id:'friend'},
+      createElement('i', { className: 'fa-solid fa-user-group fa-2x', style: { fontSize: '25px'} })
+    ),
+    
+    createElement(
+      'button',
+      { className: 'right1 drag1 clear', onClick: openAlert, id:'alert' },
+      createElement('i', { className: 'fa-solid fa-bell fa-2x', style: { fontSize: '25px'}})
+    )
+  );
+
+}
+  createRoot(document.getElementById('root')).render(createElement(approot));
+  
+  let target = document.querySelector("#root");
+  let observer = new MutationObserver(() => {
+    openAlert();
+    openFriend();
+    openMyPage();   
+});   
+window.onload = function() {openAlert(); openFriend(); openMyPage();;};
+
+ let option = { attributes: true, childList: true, characterData: true };
+ observer.observe(target, option);
+})();
+
+
+
