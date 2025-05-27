@@ -18,7 +18,7 @@
       const div = document.createElement("div");
       div.innerHTML =  `
       <dialog class="modal1">
-      <div class="box_scroll" style="padding: 15px;">
+      <div class="box_scroll">
             <table class="table table-hover">
                 <tbody>
                     <tr>
@@ -211,8 +211,7 @@
     if(!modal){
       const div = document.createElement("div");
       div.innerHTML=`
-        <dialog class="modal2" style="border: none; background-color: transparent;">
-        
+        <dialog class="modal2" style="border: none; background-color: transparent;>
             <div style="margin-top:30px;">
                 <div>
                     <button class="button_friend" onclick="Watchdiv('1')">친구 목록</button>
@@ -224,7 +223,7 @@
                     <button class="button_friend" onclick="Watchdiv('3')">요청 대기</button>
                 </div>
             </div>
-
+            <div>
             <div class="box_friend">
                 <div id="1">
                     <div class="green" style="text-align: center;">친구 목록</div>
@@ -285,7 +284,6 @@
             
             
                     <div class="box10">
-                    <div class="box_scroll">
                         <table class="table table-hover" style="border-collapse: separate; border-spacing: 0;">
                             <thead>
                                 <tr>
@@ -346,7 +344,6 @@
                                 </td></tr>
                             </tbody>
                         </table>
-                    </div>
                     </div>
                     <br/>
                     <div>
